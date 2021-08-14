@@ -11,10 +11,10 @@ export default function House(): ReactElement {
           旗の台シェアハウス<span className="text-gray-400">(仮)</span>
         </h2>
         <div className="relative">
-          <div className="mb-4 grid grid-cols-5">
+          <div className="mb-4 mb:grid mb:grid-cols-5">
             <div className="col-span-2"></div>
             <div
-              className="col-span-3 h-96"
+              className="mb:col-span-3 h-96"
               style={{
                 backgroundImage: 'url(/img/house01-01.png)',
                 backgroundSize: 'cover',
@@ -22,7 +22,7 @@ export default function House(): ReactElement {
               }}
             ></div>
           </div>
-          <div className="w-1/2 h-96 absolute top-0 bg-opacity-60 bg-white">
+          <div className="mb:w-1/2 mb:h-96 mb:absolute mb:top-0 bg-opacity-60 bg-white">
             <h3 className="text-lg mb-4">品川区旗の台 - 庭付き一戸建</h3>
             <p className="mb-2">
               広い庭付きの一戸建てをシェアハウスにしました。
@@ -34,17 +34,18 @@ export default function House(): ReactElement {
         </div>
 
         <div className="relative">
-          <div className="mb-4 grid grid-cols-9">
+          <div className="mb-4 mb:grid mb:grid-cols-9">
             <div
-              className="col-span-4 h-80"
+              className="hidden md:block mb:col-span-4 h-80"
               style={{
                 backgroundImage: 'url(/img/price.png)',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
               }}
             ></div>
+            <img className="md:hidden" src="/img/price.png" />
           </div>
-          <div className="w-1/2 h-80 absolute top-0 right-0 bg-opacity-60 bg-white">
+          <div className="mb:w-1/2 md:h-80 mb:absolute mb:top-0 right-0 bg-opacity-60 bg-white">
             <h3 className="text-lg mb-4">賃料の設定</h3>
             <p className="mb-2"></p>
             <p className="mb-2">
@@ -55,7 +56,7 @@ export default function House(): ReactElement {
             </p>
           </div>
         </div>
-        <div className="grid gap-2 grid-cols-8 px-1 py-2 ">
+        <div className="grid gap-2 grid-cols-2 md:grid-cols-8 px-1 py-2 ">
           {[
             [
               <>
