@@ -23,29 +23,29 @@ export default function Layout({
           </div>
 
           <nav className="w-9/12">
-            <ul className="flex flex-row justify-between">
-              <li className="border-r pr-16">
+            <ul className="flex flex-col ms:flex-row justify-between">
+              <li className="border-b md:border-b-0 md:border-r md:pr-16">
                 <Link href="/">
                   <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
                     AY HOUSEについて
                   </div>
                 </Link>
               </li>
-              <li className="flex-1 text-center border-r">
+              <li className="border-b md:border-b-0 md:flex-1 md:text-center md:border-r">
                 <Link href="/house">
                   <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
                     シェアハウスのご案内
                   </div>
                 </Link>
               </li>
-              <li className="flex-1 text-center border-r">
+              <li className="border-b md:border-b-0 md:flex-1 md:text-center md:border-r">
                 <Link href="/company">
                   <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
                     会社概要
                   </div>
                 </Link>
               </li>
-              <li className="flex-1 text-center border-r">
+              <li className="border-b md:border-b-0 md:flex-1 md:text-center md:border-r">
                 <Link href="https://note.com/aya_eiya">
                   <a target="_blank">
                     <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
@@ -54,7 +54,7 @@ export default function Layout({
                   </a>
                 </Link>
               </li>
-              <li className="text-right pl-16">
+              <li className="border-b md:border-b-0 md:text-right md:pl-16">
                 <Link href="/inquiry">
                   <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
                     お問い合わせ
