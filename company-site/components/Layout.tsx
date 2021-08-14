@@ -23,7 +23,7 @@ export default function Layout({
           </div>
 
           <nav className="w-9/12">
-            <ul className="flex flex-col ms:flex-row justify-between">
+            <ul className="flex flex-col md:flex-row justify-between">
               <li className="border-b md:border-b-0 md:border-r md:pr-16">
                 <Link href="/">
                   <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
