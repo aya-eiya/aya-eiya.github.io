@@ -19,6 +19,7 @@ jobs:
         run: yarn build
 
       - name: export
+        working-directory: company-site
         run: yarn next export -o ../out
 
       - name: add nojekyll
