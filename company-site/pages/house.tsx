@@ -11,10 +11,10 @@ export default function House(): ReactElement {
           旗の台シェアハウス<span className="text-gray-400">(仮)</span>
         </h2>
         <div className="relative">
-          <div className="mb-4 mb:grid mb:grid-cols-5">
+          <div className="mb-4 md:grid md:grid-cols-5">
             <div className="col-span-2"></div>
             <div
-              className="mb:col-span-3 h-96"
+              className="md:col-span-3 h-96"
               style={{
                 backgroundImage: 'url(/img/house01-01.png)',
                 backgroundSize: 'cover',
@@ -22,7 +22,7 @@ export default function House(): ReactElement {
               }}
             ></div>
           </div>
-          <div className="mb:w-1/2 mb:h-96 mb:absolute mb:top-0 bg-opacity-60 bg-white">
+          <div className="md:w-1/2 md:h-96 md:absolute md:top-0 bg-opacity-60 bg-white">
             <h3 className="text-lg mb-4">品川区旗の台 - 庭付き一戸建</h3>
             <p className="mb-2">
               広い庭付きの一戸建てをシェアハウスにしました。
@@ -34,9 +34,9 @@ export default function House(): ReactElement {
         </div>
 
         <div className="relative">
-          <div className="mb-4 mb:grid mb:grid-cols-9">
+          <div className="mb-4 md:grid md:grid-cols-9">
             <div
-              className="hidden md:block mb:col-span-4 h-80"
+              className="hidden md:block md:col-span-4 h-80"
               style={{
                 backgroundImage: 'url(/img/price.png)',
                 backgroundSize: 'cover',
@@ -45,7 +45,7 @@ export default function House(): ReactElement {
             ></div>
             <img className="md:hidden" src="/img/price.png" />
           </div>
-          <div className="mb:w-1/2 md:h-80 mb:absolute mb:top-0 right-0 bg-opacity-60 bg-white">
+          <div className="md:w-1/2 md:h-80 md:absolute md:top-0 right-0 bg-opacity-60 bg-white">
             <h3 className="text-lg mb-4">賃料の設定</h3>
             <p className="mb-2"></p>
             <p className="mb-2">
