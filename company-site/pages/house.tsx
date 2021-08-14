@@ -44,7 +44,7 @@ export default function House(): ReactElement {
               }}
             ></div>
           </div>
-          <div className="w-1/2 h-96 absolute top-0 right-0 bg-opacity-60 bg-white">
+          <div className="w-1/2 h-80 absolute top-0 right-0 bg-opacity-60 bg-white">
             <h3 className="text-lg mb-4">賃料の設定</h3>
             <p className="mb-2"></p>
             <p className="mb-2">
