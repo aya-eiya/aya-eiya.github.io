@@ -1,45 +1,33 @@
-import Head from 'next/head'
-import Image from 'next/image'
+import Link from 'next/link'
+import { ReactElement } from 'react'
+import HeadLine from '../components/HeadLine'
+import Layout from '../components/Layout'
 
-export default function Home() {
+export default function Home(): ReactElement {
   return (
-    <div className="m-auto">
-      <Head>
-        <title>AY合同会社</title>
-        <meta name="description" content="AY合同会社 公式サイト" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className="max-w-full md:max-w-7xl m-auto flex flex-col">
-        <h1 className="text-xl flex-auto">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className="">
-          Get started by editing <code className="">pages/index.js</code>
-        </p>
-
-        <div className="grid grid-cols-2 gap-2">
-          <div>1</div>
-          <div>2</div>
-          <div>3</div>
-          <div>4</div>
-          <div>5</div>
+    <Layout>
+      <HeadLine background="/img/head01.png">AY HOUSEについて</HeadLine>
+      <div className="w-9/12 mx-auto mt-10">
+        <div className="mb-2">
+          <p className="mb-2">
+            2021年に開始されたシェアハウスです。都内近郊中心に展開する予定です。
+          </p>
+          <p className="mb-2">
+            代表はギークハウスで長らく管理人を経験してきましたが、新たなコンセプトシェアハウスとなる新ブランドとしてAY
+            HOUSEをこの度スタートしました。
+          </p>
         </div>
-      </main>
-
-      <footer className="mt-4 bg-gray-300 p-3">
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className="w-9 h-9">
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
-    </div>
+        <div className="mb-2">
+          <p>現在、品川旗の台に１号のシェアハウスを運営しています。</p>
+          <p>
+            ご案内は
+            <Link href="/house">
+              <a className="font-bold underline">こちら</a>
+            </Link>
+            から。
+          </p>
+        </div>
+      </div>
+    </Layout>
   )
 }
