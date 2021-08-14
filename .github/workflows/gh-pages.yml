@@ -7,25 +7,25 @@ on:
 
 jobs:
   build:
-  runs-on: ubuntu-latest
-  steps:
-    - uses: actions/checkout@v2
-    - name: yarn install
-      working-directory: company-site
-      run: yarn
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: yarn install
+        working-directory: company-site
+        run: yarn
 
-    - name: build
-      working-directory: company-site
-      run: yarn build
+      - name: build
+        working-directory: company-site
+        run: yarn build
 
-    - name: export
-      run: yarn next export -o ../out
+      - name: export
+        run: yarn next export -o ../out
 
-    - name: add nojekyll
-      run: touch ./out/.nojekyll
+      - name: add nojekyll
+        run: touch ./out/.nojekyll
 
-    - name: deploy
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./out
+      - name: deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
