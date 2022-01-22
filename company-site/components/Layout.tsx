@@ -24,7 +24,7 @@ export default function Layout({
 
           <nav className="w-9/12">
             <ul className="flex flex-col md:flex-row justify-between">
-              <li className="border-b md:border-b-0 md:border-r md:pr-16">
+              <li className="border-b md:border-b-0 md:border-r md:pr-7">
                 <Link href="/">
                   <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
                     AY HOUSEについて
@@ -35,6 +35,13 @@ export default function Layout({
                 <Link href="/house">
                   <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
                     シェアハウスのご案内
+                  </div>
+                </Link>
+              </li>
+              <li className="border-b md:border-b-0 md:flex-1 md:text-center md:border-r">
+                <Link href="/space">
+                  <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
+                    レンタルスペース紹介
                   </div>
                 </Link>
               </li>
@@ -54,7 +61,7 @@ export default function Layout({
                   </a>
                 </Link>
               </li>
-              <li className="border-b md:border-b-0 md:text-right md:pl-16">
+              <li className="border-b md:border-b-0 md:text-right md:pl-7">
                 <Link href="/inquiry">
                   <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
                     お問い合わせ
