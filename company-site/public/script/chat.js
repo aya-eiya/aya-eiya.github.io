@@ -1,40 +1,19 @@
-;(function () {
-  var w = window
-  if (w.ChannelIO) {
-    return (window.console.error || window.console.log || function () {})(
-      'ChannelIO script included twice.'
-    )
-  }
-  var ch = function () {
-    ch.c(arguments)
-  }
-  ch.q = []
-  ch.c = function (args) {
-    ch.q.push(args)
-  }
-  w.ChannelIO = ch
-  function l() {
-    if (w.ChannelIOInitialized) {
-      return
-    }
-    w.ChannelIOInitialized = true
-    var s = document.createElement('script')
-    s.type = 'text/javascript'
-    s.async = true
-    s.src = 'https://cdn.channel.io/plugin/ch-plugin-web.js'
-    s.charset = 'UTF-8'
-    var x = document.getElementsByTagName('script')[0]
-    x.parentNode.insertBefore(s, x)
-  }
-  if (document.readyState === 'complete') {
-    l()
-  } else if (window.attachEvent) {
-    window.attachEvent('onload', l)
-  } else {
-    window.addEventListener('DOMContentLoaded', l, false)
-    window.addEventListener('load', l, false)
-  }
-})()
-ChannelIO('boot', {
-  pluginKey: '909cd626-0d6f-4c8d-8ee3-5beba9fa3d73',
-})
+var chatbox = document.getElementById('fb-customer-chat')
+chatbox.setAttribute('page_id', '108626034797881')
+chatbox.setAttribute('attribution', 'biz_inbox')
+window.fbAsyncInit = function () {
+  FB.init({
+    xfbml: true,
+    version: 'v12.0',
+  })
+}
+
+;(function (d, s, id) {
+  var js,
+    fjs = d.getElementsByTagName(s)[0]
+  if (d.getElementById(id)) return
+  js = d.createElement(s)
+  js.id = id
+  js.src = 'https://connect.facebook.net/ja_JP/sdk/xfbml.customerchat.js'
+  fjs.parentNode.insertBefore(js, fjs)
+})(document, 'script', 'facebook-jssdk')
