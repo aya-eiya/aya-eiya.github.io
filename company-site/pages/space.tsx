@@ -8,23 +8,35 @@ export default function Home(): ReactElement {
     <Layout>
       <HeadLine background="/img/head01.png">レンタルスペース</HeadLine>
       <div className="w-9/12 mx-auto mt-10">
-        <div className="mb-2">
-          <p className="mb-2"></p>
-          <p className="mb-2">
-            代表はギークハウスで長らく管理人を経験してきましたが、新たなコンセプトシェアハウスとなる新ブランドとしてAY
-            HOUSEをこの度スタートしました。
-          </p>
-        </div>
-        <div className="mb-2">
-          <p>現在、品川旗の台に１号のシェアハウスを運営しています。</p>
-          <p>
-            ご案内は
-            <Link href="/house">
-              <a className="font-bold underline">こちら</a>
-            </Link>
-            から。
-          </p>
-        </div>
+        <p className="mb-2">
+          レンタルスペースとしてご利用いただける部屋をご用意しております。
+        </p>
+        <p className="mb-2">宴会・料理教室・学習会・WEB会議のほか</p>
+
+        <p className="mb-2">
+          各種広告用写真・ミュージンクビデオ・配信用動画の撮影などにもご利用いただけます。
+        </p>
+
+        <p className="mb-2">
+          ご予約は
+          <a
+            href="https://www.instabase.jp/owners/8543911892"
+            target={'_blank'}
+          >
+            こちら
+          </a>
+          からよろしくお願いします。
+        </p>
+        <a href="https://www.instabase.jp/owners/8543911892" target={'_blank'}>
+          <dl className="border rounded-md p-4">
+            <dt className="mb-2">予約サイト</dt>
+            <dd className="pl-4 mb-4">インスタベース</dd>
+            <dt className="mb-2">URL</dt>
+            <dd className="pl-4 mb-4">
+              https://www.instabase.jp/owners/8543911892
+            </dd>
+          </dl>
+        </a>
       </div>
     </Layout>
   )
