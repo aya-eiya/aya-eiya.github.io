@@ -14,7 +14,6 @@ export default function Layout({
           <title>AY HOUSE</title>
           <meta name="description" content="AY HOUSE" />
           <link rel="icon" href="/favicon.ico" />
-          <script type="text/javascript" src="/script/chat.js"></script>
         </Head>
 
         <header className="w-full flex items-center justify-center flex-col mb-4">
@@ -76,8 +75,10 @@ export default function Layout({
           <p className="text-center font-serif text-gray-500">&copy; AY.LLC.</p>
         </footer>
       </div>
+
       <div id="fb-root"></div>
       <div id="fb-customer-chat" className="fb-customerchat"></div>
+      <script type="text/javascript" src="/script/chat.js"></script>
     </>
   )
 }
