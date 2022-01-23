@@ -75,10 +75,6 @@ export default function Layout({
           <p className="text-center font-serif text-gray-500">&copy; AY.LLC.</p>
         </footer>
       </div>
-
-      <div id="fb-root"></div>
-      <div id="fb-customer-chat" className="fb-customerchat"></div>
-      <script type="text/javascript" src="/script/chat.js"></script>
     </>
   )
 }
