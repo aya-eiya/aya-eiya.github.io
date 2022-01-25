@@ -11,9 +11,12 @@ export default function Layout({
     <>
       <div className="m-auto min-h-screen relative">
         <Head>
-          <title>AY HOUSE</title>
           <meta name="description" content="AY HOUSE" />
           <link rel="icon" href="/favicon.ico" />
+          <meta
+            name="keywords"
+            content="シェアハウス,レンタルスペース,ギークハウス,share house,rental space"
+          />
         </Head>
 
         <header className="w-full flex items-center justify-center flex-col mb-4">
