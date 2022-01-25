@@ -54,10 +54,14 @@ export default function House(): ReactElement {
                 <a
                   href="https://ay-house01.connpass.com/event/237303/"
                   target="_blank"
+                  title="connpass イベントグループページ"
                 >
                   <span className="underline inline-block mx-1 ">
                     オーナー主催のIT勉強会
-                    <span className="inline-block bg-[url(/img/link.svg)] bg-no-repeat w-4 h-4" />
+                    <span
+                      title="外部リンク"
+                      className="inline-block align-sub bg-[url(/img/link.svg)] bg-no-repeat w-4 h-4 ml-1"
+                    />
                   </span>
                 </a>
                 を催しております。
