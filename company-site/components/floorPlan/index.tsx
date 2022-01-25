@@ -126,7 +126,7 @@ function Floor1({
           <text x="860" y="180" font-size="64" onClick={() => setRoom('domi')}>
             {RoomNames.domi}
           </text>
-          <text x="480" y="160" font-size="35">
+          <text x="480" y="160" font-size="35" onClick={() => setRoom('c')}>
             サービスルーム
           </text>
           <text x="1300" y="80" font-size="35">

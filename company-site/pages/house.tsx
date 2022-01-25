@@ -9,6 +9,9 @@ import {
   Base,
   Rooms,
   DetailTexts,
+  CommonFee,
+  BaseRent,
+  ManageFee,
 } from '../domains/house'
 import { FloorPlan } from '../components/floorPlan'
 import { currencyFormat } from '../domains/number'
@@ -38,43 +41,45 @@ export default function House(): ReactElement {
             </div>
             <div className="md:w-1/2 md:h-96 md:absolute md:top-0 bg-opacity-60 bg-white">
               <h3 className="text-lg mb-4">品川区旗の台 - 庭付き一戸建</h3>
-              <p className="mb-4">
-                品川区旗の台の駅近く、徒歩3分の立地で7LLDDKKの広い庭付き一戸建てです。
-              </p>
-              <p className="mb-4">
-                個室中心で広いお部屋が多く、シェアハウスでは珍しいルームシェアのご希望にもお応えできます。
-              </p>
-              <p className="mb-4">
-                住民はオーナーの影響からエンジニアが多く、ITに関わる方に人気が高くなっております。
-              </p>
-              <p className="mb-4">
-                外国人起業家や、フリーランスのエンジニアなど会社員以外のお仕事をしている人も入居しており、
-                <br />
-                週末には
-                <a
-                  href="https://ay-house01.connpass.com/event/237303/"
-                  target="_blank"
-                  title="connpass イベントグループページ"
-                >
-                  <span className="underline inline-block mx-1 ">
-                    オーナー主催のIT勉強会
-                    <span
-                      title="外部リンク"
-                      className="inline-block align-sub bg-[url(/img/link.svg)] bg-no-repeat w-4 h-4 ml-1"
-                    />
-                  </span>
-                </a>
-                を催しております。
-              </p>
+              <div className="px-2">
+                <p className="mb-4">
+                  品川区旗の台の駅近く、徒歩3分の立地で7LLDDKKの広い庭付き一戸建てです。
+                </p>
+                <p className="mb-4">
+                  個室中心で広いお部屋が多く、シェアハウスでは珍しいルームシェアのご希望にもお応えできます。
+                </p>
+                <p className="mb-4">
+                  住民はオーナーの影響からエンジニアが多く、ITに関わる方に人気が高くなっております。
+                </p>
+                <p className="mb-4">
+                  外国人起業家や、フリーランスのエンジニアなど会社員以外のお仕事をしている人も入居しており、
+                  <br />
+                  週末には
+                  <a
+                    href="https://ay-house01.connpass.com/event/237303/"
+                    target="_blank"
+                    title="connpass イベントグループページ"
+                  >
+                    <span className="underline inline-block mx-1 ">
+                      オーナー主催のIT勉強会
+                      <span
+                        title="外部リンク"
+                        className="inline-block align-sub bg-[url(/img/link.svg)] bg-no-repeat w-4 h-4 ml-1"
+                      />
+                    </span>
+                  </a>
+                  を催しております。
+                </p>
+              </div>
             </div>
           </div>
           <div>
             <h3 className="text-lg mb-4">ご案内</h3>
+            <p className="px-2 pb-4 text-sm">
+              ご覧になりたい部屋を間取り図から選択してください
+            </p>
             <div className="grid grid-cols-5">
               <div className="col-span-2 md:col-span-3 pb-6">
-                <p className="pb-4">
-                  ご覧になりたい部屋を間取り図から選択してください
-                </p>
                 <FloorPlan selected={room} setRoom={setRoom} />
               </div>
               <div className="col-span-3 md:col-span-2 pl-4">
@@ -103,7 +108,9 @@ export default function House(): ReactElement {
                         <p className="text-right">
                           {currencyFormat(Rent[key])} 円
                         </p>
-                        <div className="pl-2">教養部利用費:</div>
+                        <div className="pl-2">
+                          共用部利用費(*<span className="text-xs">1</span>):
+                        </div>
                         <p className="text-right">{currencyFormat(Base)} 円</p>
                         <div className="pl-2">入居人数:</div>
                         <div className="border-b pb-2 border-gray-400 text-right">
@@ -134,6 +141,29 @@ export default function House(): ReactElement {
             </div>
           </div>
           <OptionList />
+          <hr className="border-b md:mt-4 mb-1" />
+          <div className="text-gray-400 mb-6">
+            <dl className="flex flex-row text-xs md:text-sm">
+              <dt>(*1):</dt>
+              <dd>
+                共用部利用費の内訳は
+                <span className="inline-block mx-1">
+                  <span className="underline">
+                    家賃:{currencyFormat(BaseRent)}円
+                  </span>
+                  {' + '}
+                  <span className="underline">
+                    共益費:{currencyFormat(CommonFee)}円
+                  </span>
+                  {' + '}
+                  <span className="underline">
+                    管理手数料:{currencyFormat(ManageFee)}円
+                  </span>
+                </span>
+                となります。
+              </dd>
+            </dl>
+          </div>
         </div>
       </Layout>
     </>
@@ -141,7 +171,7 @@ export default function House(): ReactElement {
 }
 function OptionList() {
   return (
-    <div className="grid gap-2 grid-cols-2 md:grid-cols-5 px-1 py-2 ">
+    <div className="grid gap-2 grid-cols-2 md:grid-cols-5 px-1 pb-2">
       {[
         [
           <>
