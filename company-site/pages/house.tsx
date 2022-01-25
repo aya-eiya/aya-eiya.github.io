@@ -1,4 +1,4 @@
-import { ReactElement, useEffect, useState } from 'react'
+import { ReactElement, useState } from 'react'
 import HeadLine from '../components/HeadLine'
 import Layout from '../components/Layout'
 import {
@@ -9,9 +9,14 @@ import {
   Base,
   Rooms,
   DetailTexts,
+  CommonFee,
+  BaseRent,
+  ManageFee,
 } from '../domains/house'
 import { FloorPlan } from '../components/floorPlan'
 import { currencyFormat } from '../domains/number'
+import Image from 'next/image'
+import Head from 'next/head'
 
 const defaultRNum = Rooms.reduce(
   (i, r) => ({ ...i, [r]: 1 }),
@@ -21,96 +26,152 @@ export default function House(): ReactElement {
   const [room, setRoom] = useState('a' as Room)
   const [rnum, setRNum] = useState(defaultRNum)
   return (
-    <Layout>
-      <HeadLine background="">シェアハウスのご案内</HeadLine>
-      <div className="w-9/12 mx-auto">
-        <h2 className="text-xl my-4">旗の台シェアハウス</h2>
-        <div className="relative">
-          <div className="mb-4 md:grid md:grid-cols-5">
-            <div className="col-span-2"></div>
-            <div className="md:col-span-3 h-96 bg-cover bg-center bg-[url(/img/house01-01.png)]"></div>
-          </div>
-          <div className="md:w-1/2 md:h-96 md:absolute md:top-0 bg-opacity-60 bg-white">
-            <h3 className="text-lg mb-4">品川区旗の台 - 庭付き一戸建</h3>
-            <p className="mb-2">
-              広い庭付きの一戸建てをシェアハウスにしました。
-            </p>
-            <p className="mb-2">
-              個室中心で、広いお部屋が多くルームシェアのご希望にもお応えできます。
-            </p>
-          </div>
-        </div>
-        <div>
-          <h3 className="text-lg mb-4">ご案内</h3>
-          <div className="grid grid-cols-5">
-            <div className="col-span-2 md:col-span-3 pb-6">
-              <p className="pb-4">
-                ご覧になりたい部屋を間取り図から選択してください
-              </p>
-              <FloorPlan selected={room} setRoom={setRoom} />
+    <>
+      <Head>
+        <title>AY HOUSE | シェアハウスのご案内</title>
+      </Head>
+      <Layout>
+        <HeadLine background="">シェアハウスのご案内</HeadLine>
+        <div className="w-9/12 mx-auto">
+          <h2 className="text-xl my-4">旗の台シェアハウス</h2>
+          <div className="relative">
+            <div className="mb-4 md:grid md:grid-cols-5">
+              <div className="col-span-2"></div>
+              <div className="md:col-span-3 h-96 bg-cover bg-center bg-[url(/img/house01-01.png)]"></div>
             </div>
-            <div className="col-span-3 md:col-span-2 pl-4">
-              {Rooms.map((key) => {
-                const value = Upto[key]
-                return (
-                  <div key={key} className={key === room ? '' : 'hidden'}>
-                    <h2 className="text-lg pb-4">{RoomNames[key]}</h2>
-                    <div className="h-28 m-2 mt-0 rounded-sm border border-gray-400 p-2 text-sm">
-                      {DetailTexts[key]}
-                    </div>
-                    <div
-                      className={
-                        Rent[key] > 0
-                          ? 'px-4 grid grid-cols-2 gap-y-2'
-                          : 'hidden'
-                      }
-                    >
-                      <h3 className="col-span-2 text-lg pb-1">月額料金計算</h3>
-                      <div className="pl-2">
-                        {room !== 'domi' ? '部屋' : 'ベッド'}
-                        利用料金:
-                      </div>
-                      <p className="text-right">
-                        {currencyFormat(Rent[key])} 円
-                      </p>
-                      <div className="pl-2">教養部利用費:</div>
-                      <p className="text-right">{currencyFormat(Base)} 円</p>
-                      <div className="pl-2">入居人数:</div>
-                      <div className="border-b pb-2 border-gray-400 text-right">
-                        <select
-                          className="w-16 border text-right px-2"
-                          onChange={({ target: { value } }) =>
-                            setRNum({
-                              ...rnum,
-                              [key]: parseInt(value),
-                            })
-                          }
-                        >
-                          {[...Array(value)].map((_, i) => {
-                            return <option key={i}>{i + 1}</option>
-                          })}
-                        </select>{' '}
-                        / {value} 人
-                      </div>
-                      <p className="col-span-2 text-right text-lg">
-                        <span className="inline-block pr-4">合計</span>
-                        {currencyFormat(rnum[key] * Base + Rent[key])} 円
-                      </p>
-                    </div>
-                  </div>
-                )
-              })}
+            <div className="md:w-1/2 md:h-96 md:absolute md:top-0 bg-opacity-60 bg-white">
+              <h3 className="text-lg mb-4">品川区旗の台 - 庭付き一戸建</h3>
+              <div className="px-2">
+                <p className="mb-4">
+                  品川区旗の台の駅近く、徒歩3分の立地で7LLDDKKの広い庭付き一戸建てです。
+                </p>
+                <p className="mb-4">
+                  個室中心で広いお部屋が多く、シェアハウスでは珍しいルームシェアのご希望にもお応えできます。
+                </p>
+                <p className="mb-4">
+                  住民はオーナーの影響からエンジニアが多く、ITに関わる方に人気が高くなっております。
+                </p>
+                <p className="mb-4">
+                  外国人起業家や、フリーランスのエンジニアなど会社員以外のお仕事をしている人も入居しており、
+                  <br />
+                  週末には
+                  <a
+                    href="https://ay-house01.connpass.com/event/237303/"
+                    target="_blank"
+                    title="connpass イベントグループページ"
+                  >
+                    <span className="underline inline-block mx-1 ">
+                      オーナー主催のIT勉強会
+                      <span
+                        title="外部リンク"
+                        className="inline-block align-sub bg-[url(/img/link.svg)] bg-no-repeat w-4 h-4 ml-1"
+                      />
+                    </span>
+                  </a>
+                  を催しております。
+                </p>
+              </div>
             </div>
           </div>
+          <div>
+            <h3 className="text-lg mb-4">ご案内</h3>
+            <p className="px-2 pb-4 text-sm">
+              ご覧になりたい部屋を間取り図から選択してください
+            </p>
+            <div className="grid grid-cols-5">
+              <div className="col-span-2 md:col-span-3 pb-6">
+                <FloorPlan selected={room} setRoom={setRoom} />
+              </div>
+              <div className="col-span-3 md:col-span-2 pl-4">
+                {Rooms.map((key) => {
+                  const value = Upto[key]
+                  return (
+                    <div key={key} className={key === room ? '' : 'hidden'}>
+                      <h2 className="text-lg pb-4">{RoomNames[key]}</h2>
+                      <div className="m-2 mt-0 rounded-sm border border-gray-400 p-2 text-sm">
+                        {DetailTexts[key]}
+                      </div>
+                      <div
+                        className={
+                          Rent[key] > 0
+                            ? 'px-4 grid grid-cols-2 gap-y-2'
+                            : 'hidden'
+                        }
+                      >
+                        <h3 className="col-span-2 text-lg pb-1">
+                          月額料金計算
+                        </h3>
+                        <div className="pl-2">
+                          {room !== 'domi' ? '部屋' : 'ベッド'}
+                          利用料金:
+                        </div>
+                        <p className="text-right">
+                          {currencyFormat(Rent[key])} 円
+                        </p>
+                        <div className="pl-2">
+                          共用部利用費(*<span className="text-xs">1</span>):
+                        </div>
+                        <p className="text-right">{currencyFormat(Base)} 円</p>
+                        <div className="pl-2">入居人数:</div>
+                        <div className="border-b pb-2 border-gray-400 text-right">
+                          <select
+                            className="w-16 border text-right px-2"
+                            onChange={({ target: { value } }) =>
+                              setRNum({
+                                ...rnum,
+                                [key]: parseInt(value),
+                              })
+                            }
+                          >
+                            {[...Array(value)].map((_, i) => {
+                              return <option key={i}>{i + 1}</option>
+                            })}
+                          </select>{' '}
+                          / {value} 人
+                        </div>
+                        <p className="col-span-2 text-right text-lg">
+                          <span className="inline-block pr-4">合計</span>
+                          {currencyFormat(rnum[key] * Base + Rent[key])} 円
+                        </p>
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
+          </div>
+          <OptionList />
+          <hr className="border-b md:mt-4 mb-1" />
+          <div className="text-gray-400 mb-6">
+            <dl className="flex flex-row text-xs md:text-sm">
+              <dt>(*1):</dt>
+              <dd>
+                共用部利用費の内訳は
+                <span className="inline-block mx-1">
+                  <span className="underline">
+                    家賃:{currencyFormat(BaseRent)}円
+                  </span>
+                  {' + '}
+                  <span className="underline">
+                    共益費:{currencyFormat(CommonFee)}円
+                  </span>
+                  {' + '}
+                  <span className="underline">
+                    管理手数料:{currencyFormat(ManageFee)}円
+                  </span>
+                </span>
+                となります。
+              </dd>
+            </dl>
+          </div>
         </div>
-        <OptionList />
-      </div>
-    </Layout>
+      </Layout>
+    </>
   )
 }
 function OptionList() {
   return (
-    <div className="grid gap-2 grid-cols-2 md:grid-cols-5 px-1 py-2 ">
+    <div className="grid gap-2 grid-cols-2 md:grid-cols-5 px-1 pb-2">
       {[
         [
           <>

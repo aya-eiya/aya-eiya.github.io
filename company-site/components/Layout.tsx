@@ -11,9 +11,12 @@ export default function Layout({
     <>
       <div className="m-auto min-h-screen relative">
         <Head>
-          <title>AY HOUSE</title>
           <meta name="description" content="AY HOUSE" />
           <link rel="icon" href="/favicon.ico" />
+          <meta
+            name="keywords"
+            content="シェアハウス,レンタルスペース,ギークハウス,share house,rental space"
+          />
         </Head>
 
         <header className="w-full flex items-center justify-center flex-col mb-4">
@@ -56,6 +59,10 @@ export default function Layout({
                   <a target="_blank">
                     <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
                       ブログ
+                      <span
+                        title="外部リンク"
+                        className="inline-block align-sub bg-[url(/img/link.svg)] bg-no-repeat w-3 h-3 ml-1"
+                      />
                     </div>
                   </a>
                 </Link>

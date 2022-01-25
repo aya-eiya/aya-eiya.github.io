@@ -87,6 +87,9 @@ function Floor1({
         <g name="STR" {...defaultGProps}>
           <path d="M 2.0 2.0 m 975.0 654.0 h 191 v 256 h -191 v -256 z" />
         </g>
+        <g name="1FWC" {...defaultGProps}>
+          <path d="M 2.0 2.0 m 1337.0 910.0 h 120 v 91 h -120 v -91 z" />
+        </g>
         <g
           name="1F3"
           stroke="black"
@@ -123,7 +126,7 @@ function Floor1({
           <text x="860" y="180" font-size="64" onClick={() => setRoom('domi')}>
             {RoomNames.domi}
           </text>
-          <text x="480" y="160" font-size="35">
+          <text x="480" y="160" font-size="35" onClick={() => setRoom('c')}>
             サービスルーム
           </text>
           <text x="1300" y="80" font-size="35">
@@ -137,6 +140,21 @@ function Floor1({
           </text>
           <text x="1320" y="320" font-size="35">
             W.C.
+          </text>
+          <text x="580" y="620" font-size="35">
+            リビング
+          </text>
+          <text x="1020" y="560" font-size="35">
+            ダイニング・キッチン
+          </text>
+          <text x="1040" y="768" font-size="35">
+            階段
+          </text>
+          <text x="1370" y="968" font-size="35">
+            W.C.
+          </text>
+          <text x="930" y="1168" font-size="35">
+            玄関
           </text>
         </g>
       </svg>
@@ -186,6 +204,9 @@ function Floor2({
         <g name="2FLDK" {...defaultGProps}>
           <path d="M 2.0 2.0 m 0 546 m 224 330 h 659 v 185 h 60 h 191 v 179 h -910 z" />
         </g>
+        <g name="2FWC" {...defaultGProps}>
+          <path d="M 2.0 2.0 m 1134 1061 h 92 v 179 h -92 v -179 z" />
+        </g>
         <g name="2FB" {...defaultGProps}>
           <path d="M 2.0 2.0 m 1166 876 h 60 h 182 v 364 h -182 v -179 v -120 h -60 z" />
         </g>
@@ -195,6 +216,27 @@ function Floor2({
           </text>
           <text x="560" y="760" font-size="64" onClick={() => setRoom('e')}>
             {RoomNames.e}
+          </text>
+          <text x="1040" y="768" font-size="35">
+            階段
+          </text>
+          <text x="420" y="1100" font-size="35" onClick={() => setRoom('e')}>
+            レンタルスペース
+          </text>
+          <text x="1120" y="520" font-size="35" onClick={() => setRoom('e')}>
+            シェアオフィス
+          </text>
+          <text x="1264" y="970" font-size="35" onClick={() => setRoom('e')}>
+            洗面所
+          </text>
+          <text x="1264" y="1040" font-size="35" onClick={() => setRoom('e')}>
+            脱衣所
+          </text>
+          <text x="1264" y="1160" font-size="35" onClick={() => setRoom('e')}>
+            風呂場
+          </text>
+          <text x="1150" y="1160" font-size="35" onClick={() => setRoom('e')}>
+            W.C.
           </text>
         </g>
       </svg>

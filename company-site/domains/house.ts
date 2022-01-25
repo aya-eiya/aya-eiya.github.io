@@ -18,7 +18,10 @@ export const Upto: Record<Room, number> = {
   e: 2,
   domi: 1,
 }
-export const Base = 55000
+export const BaseRent = 45000
+export const ManageFee = 5000
+export const CommonFee = 10000
+export const Base = BaseRent + ManageFee + CommonFee
 export const Rent: Record<Room, number> = {
   a: 50000,
   b: 0,
