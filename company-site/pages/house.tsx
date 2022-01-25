@@ -28,14 +28,7 @@ export default function House(): ReactElement {
         <div className="relative">
           <div className="mb-4 md:grid md:grid-cols-5">
             <div className="col-span-2"></div>
-            <div
-              className="md:col-span-3 h-96"
-              style={{
-                backgroundImage: 'url(/img/house01-01.png)',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-              }}
-            ></div>
+            <div className="md:col-span-3 h-96 bg-cover bg-center bg-[url(/img/house01-01.png)]"></div>
           </div>
           <div className="md:w-1/2 md:h-96 md:absolute md:top-0 bg-opacity-60 bg-white">
             <h3 className="text-lg mb-4">品川区旗の台 - 庭付き一戸建</h3>

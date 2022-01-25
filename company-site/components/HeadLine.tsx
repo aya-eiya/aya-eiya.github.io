@@ -9,11 +9,11 @@ export default function HeadLine({
 }): ReactElement {
   return (
     <div
-      className="h-28 flex items-center justify-center bg-gray-300 w-full"
+      className={
+        'bg-cover bg-center h-28 flex items-center justify-center bg-gray-300 w-full'
+      }
       style={{
         backgroundImage: `url(${background})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
       }}
     >
       <div className="w-9/12">
