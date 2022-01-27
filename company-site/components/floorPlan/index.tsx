@@ -109,51 +109,51 @@ function Floor1({
           <path d="M 2.0 2.0 m 1092.0 1001.0 h 364 v 273 h -364 v -273 z" />
         </g>
         <g>
-          <text x="80" y="180" font-size="64" onClick={() => setRoom('a')}>
+          <text x="80" y="180" fontSize="64" onClick={() => setRoom('a')}>
             {RoomNames.a}
           </text>
           <g onClick={() => setRoom('b')}>
-            <text x="1200" y="1130" font-size="35">
+            <text x="1200" y="1130" fontSize="35">
               {RoomNames.b}
             </text>
-            <text x="1190" y="1180" font-size="35">
+            <text x="1190" y="1180" fontSize="35">
               管理人室
             </text>
           </g>
-          <text x="280" y="1120" font-size="64" onClick={() => setRoom('c')}>
+          <text x="280" y="1120" fontSize="64" onClick={() => setRoom('c')}>
             {RoomNames.c}
           </text>
-          <text x="860" y="180" font-size="64" onClick={() => setRoom('domi')}>
+          <text x="860" y="180" fontSize="64" onClick={() => setRoom('domi')}>
             {RoomNames.domi}
           </text>
-          <text x="480" y="160" font-size="35" onClick={() => setRoom('c')}>
+          <text x="480" y="160" fontSize="35" onClick={() => setRoom('c')}>
             サービスルーム
           </text>
-          <text x="1300" y="80" font-size="35">
+          <text x="1300" y="80" fontSize="35">
             浴室
           </text>
-          <text x="1300" y="190" font-size="35">
+          <text x="1300" y="190" fontSize="35">
             脱衣所
           </text>
-          <text x="1300" y="240" font-size="35">
+          <text x="1300" y="240" fontSize="35">
             洗面所
           </text>
-          <text x="1320" y="320" font-size="35">
+          <text x="1320" y="320" fontSize="35">
             W.C.
           </text>
-          <text x="580" y="620" font-size="35">
+          <text x="580" y="620" fontSize="35">
             リビング
           </text>
-          <text x="1020" y="560" font-size="35">
+          <text x="1020" y="560" fontSize="35">
             ダイニング・キッチン
           </text>
-          <text x="1040" y="768" font-size="35">
+          <text x="1040" y="768" fontSize="35">
             階段
           </text>
-          <text x="1370" y="968" font-size="35">
+          <text x="1370" y="968" fontSize="35">
             W.C.
           </text>
-          <text x="930" y="1168" font-size="35">
+          <text x="930" y="1168" fontSize="35">
             玄関
           </text>
         </g>
@@ -211,31 +211,31 @@ function Floor2({
           <path d="M 2.0 2.0 m 1166 876 h 60 h 182 v 364 h -182 v -179 v -120 h -60 z" />
         </g>
         <g>
-          <text x="560" y="480" font-size="64" onClick={() => setRoom('d')}>
+          <text x="560" y="480" fontSize="64" onClick={() => setRoom('d')}>
             {RoomNames.d}
           </text>
-          <text x="560" y="760" font-size="64" onClick={() => setRoom('e')}>
+          <text x="560" y="760" fontSize="64" onClick={() => setRoom('e')}>
             {RoomNames.e}
           </text>
-          <text x="1040" y="768" font-size="35">
+          <text x="1040" y="768" fontSize="35">
             階段
           </text>
-          <text x="420" y="1100" font-size="35" onClick={() => setRoom('e')}>
+          <text x="420" y="1100" fontSize="35" onClick={() => setRoom('e')}>
             レンタルスペース
           </text>
-          <text x="1120" y="520" font-size="35" onClick={() => setRoom('e')}>
+          <text x="1120" y="520" fontSize="35" onClick={() => setRoom('e')}>
             シェアオフィス
           </text>
-          <text x="1264" y="970" font-size="35" onClick={() => setRoom('e')}>
+          <text x="1264" y="970" fontSize="35" onClick={() => setRoom('e')}>
             洗面所
           </text>
-          <text x="1264" y="1040" font-size="35" onClick={() => setRoom('e')}>
+          <text x="1264" y="1040" fontSize="35" onClick={() => setRoom('e')}>
             脱衣所
           </text>
-          <text x="1264" y="1160" font-size="35" onClick={() => setRoom('e')}>
+          <text x="1264" y="1160" fontSize="35" onClick={() => setRoom('e')}>
             風呂場
           </text>
-          <text x="1150" y="1160" font-size="35" onClick={() => setRoom('e')}>
+          <text x="1150" y="1160" fontSize="35" onClick={() => setRoom('e')}>
             W.C.
           </text>
         </g>

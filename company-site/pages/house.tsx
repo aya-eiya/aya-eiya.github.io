@@ -2,16 +2,16 @@ import { ReactElement, useState } from 'react'
 import HeadLine from '../components/HeadLine'
 import Layout from '../components/Layout'
 import {
-  Room,
-  Upto,
-  RoomNames,
-  Rent,
   Base,
-  Rooms,
-  DetailTexts,
-  CommonFee,
   BaseRent,
+  CommonFee,
+  DetailTexts,
   ManageFee,
+  Rent,
+  Room,
+  RoomNames,
+  Rooms,
+  Upto,
 } from '../domains/house'
 import { FloorPlan } from '../components/floorPlan'
 import { currencyFormat } from '../domains/number'
@@ -32,14 +32,14 @@ export default function House(): ReactElement {
       </Head>
       <Layout>
         <HeadLine background="">シェアハウスのご案内</HeadLine>
-        <div className="w-9/12 mx-auto">
-          <h2 className="text-xl my-4">旗の台シェアハウス</h2>
+        <div className="w-full md:w-9/12 mx-auto">
+          <h2 className="px-2 md:px-0 text-xl my-4">旗の台シェアハウス</h2>
           <div className="relative">
             <div className="mb-4 md:grid md:grid-cols-5">
               <div className="col-span-2"></div>
               <div className="md:col-span-3 h-96 bg-cover bg-center bg-[url(/img/house01-01.png)]"></div>
             </div>
-            <div className="md:w-1/2 md:h-96 md:absolute md:top-0 bg-opacity-60 bg-white">
+            <div className="px-2 md:px-0 md:w-1/2 md:h-96 md:absolute md:top-0 bg-opacity-60 bg-white">
               <h3 className="text-lg mb-4">品川区旗の台 - 庭付き一戸建</h3>
               <div className="px-2">
                 <p className="mb-4">
@@ -73,7 +73,7 @@ export default function House(): ReactElement {
               </div>
             </div>
           </div>
-          <div>
+          <div className="px-2 md:px-0">
             <h3 className="text-lg mb-4">ご案内</h3>
             <p className="px-2 pb-4 text-sm">
               ご覧になりたい部屋を間取り図から選択してください
@@ -94,24 +94,26 @@ export default function House(): ReactElement {
                       <div
                         className={
                           Rent[key] > 0
-                            ? 'px-4 grid grid-cols-2 gap-y-2'
+                            ? 'px-4 md:grid md:grid-cols-2 gap-y-2'
                             : 'hidden'
                         }
                       >
-                        <h3 className="col-span-2 text-lg pb-1">
+                        <h3 className="md:col-span-2 text-lg pb-1">
                           月額料金計算
                         </h3>
                         <div className="pl-2">
                           {room !== 'domi' ? '部屋' : 'ベッド'}
                           利用料金:
                         </div>
-                        <p className="text-right">
+                        <div className="text-right">
                           {currencyFormat(Rent[key])} 円
-                        </p>
+                        </div>
                         <div className="pl-2">
                           共用部利用費(*<span className="text-xs">1</span>):
                         </div>
-                        <p className="text-right">{currencyFormat(Base)} 円</p>
+                        <div className="text-right">
+                          {currencyFormat(Base)} 円
+                        </div>
                         <div className="pl-2">入居人数:</div>
                         <div className="border-b pb-2 border-gray-400 text-right">
                           <select
@@ -129,10 +131,10 @@ export default function House(): ReactElement {
                           </select>{' '}
                           / {value} 人
                         </div>
-                        <p className="col-span-2 text-right text-lg">
+                        <div className="md:col-span-2 text-right text-lg">
                           <span className="inline-block pr-4">合計</span>
                           {currencyFormat(rnum[key] * Base + Rent[key])} 円
-                        </p>
+                        </div>
                       </div>
                     </div>
                   )
@@ -140,6 +142,8 @@ export default function House(): ReactElement {
               </div>
             </div>
           </div>
+        </div>
+        <div className="px-2 md:px-0 w-full md:w-9/12 mx-auto pt-4">
           <OptionList />
           <hr className="border-b md:mt-4 mb-1" />
           <div className="text-gray-400 mb-6">
