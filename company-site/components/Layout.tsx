@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { ReactElement } from 'react'
+import { useRouter } from 'next/router'
+import { ReactElement, useEffect, useState } from 'react'
 
 export default function Layout({
   children,
@@ -20,41 +21,41 @@ export default function Layout({
         </Head>
 
         <header className="w-full flex items-center justify-center flex-col mb-4">
-          <div className="my-4 w-9/12">
+          <div className="py-4 w-full bg-white fixed z-10 md:relative top-0 px-4 md:px-0 md:w-9/12">
             <h1 className="text-xl flex-auto">AY合同会社</h1>
           </div>
 
-          <nav className="w-9/12">
+          <nav className="w-full mt-12 md:mt-0 px-4 md:px-0 md:w-9/12">
             <ul className="flex flex-col md:flex-row justify-between">
-              <li className="border-b md:border-b-0 md:border-r md:pr-7">
+              <li className="border-b mx-4 md:mx-0 md:border-b-0 md:border-r md:pr-7">
                 <Link href="/">
                   <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
                     AY HOUSEについて
                   </div>
                 </Link>
               </li>
-              <li className="border-b md:border-b-0 md:flex-1 md:text-center md:border-r">
+              <li className="border-b mx-4 md:mx-0 md:border-b-0 md:flex-1 md:text-center md:border-r">
                 <Link href="/house">
                   <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
                     シェアハウスのご案内
                   </div>
                 </Link>
               </li>
-              <li className="border-b md:border-b-0 md:flex-1 md:text-center md:border-r">
+              <li className="border-b mx-4 md:mx-0 md:border-b-0 md:flex-1 md:text-center md:border-r">
                 <Link href="/space">
                   <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
                     レンタルスペース紹介
                   </div>
                 </Link>
               </li>
-              <li className="border-b md:border-b-0 md:flex-1 md:text-center md:border-r">
+              <li className="border-b mx-4 md:mx-0 md:border-b-0 md:flex-1 md:text-center md:border-r">
                 <Link href="/company">
                   <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
                     会社概要
                   </div>
                 </Link>
               </li>
-              <li className="border-b md:border-b-0 md:flex-1 md:text-center md:border-r">
+              <li className="border-b mx-4 md:mx-0 md:border-b-0 md:flex-1 md:text-center md:border-r">
                 <Link href="https://note.com/aya_eiya">
                   <a target="_blank">
                     <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
@@ -67,7 +68,7 @@ export default function Layout({
                   </a>
                 </Link>
               </li>
-              <li className="border-b md:border-b-0 md:text-right md:pl-7">
+              <li className="border-b mx-4 md:mx-0 md:border-b-0 md:text-right md:pl-7">
                 <Link href="/inquiry">
                   <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
                     お問い合わせ
