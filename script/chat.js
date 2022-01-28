@@ -21,8 +21,8 @@ function initChat() {
 if (document.readyState === 'complete') {
   initChat()
 } else if (window.attachEvent) {
-  window.attachEvent('onload', initChat())
+  window.attachEvent('onload', initChat)
 } else {
-  window.addEventListener('DOMContentLoaded', initChat(), false)
-  window.addEventListener('load', initChat(), false)
+  window.addEventListener('DOMContentLoaded', initChat, false)
+  window.addEventListener('load', initChat, false)
 }

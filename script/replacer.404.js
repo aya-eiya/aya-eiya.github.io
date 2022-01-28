@@ -12,8 +12,8 @@ function detect404() {
 if (document.readyState === 'complete') {
   detect404()
 } else if (window.attachEvent) {
-  window.attachEvent('onload', detect404())
+  window.attachEvent('onload', detect404)
 } else {
-  window.addEventListener('DOMContentLoaded', detect404(), false)
-  window.addEventListener('load', detect404(), false)
+  window.addEventListener('DOMContentLoaded', detect404, false)
+  window.addEventListener('load', detect404, false)
 }
