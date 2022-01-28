@@ -16,7 +16,7 @@ export default function _404(): ReactElement {
       replace(`/`)
     }
     setIsLoading(false)
-  })
+  }, [isLoading, pathname, query, replace])
   if (isLoading) return <></>
   return <Error statusCode={404} />
 }
