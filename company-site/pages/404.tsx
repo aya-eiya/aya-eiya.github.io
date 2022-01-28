@@ -7,6 +7,7 @@ export default function _404(): ReactElement {
   const { pathname, query, replace } = useRouter()
   const [isLoading, setIsLoading] = useState(true)
   useEffect(() => {
+    console.log({ isLoading })
     if (!isLoading) {
       return
     }
