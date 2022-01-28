@@ -1,18 +1,13 @@
-import Head from 'next/head'
 import Link from 'next/link'
 import { ReactElement } from 'react'
-import HeadLine from '../components/HeadLine'
-import Layout from '../components/Layout'
+import HeadLine from '../HeadLine'
 
 export default function Inquiry(): ReactElement {
   return (
     <>
-      <Head>
-        <title>AY HOUSE | お問い合わせ</title>
-      </Head>
-      <Layout>
-        <HeadLine background="">お問い合わせ</HeadLine>
-        <div className="w-9/12 mx-auto mt-4">
+      <HeadLine id="inquiry">お問い合わせ</HeadLine>
+      <div className="mx-auto mt-4">
+        <div className="border rounded-lg p-4 mx-2 text-white bg-brand-light">
           <p className="mb-4">
             お問い合わせは、Twitter DM、Facebookページ
             <br />
@@ -26,7 +21,7 @@ export default function Inquiry(): ReactElement {
                   @hatano_ay
                   <span
                     title="外部リンク"
-                    className="inline-block align-sub bg-[url(/img/link.svg)] bg-no-repeat w-3 h-3 ml-1"
+                    className="inline-block align-sub bg-[url(/img/link.white.svg)] bg-no-repeat w-3 h-3 ml-1"
                   />
                 </a>
               </Link>
@@ -38,7 +33,7 @@ export default function Inquiry(): ReactElement {
                   https://www.facebook.com/hatano.ay
                   <span
                     title="外部リンク"
-                    className="inline-block align-sub bg-[url(/img/link.svg)] bg-no-repeat w-3 h-3 ml-1"
+                    className="inline-block align-sub bg-[url(/img/link.white.svg)] bg-no-repeat w-3 h-3 ml-1"
                   />
                 </a>
               </Link>
@@ -50,14 +45,14 @@ export default function Inquiry(): ReactElement {
                   @hatano_ay
                   <span
                     title="外部リンク"
-                    className="inline-block align-sub bg-[url(/img/link.svg)] bg-no-repeat w-3 h-3 ml-1"
+                    className="inline-block align-sub bg-[url(/img/link.white.svg)] bg-no-repeat w-3 h-3 ml-1"
                   />
                 </a>
               </Link>
             </div>
           </div>
         </div>
-      </Layout>
+      </div>
     </>
   )
 }
