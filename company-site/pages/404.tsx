@@ -7,15 +7,16 @@ export default function _404(): ReactElement {
   const { pathname, query, replace } = useRouter()
   const [isLoading, setIsLoading] = useState(true)
   useEffect(() => {
+    console.log({ isLoading })
     if (!isLoading) {
       return
     }
     const id = query.page ? String(query.page) : pathname.replace(/^\//, '')
     if (isPageName(id)) {
-      replace(`/${id}`)
+      replace(`/`)
     }
     setIsLoading(false)
-  })
+  }, [isLoading, pathname, query, replace])
   if (isLoading) return <></>
   return <Error statusCode={404} />
 }
