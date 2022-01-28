@@ -12,7 +12,7 @@ export default function _404(): ReactElement {
     }
     const id = query.page ? String(query.page) : pathname.replace(/^\//, '')
     if (isPageName(id)) {
-      replace(`/${id}`)
+      replace(`/`)
     }
     setIsLoading(false)
   })
