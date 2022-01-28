@@ -18,6 +18,7 @@ class MyDocument extends Document {
           <div id="fb-root"></div>
           <div id="fb-customer-chat" className="fb-customerchat"></div>
           <script type="text/javascript" src="/script/chat.js"></script>
+          <script type="text/javascript" src="/script/replacer.404.js"></script>
         </body>
       </Html>
     )
