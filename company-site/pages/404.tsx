@@ -14,6 +14,7 @@ export default function _404(): ReactElement {
     console.log(id)
     if (isPageName(id)) {
       replace(`/${id}`)
+      return
     }
     setIsLoading(false)
   }, [isLoading, asPath, replace])
