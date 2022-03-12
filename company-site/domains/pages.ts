@@ -1,11 +1,19 @@
-export const titles = {
+export const PageNames = [
+  'home',
+  'space',
+  'house',
+  'company',
+  'inquiry',
+] as const
+export type PageName = typeof PageNames[number]
+
+export const titles: Record<PageName, string> = {
   home: 'AY HOUSE',
   space: 'AY HOUSE | レンタルスペース',
   house: 'AY HOUSE | シェアハウス',
   company: 'AY HOUSE | 会社概要',
   inquiry: 'AY HOUSE | お問合せ',
-} as const
-export type PageName = keyof typeof titles
+}
 export function isPageName(id: string): id is PageName {
-  return Object.keys(titles).indexOf(id) > -1
+  return PageNames.indexOf(id as PageName) > -1
 }
