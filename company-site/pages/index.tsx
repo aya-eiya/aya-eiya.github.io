@@ -1,5 +1,4 @@
-import Head from 'next/head'
-import { ReactElement, useState } from 'react'
+import { ReactElement } from 'react'
 import Company from '../components/contents/company'
 import Home from '../components/contents/home'
 import House from '../components/contents/house'

@@ -1,4 +1,4 @@
-import { ReactElement, ReactText, useEffect } from 'react'
+import { ReactElement, ReactText } from 'react'
 
 export default function HeadLine({
   id,

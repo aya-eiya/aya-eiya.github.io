@@ -5,10 +5,12 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:@next/next/recommended',
     'prettier',
   ],
   rules: {
     'prettier/prettier': ['error', {}, { usePrettierrc: true }],
+    '@next/next/no-img-element': 'off',
   },
   overrides: [
     {
@@ -26,6 +28,7 @@ module.exports = {
         'plugin:react/recommended', // React rules
         'plugin:react-hooks/recommended', // React hooks rules
         'plugin:jsx-a11y/recommended', // Accessibility rules
+        'plugin:@next/next/recommended',
         'prettier',
       ],
       rules: {
