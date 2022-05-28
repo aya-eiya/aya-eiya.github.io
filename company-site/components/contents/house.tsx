@@ -256,7 +256,7 @@ function OptionList() {
         [
           <>
             <p className="mb-2">
-              <img src="/img/people.svg" className="h-8 md:h-20" />
+              <img src="/img/sink.svg" className="h-8 md:h-20" />
             </p>
             <p>２ヶ所</p>
             <p className="text-xs">兼脱衣所</p>

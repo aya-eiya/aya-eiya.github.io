@@ -14,7 +14,7 @@ export default function Home(): ReactElement {
             </p>
             <p className="mb-2">
               代表はギークハウスで長らく管理人を経験してきましたが、新たなコンセプトシェアハウスとなる新ブランドとしてAY
-              HOUSEをこの度スタートしました。
+              HOUSEを2021年08月にスタートしました。
             </p>
           </div>
           <div className="mb-2">
