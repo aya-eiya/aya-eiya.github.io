@@ -49,7 +49,7 @@ export default function House(): ReactElement {
                 <br />
                 週末には
                 <a
-                  href="https://ay-house01.connpass.com/event/237303/"
+                  href="https://ay-house01.connpass.com/"
                   target="_blank"
                   title="connpass イベントグループページ"
                 >

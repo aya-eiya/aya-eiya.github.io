@@ -1,10 +1,22 @@
 import Document, { Head, Html, Main, NextScript } from 'next/document'
+import Script from 'next/script'
 
 class MyDocument extends Document {
   render() {
     return (
       <Html lang="ja">
-        <Head />
+        <Head>
+          <Script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-P626NSEPMZ"
+            strategy="beforeInteractive"
+          ></Script>
+          <Script
+            type="text/javascript"
+            src="/script/analytics.js"
+            strategy="beforeInteractive"
+          ></Script>
+        </Head>
         <body>
           <Main />
           <NextScript />
