@@ -199,7 +199,13 @@ function Floor2({
           <g name="STR" {...defaultGProps}>
             <path d="M 2.0 2.0 m 975.0 654.0 h 191 v 256 h -191 v -256 z" />
           </g>
-          <g name="2FWRK" {...defaultGProps}>
+          <g
+            name="2FWRK"
+            {...defaultGProps}
+            fill={colors.f}
+            strokeWidth={strokeWidths.f}
+            onClick={() => setRoom('f')}
+          >
             <path d="M 2.0 2.0 m 201 330 m 273 0 m 410 0 h 91 h 500.5 v 546 h -309 v -223 h -191 v -153 h -91 z" />
           </g>
           <g name="2FLDK" {...defaultGProps}>
@@ -227,7 +233,7 @@ function Floor2({
               <text x="410" y="1100" onClick={() => setRoom('e')}>
                 レンタルスペース
               </text>
-              <text x="1100" y="550" onClick={() => setRoom('e')}>
+              <text x="1100" y="550" onClick={() => setRoom('f')}>
                 シェアオフィス
               </text>
               <text x="1252" y="970" onClick={() => setRoom('e')}>

@@ -3,7 +3,7 @@ import Layout from '../components/Layout'
 export default function Privacy(): ReactElement {
   return (
     <Layout>
-      <dl className="p-2 border rounded mb-4">
+      <dl className="p-2 border rounded mb-4 mx-2">
         <dt className="text-lg m-2">プライバシーポリシー(個人情報保護方針)</dt>
         <dd className="mx-2">
           AY合同会社(以下、当社)は、ユーザーの個人情報について以下のとおりプライバシーポリシー(以下、本ポリシー)を定めます。
@@ -11,7 +11,7 @@ export default function Privacy(): ReactElement {
           本ポリシーは、当社がどのような個人情報を取得し、どのように利用・共有するか、ユーザーがどのようにご自身の個人情報を管理できるかをご説明するものです。
         </dd>
       </dl>
-      <dl className="p-2 border rounded mb-4">
+      <dl className="p-2 border rounded mb-4 mx-2">
         <dt className="text-lg m-2">1. 事業者情報</dt>
         <dd className="mx-2">AY合同会社</dd>
         <dd className="mx-2">東京都品川区旗の台 1-11-9</dd>
