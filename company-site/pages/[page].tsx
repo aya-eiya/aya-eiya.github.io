@@ -2,7 +2,7 @@ import { ReactElement } from 'react'
 import HomePage from '.'
 import { PageNames } from '../domains/pages'
 
-export default function InquiryPage(): ReactElement {
+export default function Page(): ReactElement {
   return HomePage()
 }
 

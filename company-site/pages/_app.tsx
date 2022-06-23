@@ -7,16 +7,6 @@ function MyApp({ Component, pageProps }: AppProps): ReactElement {
   return (
     <>
       <Script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-P626NSEPMZ"
-        strategy="beforeInteractive"
-      ></Script>
-      <Script
-        type="text/javascript"
-        src="/script/analytics.js"
-        strategy="beforeInteractive"
-      ></Script>
-      <Script
         type="text/javascript"
         src="/script/chat.js"
         strategy="lazyOnload"
