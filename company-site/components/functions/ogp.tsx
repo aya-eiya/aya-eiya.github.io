@@ -22,7 +22,7 @@ export default function Ogp(): ReactElement {
       />
       <meta
         property="og:image"
-        content={`https://www.aya-eiya.work/img/house01-01.png`}
+        content={`https://www.aya-eiya.work/img/house_ogp.png`}
       />
     </Head>
   )
