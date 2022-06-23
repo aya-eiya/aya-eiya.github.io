@@ -46,6 +46,11 @@ export default function TopNavi({
         </li>
         <li className="text-right">
           <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
+            <a onClick={() => push('/office')}>コワーキングスペース</a>
+          </div>
+        </li>
+        <li className="text-right">
+          <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
             <a onClick={() => push('/company')}>会社概要</a>
           </div>
         </li>
