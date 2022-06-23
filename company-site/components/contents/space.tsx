@@ -12,7 +12,7 @@ export default function Space(): ReactElement {
         <p className="mb-2">宴会・料理教室・学習会・WEB会議のほか</p>
 
         <p className="mb-2">
-          各種広告用写真・ミュージンクビデオ・配信用動画の撮影などにもご利用いただけます。
+          各種広告用写真・ミュージックビデオ・配信用動画の撮影などにもご利用いただけます。
         </p>
 
         <p className="mb-2">
