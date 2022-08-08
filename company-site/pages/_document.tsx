@@ -5,7 +5,11 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="ja">
-        <Head>
+        <Head></Head>
+        <body>
+          <Main />
+          <NextScript />
+
           <Script
             async
             src="https://www.googletagmanager.com/gtag/js?id=G-P626NSEPMZ"
@@ -16,10 +20,6 @@ class MyDocument extends Document {
             src="/script/analytics.js"
             strategy="beforeInteractive"
           ></Script>
-        </Head>
-        <body>
-          <Main />
-          <NextScript />
           <div id="fb-root"></div>
           <div id="fb-customer-chat" className="fb-customerchat"></div>
         </body>
