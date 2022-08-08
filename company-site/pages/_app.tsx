@@ -11,6 +11,16 @@ function MyApp({ Component, pageProps }: AppProps): ReactElement {
         src="/script/chat.js"
         strategy="lazyOnload"
       ></Script>
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-P626NSEPMZ"
+        strategy="afterInteractive"
+      ></Script>
+      <Script
+        type="text/javascript"
+        src="/script/analytics.js"
+        strategy="afterInteractive"
+      ></Script>
       <Component {...pageProps} />
     </>
   )
