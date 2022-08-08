@@ -15,6 +15,7 @@ jobs:
           node-version: '14'
           cache: yarn
           cache-dependency-path: company-site/yarn.lock
+
       - name: yarn install
         working-directory: company-site
         run: yarn
@@ -27,11 +28,10 @@ jobs:
         working-directory: company-site
         run: yarn next export -o ../out
 
-      - name: add nojekyll
-        run: touch ./out/.nojekyll
-
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out
+          cname: www.aya-eiya.work
+          enable_jekyll: false
