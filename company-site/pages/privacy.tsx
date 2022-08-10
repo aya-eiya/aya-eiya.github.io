@@ -2,7 +2,7 @@ import { ReactElement } from 'react'
 import Layout from '../components/Layout'
 export default function Privacy(): ReactElement {
   return (
-    <Layout>
+    <Layout hideNavi={true}>
       <dl className="p-2 border rounded mb-4 mx-2">
         <dt className="text-lg m-2">プライバシーポリシー(個人情報保護方針)</dt>
         <dd className="mx-2">
@@ -31,19 +31,24 @@ export default function Privacy(): ReactElement {
         <dd className="mx-2">
           当社は個人情報を正確かつ最新の内容に保つよう努め、不正なアクセス・改ざん・漏えい・滅失及び毀損から保護するため全従業員及び役員に対して教育研修を実施しています。また、個人情報保護規程を設け、現場での管理についても定期的に点検を行っています。
         </dd>
-        <dt className="text-lg m-2">
-          5. 個人データの共同利用】 当社は、以下のとおり共同利用を行います。
-        </dt>
+        <dt className="text-lg m-2">5. 個人データの共同利用</dt>
         <dd className="mx-2">
-          <dl className="p-2 border rounded mb-4 grid grid-cols-2">
-            <dt className="">個人データの管理に関する責任者</dt>
-            <dd className="">AY合同会社</dd>
-            <dt className="">共同して利用する者の利用目的</dt>
-            <dd className="">上記「利用目的」の内容と同様。</dd>
-            <dt className="">利用項目</dt>
-            <dd className="">氏名、住所、電話番号、メールアドレス</dd>
-            <dt className="">共同して利用する者の範囲</dt>
-            <dd className="">当社企業グループを構成する企業</dd>
+          当社は、以下のとおり共同利用を行います
+          <dl className="p-2 border rounded mb-4 mt-2 grid md:grid-cols-2">
+            <dt className="text-sm md:text-base">
+              個人データの管理に関する責任者
+            </dt>
+            <dd className="pl-4">AY合同会社</dd>
+            <dt className="text-sm mt-2 md:text-base md:mt-0">
+              共同して利用する者の利用目的
+            </dt>
+            <dd className="pl-4">上記「利用目的」の内容と同様</dd>
+            <dt className="text-sm mt-2 md:text-base md:mt-0">利用項目</dt>
+            <dd className="pl-4">氏名、住所、電話番号、メールアドレス</dd>
+            <dt className="text-sm mt-2 md:text-base md:mt-0">
+              共同して利用する者の範囲
+            </dt>
+            <dd className="pl-4">当社企業グループを構成する企業</dd>
           </dl>
         </dd>
         <dt className="text-lg m-2">6. 個人データの第三者提供について</dt>

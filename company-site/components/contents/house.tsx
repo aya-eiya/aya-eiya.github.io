@@ -1,6 +1,7 @@
 import { ReactElement, useState } from 'react'
 import HeadLine from '../HeadLine'
 import {
+  Available,
   Base,
   BaseRent,
   CommonFee,
@@ -27,22 +28,18 @@ export default function House(): ReactElement {
       <HeadLine id="house">シェアハウスのご案内</HeadLine>
       <div className="mt-10 mx-auto">
         <h2 className="px-2 text-xl my-4">旗の台シェアハウス</h2>
-        <div className="relative">
-          <div className="mb-4 md:grid md:grid-cols-5">
-            <div className="col-span-2"></div>
-            <div className="md:col-span-3 h-96 bg-cover bg-center bg-[url(/img/house01-01.png)]"></div>
-          </div>
-          <div className="px-2 md:px-0 md:w-1/2 md:h-96 md:absolute md:top-0 bg-opacity-60 bg-white">
+        <div className="bg-right bg-[url(/img/house01-01.png)]">
+          <div className="px-2 md:px-0 md:w-1/2 bg-opacity-60 bg-white">
             <h3 className="text-lg mb-4">品川区旗の台 - 庭付き一戸建</h3>
             <div className="px-2">
               <p className="mb-4">
-                品川区旗の台の駅近く、徒歩3分の立地で7LLDDKKの広い庭付き一戸建てです。
+                品川区旗の台の駅近く、徒歩3分の立地で7LLDDKKの広い庭付き一戸建てです
               </p>
               <p className="mb-4">
-                個室中心で広いお部屋が多く、シェアハウスでは珍しいルームシェアのご希望にもお応えできます。
+                個室中心で広いお部屋が多く、シェアハウスでは珍しいルームシェアでのご利用もいただけます
               </p>
               <p className="mb-4">
-                住民はオーナーの影響からエンジニアが多く、ITに関わる方に人気が高くなっております。
+                住民はオーナーの影響からエンジニアが多く、ITに関わる方に人気が高くなっております
               </p>
               <p className="mb-4">
                 外国人起業家や、フリーランスのエンジニアなど会社員以外のお仕事をしている人も入居しており、
@@ -61,7 +58,7 @@ export default function House(): ReactElement {
                     />
                   </span>
                 </a>
-                を催しております。
+                を催しております
               </p>
             </div>
           </div>
@@ -78,9 +75,20 @@ export default function House(): ReactElement {
             <div className="col-span-3 md:col-span-2 pl-4">
               {Rooms.map((key) => {
                 const value = Upto[key]
+                const isAvailable = Available[key]
                 return (
-                  <div key={key} className={key === room ? '' : 'hidden'}>
-                    <h2 className="text-lg pb-4">{RoomNames[key]}</h2>
+                  <div
+                    key={key}
+                    className={`${key === room ? '' : 'hidden'} ${
+                      isAvailable ? '' : 'text-gray-400'
+                    }`}
+                  >
+                    <h2 className="text-lg pb-4">
+                      {RoomNames[key]}
+                      {!isAvailable && (
+                        <span className="text-red-500">(満室)</span>
+                      )}
+                    </h2>
                     <div className="m-2 mt-0 rounded-sm border border-gray-400 p-2 text-sm">
                       {DetailTexts[key]}
                     </div>
@@ -157,7 +165,7 @@ export default function House(): ReactElement {
                   管理手数料:{currencyFormat(ManageFee)}円
                 </span>
               </span>
-              となります。
+              となります
             </dd>
           </dl>
         </div>

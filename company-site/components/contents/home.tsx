@@ -10,21 +10,21 @@ export default function Home(): ReactElement {
         <div className="mx-2">
           <div className="mb-2">
             <p className="mb-2">
-              2021年に開始されたシェアハウスです。都内近郊中心に展開する予定です。
+              2021年に開始されたシェアハウスです。都内近郊中心に展開する予定です
             </p>
             <p className="mb-2">
               代表はギークハウスで長らく管理人を経験してきましたが、新たなコンセプトシェアハウスとなる新ブランドとしてAY
-              HOUSEを2021年08月にスタートしました。
+              HOUSEを2021年08月にスタートしました
             </p>
           </div>
           <div className="mb-2">
-            <p>現在、品川旗の台にシェアハウス１号店を運営しています。</p>
+            <p>現在、品川旗の台にシェアハウス１号店を運営しています</p>
             <p>
               ご案内は
               <Link href="/house">
                 <a className="font-bold underline">こちら</a>
               </Link>
-              から。
+              から
             </p>
           </div>
         </div>

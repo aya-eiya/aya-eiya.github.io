@@ -12,7 +12,7 @@ export default function TopNavi({
   const { push: _push } = useRouter()
   const push = (url: string) => _push(url, undefined, { shallow: true })
   return (
-    <nav className="top-4 right-4 z-10 md:top-24 md:bg-transparent fixed md:right-4 md:border-r">
+    <nav className="top-4 right-4 z-10 md:top-24 md:bg-opacity-70 md:bg-white fixed md:right-4 md:border-r">
       <div className="text-right md:hidden">
         <button
           onClick={() => {

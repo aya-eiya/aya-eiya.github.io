@@ -8,9 +8,9 @@ export default function Office(): ReactElement {
 
       <div className="mt-10 mx-2">
         <p className="mb-2">
-          コワークングスペース・レンタルオフィスとしてご利用いただける部屋をご用意しております。
+          コワークングスペース・レンタルオフィスとしてご利用いただける部屋をご用意しております
         </p>
-        <p className="mb-2">現在は月額利用（5000円〜）のみ募集しております。</p>
+        <p className="mb-2">現在は月額利用（5000円〜）のみ募集しております</p>
 
         <p className="mb-2">
           お問い合わせは、右自他のチャットボタンもしくは、
@@ -21,7 +21,7 @@ export default function Office(): ReactElement {
         </p>
         <div className="mb-2">
           <a href="https://forms.gle/cE6YqBN1o4DMqejKA" target={'_blank'}>
-            <dl className="border rounded-md p-4 mt-4 bg-[url(/img/office_01.png)] pt-[65vw] md:pt-0 bg-no-repeat bg-contain md:bg-right-top">
+            <dl className="border rounded-md p-4 mt-4 bg-[url(/img/office_01.png)] pt-[65vw] md:pt-0 bg-no-repeat bg-contain md:bg-right-top md:pr-48">
               <dt className="mb-2">お問合せ</dt>
               <dd className="pl-4 mb-4">Googleフォームが開きます</dd>
               <dt className="mb-2"></dt>

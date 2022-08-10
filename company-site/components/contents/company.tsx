@@ -9,7 +9,7 @@ export default function Company(): ReactElement {
         <table className="table-fixed mt-4">
           <tbody>
             <tr>
-              <th className="border w-32 p-3 font-normal bg-gray-100 bg-brand-dark text-white rounded-tl-2xl">
+              <th className="border w-32 p-3 font-normal bg-brand-dark text-white rounded-tl-2xl">
                 社名
               </th>
               <td className="border p-3">
@@ -18,25 +18,25 @@ export default function Company(): ReactElement {
               </td>
             </tr>
             <tr>
-              <th className="border w-32 p-3 font-normal bg-gray-100 bg-brand-dark text-white">
+              <th className="border w-32 p-3 font-normal bg-brand-dark text-white">
                 代表社員
               </th>
               <td className="border p-3">綾部 英俊</td>
             </tr>
             <tr>
-              <th className="border w-32 p-3 font-normal bg-gray-100 bg-brand-dark text-white">
+              <th className="border w-32 p-3 font-normal bg-brand-dark text-white">
                 設立
               </th>
               <td className="border p-3">令和3年（2021年） 8月 4日</td>
             </tr>
             <tr>
-              <th className="border w-32 p-3 font-normal bg-gray-100 bg-brand-dark text-white">
+              <th className="border w-32 p-3 font-normal bg-brand-dark text-white">
                 所在地
               </th>
               <td className="border p-3">東京都品川区旗の台１丁目１１番９号</td>
             </tr>
             <tr>
-              <th className="border w-32 p-3 font-normal bg-gray-100 bg-brand-dark text-white">
+              <th className="border w-32 p-3 font-normal bg-brand-dark text-white">
                 事業内容
               </th>
               <td className="border p-3">
