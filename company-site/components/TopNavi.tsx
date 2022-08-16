@@ -46,7 +46,7 @@ export default function TopNavi({
         </li>
         <li className="text-right">
           <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
-            <a onClick={() => push('/office')}>コワーキングスペース</a>
+            <a onClick={() => push('/office')}>共用オフィス</a>
           </div>
         </li>
         <li className="text-right">

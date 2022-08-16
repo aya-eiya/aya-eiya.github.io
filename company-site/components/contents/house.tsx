@@ -27,9 +27,9 @@ export default function House(): ReactElement {
     <>
       <HeadLine id="house">シェアハウスのご案内</HeadLine>
       <div className="mt-10 mx-auto">
-        <h2 className="px-2 text-xl my-4">旗の台シェアハウス</h2>
-        <div className="bg-right bg-[url(/img/house01-01.png)]">
-          <div className="px-2 md:px-0 md:w-1/2 bg-opacity-60 bg-white">
+        <h2 className="px-2 md:px-0 text-xl my-4">旗の台シェアハウス</h2>
+        <div className="bg-right bg-[url(/img/house01-01.png)] mb-4">
+          <div className="p-2 md:w-1/2 bg-opacity-60 bg-white text-shadow">
             <h3 className="text-lg mb-4">品川区旗の台 - 庭付き一戸建</h3>
             <div className="px-2">
               <p className="mb-4">
@@ -41,7 +41,7 @@ export default function House(): ReactElement {
               <p className="mb-4">
                 住民はオーナーの影響からエンジニアが多く、ITに関わる方に人気が高くなっております
               </p>
-              <p className="mb-4">
+              <p>
                 外国人起業家や、フリーランスのエンジニアなど会社員以外のお仕事をしている人も入居しており、
                 <br />
                 週末には

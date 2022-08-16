@@ -24,5 +24,13 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        '.text-shadow': {
+          textShadow: '0px 1px 2px white',
+        },
+      })
+    },
+  ],
 }

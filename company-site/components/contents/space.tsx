@@ -35,11 +35,11 @@ export default function Space(): ReactElement {
                 target={'_blank'}
               >
                 <dl>
-                  <dt className="mb-2">キッチン付きスペース</dt>
-                  <dd>2FのLDKをお使いいただけます</dd>
+                  <dt className="mb-4">キッチン付きスペース</dt>
+                  <dd className="mb-2">2FのLDKをお使いいただけます</dd>
                   <dd className="mb-2">
-                    <p>宴会・料理教室・学習会のほか</p>
-                    <p>
+                    <p className="px-2 md:pr-4">宴会・料理教室・学習会のほか</p>
+                    <p className="px-2 md:pr-4">
                       屋内でのドラマシーンの撮影や、MVなどの配信用動画の撮影などにもご利用いただけます
                     </p>
                   </dd>
@@ -62,11 +62,13 @@ export default function Space(): ReactElement {
                 target={'_blank'}
               >
                 <dl>
-                  <dt className="mb-2">ガーデンテラス</dt>
-                  <dd>こちらは屋外のみのエリアです</dd>
+                  <dt className="mb-4">ガーデンテラス</dt>
+                  <dd className="mb-2">こちらは屋外のみのエリアです</dd>
                   <dd className="mb-2">
-                    <p>BBQやお茶会、子供用プールでの水遊びのほか</p>
-                    <p>
+                    <p className="px-2 md:pr-4">
+                      BBQやお茶会、子供用プールでの水遊びのほか
+                    </p>
+                    <p className="px-2 md:pr-4">
                       アウトドアグッズの広告用写真や、屋外レクリエーションシーンなどの撮影などにもご利用いただけます
                     </p>
                   </dd>
@@ -83,17 +85,21 @@ export default function Space(): ReactElement {
           </dd>
 
           <dd>
-            <div className="border rounded-md p-4 mt-4 bg-[url(/img/garden.png)] pt-[100vw] md:pt-1 bg-no-repeat bg-contain md:bg-right-top md:pr-52">
+            <div className="border rounded-md p-4 mt-4 bg-[url(/img/aroom.png)] pt-[100vw] md:pt-1 bg-no-repeat bg-contain md:bg-right-top md:pr-52">
               <a
                 href="https://www.spacemarket.com/p/sUKtqT73-eHtwPCL/"
                 target={'_blank'}
               >
                 <dl>
-                  <dt className="mb-2">作業スペース・休憩所</dt>
-                  <dd>庭に隣接の離れの一室をお貸ししております</dd>
+                  <dt className="mb-4">作業スペース・休憩所</dt>
                   <dd className="mb-2">
-                    <p>WEB会議や日中の楽器練習、勉強部屋のほか</p>
-                    <p>
+                    庭に隣接の離れの一室をお貸ししております
+                  </dd>
+                  <dd className="mb-2">
+                    <p className="px-2 md:pr-4">
+                      WEB会議や日中の楽器練習、勉強部屋のほか
+                    </p>
+                    <p className="px-2 md:pr-4">
                       室内に冷蔵庫と電子レンジが設置してありますので、お庭での撮影・イベントの際に控え室、休憩所としてご利用いただけます。
                     </p>
                   </dd>

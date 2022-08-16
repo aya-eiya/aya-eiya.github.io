@@ -8,7 +8,7 @@ export const RoomNames: Record<Room, string> = {
   c: '書斎付き和室',
   d: '洋室 (A)',
   e: '洋室 (B)',
-  f: '共用オフィススペース',
+  f: '共用オフィス',
   domi: 'ドミトリー',
 }
 export const Upto: Record<Room, number> = {
