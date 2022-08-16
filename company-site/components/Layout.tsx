@@ -27,12 +27,6 @@ export default function Layout({
   return (
     <>
       <Head>
-        <meta name="description" content="AY HOUSE" />
-        <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="keywords"
-          content="シェアハウス,レンタルスペース,ギークハウス,share house,rental space"
-        />
         <title>{title}</title>
       </Head>
       <div className="w-full relative text-brand-dark">

@@ -8,8 +8,7 @@ export default function Office(): ReactElement {
 
       <div className="mt-10 mx-2">
         <p className="mb-2">
-          用の
-          コワークングスペース・レンタルオフィスとしてご利用いただける部屋をご用意しております
+          住民用のオフィススペースについて、コワーキングスペースやレンタルオフィスとしてご利用いただけるプランをご用意しております
         </p>
         <p className="mb-2">現在は月額利用（5000円〜）のみ募集しております</p>
 

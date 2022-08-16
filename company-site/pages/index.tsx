@@ -5,6 +5,7 @@ import House from '../components/contents/house'
 import Inquiry from '../components/contents/inquiry'
 import Office from '../components/contents/office'
 import Space from '../components/contents/space'
+import Meta from '../components/functions/meta'
 import Ogp from '../components/functions/ogp'
 import Layout from '../components/Layout'
 
@@ -12,6 +13,7 @@ export default function HomePage(): ReactElement {
   return (
     <>
       <Ogp />
+      <Meta />
       <Layout>
         <Home />
         <hr className="h-44 border-0" />
