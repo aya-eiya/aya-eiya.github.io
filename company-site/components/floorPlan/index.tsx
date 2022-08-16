@@ -225,6 +225,9 @@ function Floor2({
               <text x="560" y="760" onClick={() => setRoom('e')}>
                 {RoomNames.e}
               </text>
+              <text x="1020" y="550" onClick={() => setRoom('f')}>
+                {RoomNames.f}
+              </text>
             </g>
             <g className="stroke-brand-dark fill-brand-dark">
               <text x="1030" y="770">
@@ -232,9 +235,6 @@ function Floor2({
               </text>
               <text x="410" y="1100" onClick={() => setRoom('e')}>
                 レンタルスペース
-              </text>
-              <text x="1100" y="550" onClick={() => setRoom('f')}>
-                シェアオフィス
               </text>
               <text x="1252" y="970" onClick={() => setRoom('e')}>
                 洗面所

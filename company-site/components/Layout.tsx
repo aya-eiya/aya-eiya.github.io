@@ -6,8 +6,10 @@ import TopNavi from './TopNavi'
 
 export default function Layout({
   children,
+  hideNavi,
 }: {
   children: ReactElement | ReactElement[]
+  hideNavi?: boolean
 }): ReactElement {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { pathname, push: _push, query } = useRouter()
@@ -36,14 +38,14 @@ export default function Layout({
       <div className="w-full relative text-brand-dark">
         <header className="flex items-center justify-center flex-col mb-4">
           <div className="w-full py-4 bg-brand-dark shadow-sm text-white fixed z-10 top-0">
-            <div className="mx-auto md:w-9/12 flex flex-row justify-between items-center px-4">
+            <div className="mx-auto sm:w-7/12 md:w-9/12 flex flex-row justify-between items-center px-4">
               <h1 className="text-xl">
                 <a className="cursor-pointer" onClick={() => push('/')}>
                   AY合同会社
                 </a>
               </h1>
 
-              <div className="text-gray-800 hover:text-gray-500 hidden md:flex">
+              <div className="text-white hover:text-gray-500 hidden md:flex">
                 <a className="cursor-pointer" onClick={() => push('/inquiry')}>
                   お問合せ
                 </a>
@@ -51,10 +53,12 @@ export default function Layout({
             </div>
           </div>
 
-          <TopNavi isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+          {hideNavi || (
+            <TopNavi isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+          )}
         </header>
         <main
-          className="mt-24 mx-auto max-w-screen-sm lg:max-w-screen-md 2xl:max-w-screen-lg flex flex-col pb-11 text-brand-dark"
+          className="mt-24 mx-auto max-w-screen-sm md:max-w-screen-sm lg:max-w-screen-md 2xl:max-w-screen-lg flex flex-col pb-11 text-brand-dark"
           onClick={
             isMenuOpen
               ? () => {

@@ -15,6 +15,8 @@ module.exports = {
         bright: '#B1D0E0',
       },
       white: colors.white,
+      gray: colors.gray,
+      red: colors.red,
       transparent: colors.transparent,
     },
     extend: {},
@@ -22,5 +24,13 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        '.text-shadow': {
+          textShadow: '0px 1px 2px white',
+        },
+      })
+    },
+  ],
 }

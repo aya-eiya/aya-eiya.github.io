@@ -1,3 +1,5 @@
+/* eslint-env browser */
+const { FB } = window
 window.fbAsyncInit = function () {
   FB.init({
     xfbml: true,

@@ -12,7 +12,7 @@ export default function TopNavi({
   const { push: _push } = useRouter()
   const push = (url: string) => _push(url, undefined, { shallow: true })
   return (
-    <nav className="top-4 right-4 z-10 md:top-24 md:bg-transparent fixed md:right-4 md:border-r">
+    <nav className="top-4 right-4 z-10 md:top-24 md:bg-opacity-70 md:bg-white fixed md:right-4 md:border-r">
       <div className="text-right md:hidden">
         <button
           onClick={() => {
@@ -46,7 +46,7 @@ export default function TopNavi({
         </li>
         <li className="text-right">
           <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
-            <a onClick={() => push('/office')}>コワーキングスペース</a>
+            <a onClick={() => push('/office')}>共用オフィス</a>
           </div>
         </li>
         <li className="text-right">

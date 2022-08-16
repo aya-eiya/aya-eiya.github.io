@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "public/script/analytics.js"
+    "public/script/*.js"
   ],
   "exclude": [
     "node_modules"
