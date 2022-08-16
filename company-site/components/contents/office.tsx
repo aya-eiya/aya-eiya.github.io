@@ -13,7 +13,7 @@ export default function Office(): ReactElement {
         <p className="mb-2">現在は月額利用（5000円〜）のみ募集しております</p>
 
         <p className="mb-2">
-          お問い合わせは、右自他のチャットボタンもしくは、
+          お問い合わせは、右下のFBチャットボタンもしくは、
           <a href="https://forms.gle/cE6YqBN1o4DMqejKA" target={'_blank'}>
             こちらのフォーム
           </a>
