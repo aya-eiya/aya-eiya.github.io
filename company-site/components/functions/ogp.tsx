@@ -18,7 +18,7 @@ export default function Ogp(): ReactElement {
       <meta property="og:site_name" content={titles.home} />
       <meta
         property="og:description"
-        content="戸建シェアハウス、レンタルスペースの運営を行うAY合同会社のホームページです。ITエンジニア向けを中心としたコンセプトシェアハウスを運営しており、起業家やITエンジニアに人気の物件となっております。"
+        content="品川区にて戸建シェアハウス、レンタルスペースの運営を行うAY合同会社のホームページです。ITエンジニア向けを中心としたコンセプトシェアハウスを運営しており、起業家やITエンジニアに人気の物件となっております。"
       />
       <meta
         property="og:image"

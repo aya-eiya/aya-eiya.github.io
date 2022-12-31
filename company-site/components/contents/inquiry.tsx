@@ -6,7 +6,7 @@ export default function Inquiry(): ReactElement {
   return (
     <>
       <HeadLine id="inquiry">お問い合わせ</HeadLine>
-      <div className="mx-auto mt-4">
+      <div className="mt-10 mx-auto">
         <div className="border rounded-lg p-4 mx-2 text-white bg-brand-light">
           <p className="mb-4">
             お問い合わせは、Twitter DM、Facebookページ

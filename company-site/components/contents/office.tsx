@@ -5,7 +5,6 @@ export default function Office(): ReactElement {
   return (
     <>
       <HeadLine id="office">コワーキングスペース</HeadLine>
-
       <div className="mt-10 mx-2">
         <p className="mb-2">
           住民用のオフィススペースについて、コワーキングスペースやレンタルオフィスとしてご利用いただけるプランをご用意しております

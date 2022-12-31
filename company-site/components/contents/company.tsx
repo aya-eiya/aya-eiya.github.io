@@ -5,7 +5,7 @@ export default function Company(): ReactElement {
   return (
     <>
       <HeadLine id="company">会社概要</HeadLine>
-      <div className="flex pt-4 content-center flex-col w-3/4 mx-auto">
+      <div className="mt-10 flex content-center flex-col w-3/4 mx-auto">
         <table className="table-fixed mt-4">
           <tbody>
             <tr>

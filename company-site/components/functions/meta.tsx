@@ -12,7 +12,7 @@ export default function Meta(): ReactElement {
       <link rel="icon" href="/favicon.ico" />
       <meta
         name="keywords"
-        content="シェアハウス,レンタルスペース,ギークハウス,コワーキング,空き家活用,東京シェアハウス,パーティルーム,撮影スタジオ,share house,rental space,co-working,sharing economy,party room,rental studio"
+        content="シェアハウス,レンタルスペース,ギークハウス,コワーキング,空き家活用,東京シェアハウス,パーティルーム,撮影スタジオ,品川区,旗の台,東急沿線,大井町線,浅草線,武蔵小山,西小山,戸越銀座,大岡山,自由が丘,五反田,share house,rental space,co-working,sharing economy,party room,rental studio"
       />
       <meta name="robots" content="index, follow" />
     </Head>
