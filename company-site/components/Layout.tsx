@@ -63,7 +63,7 @@ export default function Layout({
         >
           <div>{children}</div>
         </main>
-        <section className="h-60"></section>
+        <hr className="h-60 border-none" />
         <footer className="h-10 bg-brand-base p-3 w-full absolute bottom-0">
           <p className="text-center font-serif text-white">&copy; AY.LLC.</p>
         </footer>

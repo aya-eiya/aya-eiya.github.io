@@ -8,6 +8,7 @@ import Space from '../components/contents/space'
 import Meta from '../components/functions/meta'
 import Ogp from '../components/functions/ogp'
 import Layout from '../components/Layout'
+import Surroundings from '../components/contents/surroundings'
 
 export default function HomePage(): ReactElement {
   return (
@@ -22,6 +23,8 @@ export default function HomePage(): ReactElement {
         <Space />
         <hr className="h-44 border-0" />
         <Office />
+        <hr className="h-44 border-0" />
+        <Surroundings />
         <hr className="h-44 border-0" />
         <Company />
         <hr className="h-44 border-0" />
