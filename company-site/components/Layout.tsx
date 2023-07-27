@@ -13,7 +13,7 @@ export default function Layout({
 }): ReactElement {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { pathname, push: _push, query } = useRouter()
-  const [title, setTitle] = useState<typeof titles[PageName]>(titles.home)
+  const [title, setTitle] = useState<(typeof titles)[PageName]>(titles.home)
   const push = (url: string) => _push(url, undefined, { shallow: true })
   useEffect(() => {
     const id = query.page ? String(query.page) : pathname.replace(/^\//, '')
