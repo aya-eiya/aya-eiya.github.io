@@ -60,16 +60,14 @@ export default function TopNavi({
           </div>
         </li>
         <li className="text-right">
-          <Link href="https://note.com/aya_eiya">
-            <a target="_blank">
-              <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
-                ブログ
-                <span
-                  title="外部リンク"
-                  className="inline-block align-sub bg-[url(/img/link.svg)] bg-no-repeat w-3 h-3 ml-1"
-                />
-              </div>
-            </a>
+          <Link href="https://note.com/aya_eiya" target="_blank">
+            <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
+              ブログ
+              <span
+                title="外部リンク"
+                className="inline-block align-sub bg-[url(/img/link.svg)] bg-no-repeat w-3 h-3 ml-1"
+              />
+            </div>
           </Link>
         </li>
         <li className="text-right">

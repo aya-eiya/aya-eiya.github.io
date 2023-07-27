@@ -2,16 +2,16 @@ import { ReactElement, useState } from 'react'
 import HeadLine from '../HeadLine'
 import {
   Available,
-  Base,
-  BaseRent,
   CommonFee,
   DetailTexts,
-  ManageFee,
   Rent,
   Room,
   RoomNames,
   Rooms,
+  Deposit,
   Upto,
+  ShareRent,
+  isAvailable,
 } from '../../domains/house'
 import { FloorPlan } from '../floorPlan'
 import { currencyFormat } from '../../domains/number'
@@ -75,19 +75,18 @@ export default function House(): ReactElement {
             <div className="col-span-3 md:col-span-2 pl-4">
               {Rooms.map((key) => {
                 const value = Upto[key]
-                const isAvailable = Available[key]
+                const comment = isAvailable(Available[key])
                 return (
                   <div
                     key={key}
                     className={`${key === room ? '' : 'hidden'} ${
-                      isAvailable ? '' : 'text-gray-400'
+                      comment ? '' : 'text-gray-400'
                     }`}
                   >
                     <h2 className="text-lg pb-4">
                       {RoomNames[key]}
-                      {!isAvailable && (
-                        <span className="text-red-500">(満室)</span>
-                      )}
+                      {!comment && <span className="text-red-500">(満室)</span>}
+                      {typeof comment === 'string' && comment}
                     </h2>
                     <div className="m-2 mt-0 rounded-sm border border-gray-400 p-2 text-sm">
                       {DetailTexts[key]}
@@ -99,42 +98,47 @@ export default function House(): ReactElement {
                           : 'hidden'
                       }
                     >
-                      <h3 className="md:col-span-2 text-lg pb-1">
-                        月額料金計算
-                      </h3>
-                      <div className="pl-2">
-                        {room !== 'domi' ? '部屋' : 'ベッド'}
-                        利用料金:
+                      <h3 className="md:col-span-2 text-lg pb-1">初期費用</h3>
+                      <div className="pl-2">デポジット:</div>
+                      <div className="text-right">
+                        {currencyFormat(Deposit)} 円
                       </div>
+                      <h3 className="md:col-span-2 text-lg pb-1">賃料月額</h3>
+                      <div className="pl-2">賃料:</div>
                       <div className="text-right">
                         {currencyFormat(Rent[key])} 円
                       </div>
-                      <div className="pl-2">
-                        共用部利用費(*<span className="text-xs">1</span>):
-                      </div>
+                      <div className="pl-2">共益費:</div>
                       <div className="text-right">
-                        {currencyFormat(Base)} 円
+                        {currencyFormat(CommonFee)} 円
                       </div>
-                      <div className="pl-2">入居人数:</div>
-                      <div className="border-b pb-2 border-gray-400 text-right">
-                        <select
-                          className="w-16 border text-right px-2"
-                          onChange={({ target: { value } }) =>
-                            setRNum({
-                              ...rnum,
-                              [key]: parseInt(value),
-                            })
-                          }
-                        >
-                          {[...Array(value)].map((_, i) => {
-                            return <option key={i}>{i + 1}</option>
-                          })}
-                        </select>{' '}
-                        / {value} 人
-                      </div>
-                      <div className="md:col-span-2 text-right text-lg">
+                      {value > 1 && (
+                        <>
+                          <div className="pl-2">入居人数:</div>
+                          <div className=" border-gray-400 text-right">
+                            <select
+                              className="w-16 border text-right px-2"
+                              onChange={({ target: { value } }) =>
+                                setRNum({
+                                  ...rnum,
+                                  [key]: parseInt(value),
+                                })
+                              }
+                            >
+                              {[...Array(value)].map((_, i) => {
+                                return <option key={i}>{i + 1}</option>
+                              })}
+                            </select>{' '}
+                            / {value} 人
+                          </div>
+                        </>
+                      )}
+                      <div className="md:col-span-2 pt-2 border-t text-right text-lg">
                         <span className="inline-block pr-4">合計</span>
-                        {currencyFormat(rnum[key] * Base + Rent[key])} 円
+                        {currencyFormat(
+                          (rnum[key] - 1) * ShareRent + Rent[key] + CommonFee
+                        )}{' '}
+                        円
                       </div>
                     </div>
                   </div>
@@ -147,27 +151,8 @@ export default function House(): ReactElement {
       <div className="px-2 mx-auto pt-4">
         <OptionList />
         <hr className="border-b md:mt-4 mb-1" />
-        <div className="text-gray-400 mb-6">
-          <dl className="flex flex-row text-xs md:text-sm">
-            <dt>(*1):</dt>
-            <dd>
-              共用部利用費の内訳は
-              <span className="inline-block mx-1">
-                <span className="underline">
-                  家賃:{currencyFormat(BaseRent)}円
-                </span>
-                {' + '}
-                <span className="underline">
-                  共益費:{currencyFormat(CommonFee)}円
-                </span>
-                {' + '}
-                <span className="underline">
-                  管理手数料:{currencyFormat(ManageFee)}円
-                </span>
-              </span>
-              となります
-            </dd>
-          </dl>
+        <div>
+          備考：女子ドミトリーには上記以外に専用キッチン・水回りが含まれます
         </div>
       </div>
     </>

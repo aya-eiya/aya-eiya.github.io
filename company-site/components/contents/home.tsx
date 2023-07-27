@@ -21,8 +21,8 @@ export default function Home(): ReactElement {
             <p>現在、品川旗の台にシェアハウス１号店を運営しています</p>
             <p>
               ご案内は
-              <Link href="/house">
-                <a className="font-bold underline">こちら</a>
+              <Link href="/house" className="font-bold underline">
+                こちら
               </Link>
               から
             </p>
