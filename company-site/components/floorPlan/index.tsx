@@ -56,18 +56,18 @@ function Floor1({
         <g className="stroke-brand-base">
           <g
             name="1F1"
-            fill={colors.a}
-            strokeWidth={strokeWidths.a}
-            onClick={() => setRoom('a')}
+            fill={colors.R_1fL}
+            strokeWidth={strokeWidths.R_1fL}
+            onClick={() => setRoom('R_1fL')}
           >
             <path d="M 2.0 2.0 h 455.0 v 273.0 h -455.0 v -273.0 z" />
             <path d="M 2.0 2.0 m 455.0 0.0 h 273.0 h 50.0 v 182.0 h -50.0 v 182.0 h -273.0 v -182.0 v -182.0 z" />
           </g>
           <g
             name="1F2"
-            fill={colors.domi}
-            strokeWidth={strokeWidths.domi}
-            onClick={() => setRoom('domi')}
+            fill={colors.M_1fDomi}
+            strokeWidth={strokeWidths.M_1fDomi}
+            onClick={() => setRoom('M_1fDomi')}
           >
             <path d="M 2.0 2.0 m 455.0 0.0 m 273 0 m 50 0 h 405.0 h 70 v 182.0 v 60 h -70 v 122.0 h -405.0 h -50 v -182.0 h 50 v -182.0 z" />
           </g>
@@ -91,41 +91,51 @@ function Floor1({
           </g>
           <g
             name="1F3"
-            fill={colors.c}
-            strokeWidth={strokeWidths.c}
-            onClick={() => setRoom('c')}
+            fill={colors.R_1fJ}
+            strokeWidth={strokeWidths.R_1fJ}
+            onClick={() => setRoom('R_1fJ')}
           >
             <path d="M 2.0 2.0 m 182.0 910.0 h 273 h 110 v 91 h -50 h 50 h 254 v 273 h -637 v -273 v -91 z" />
           </g>
           <g
             name="1F4"
-            fill={colors.b}
-            strokeWidth={strokeWidths.b}
-            onClick={() => setRoom('b')}
+            fill={colors.R_1fC}
+            strokeWidth={strokeWidths.R_1fC}
+            onClick={() => setRoom('R_1fC')}
           >
             <path d="M 2.0 2.0 m 1092.0 1001.0 h 364 v 273 h -364 v -273 z" />
           </g>
           <g fontSize={48}>
             <g fontSize={72} className="stroke-white fill-white">
-              <text x="80" y="180" onClick={() => setRoom('a')}>
-                {RoomNames.a}
+              <text x="80" y="180" onClick={() => setRoom('R_1fL')}>
+                {RoomNames.R_1fL}
               </text>
-              <text fontSize={38} x="480" y="160" onClick={() => setRoom('a')}>
+              <text
+                fontSize={38}
+                x="480"
+                y="160"
+                onClick={() => setRoom('R_1fL')}
+              >
                 サービスルーム
               </text>
-              <g onClick={() => setRoom('b')}>
+              <g onClick={() => setRoom('R_1fC')}>
                 <text x="1150" y="1110">
-                  {RoomNames.b}
+                  {RoomNames.R_1fC}
                 </text>
                 <text x="1140" y="1220">
                   管理人室
                 </text>
               </g>
-              <text x="270" y="1150" onClick={() => setRoom('c')}>
-                {RoomNames.c}
+              <text x="270" y="1150" onClick={() => setRoom('R_1fJ')}>
+                {RoomNames.R_1fJ}
               </text>
-              <text x="840" y="180" onClick={() => setRoom('domi')}>
-                {RoomNames.domi}
+              <text
+                fontSize={62}
+                x="800"
+                y="180"
+                onClick={() => setRoom('M_1fDomi')}
+              >
+                {RoomNames.M_1fDomi}
               </text>
             </g>
             <g className="stroke-brand-dark fill-brand-dark">
@@ -175,21 +185,21 @@ function Floor2({
 }): ReactElement {
   return (
     <>
-      <svg className="w-full" viewBox="0,0,1480.0,1280.0">
+      <svg className="w-full" viewBox="148.0,0,1480.0,1280.0">
         <g className="stroke-brand-base">
           <g
             name="2F1"
-            fill={colors.d}
-            strokeWidth={strokeWidths.d}
-            onClick={() => setRoom('d')}
+            fill={colors.R_2fA}
+            strokeWidth={strokeWidths.R_2fA}
+            onClick={() => setRoom('R_2fA')}
           >
             <path d="M 2.0 2.0 m 201 330 m 273 0 h 409.5 v 273.0 h -409.5 v -273.0 z" />
           </g>
           <g
             name="2F2"
-            fill={colors.e}
-            strokeWidth={strokeWidths.e}
-            onClick={() => setRoom('e')}
+            fill={colors.R_2fB}
+            strokeWidth={strokeWidths.R_2fA}
+            onClick={() => setRoom('R_2fB')}
           >
             <path d="M 2.0 2.0 m 201 330 m 273 273 h 409.5 v 273.0 h -409.5 v -273.0 z" />
           </g>
@@ -202,9 +212,9 @@ function Floor2({
           <g
             name="2FWRK"
             {...defaultGProps}
-            fill={colors.f}
-            strokeWidth={strokeWidths.f}
-            onClick={() => setRoom('f')}
+            fill={colors.M_2fDomi}
+            strokeWidth={strokeWidths.M_2fDomi}
+            onClick={() => setRoom('M_2fDomi')}
           >
             <path d="M 2.0 2.0 m 201 330 m 273 0 m 410 0 h 91 h 500.5 v 546 h -309 v -223 h -191 v -153 h -91 z" />
           </g>
@@ -219,34 +229,75 @@ function Floor2({
           </g>
           <g fontSize={48}>
             <g fontSize={72} className="stroke-white fill-white">
-              <text x="560" y="480" onClick={() => setRoom('d')}>
-                {RoomNames.d}
+              <text x="560" y="480" onClick={() => setRoom('R_2fA')}>
+                {RoomNames.R_2fA}
               </text>
-              <text x="560" y="760" onClick={() => setRoom('e')}>
-                {RoomNames.e}
+              <text x="560" y="760" onClick={() => setRoom('R_2fB')}>
+                {RoomNames.R_2fB}
               </text>
-              <text x="1020" y="550" onClick={() => setRoom('f')}>
-                {RoomNames.f}
+              <text x="1020" y="550" onClick={() => setRoom('M_2fDomi')}>
+                {RoomNames.M_2fDomi}
               </text>
             </g>
             <g className="stroke-brand-dark fill-brand-dark">
               <text x="1030" y="770">
                 階段
               </text>
-              <text x="410" y="1100" onClick={() => setRoom('e')}>
+              <text x="410" y="1100">
                 レンタルスペース
               </text>
-              <text x="1252" y="970" onClick={() => setRoom('e')}>
+              <text x="1252" y="970">
                 洗面所
               </text>
-              <text x="1252" y="1040" onClick={() => setRoom('e')}>
+              <text x="1252" y="1040">
                 脱衣所
               </text>
-              <text x="1252" y="1160" onClick={() => setRoom('e')}>
+              <text x="1252" y="1160">
                 風呂場
               </text>
-              <text x="1140" y="1160" onClick={() => setRoom('e')}>
+              <text x="1140" y="1160">
                 W.C.
+              </text>
+            </g>
+          </g>
+        </g>
+
+        <g className="stroke-brand-base">
+          <g
+            name="2FFD"
+            {...defaultGProps}
+            fill={colors.F_2fDomi}
+            strokeWidth={strokeWidths.F_2fDomi}
+            onClick={() => setRoom('F_2fDomi')}
+          >
+            <path d="M 2.0 2.0 m 201 0 m 273 0 h 520 v 320 h -520 v -320 z" />
+            <path d="M 2.0 2.0 m 201 0 m 273 0 m 520 120 h 400 v 120 h 100 v 80 h -500 v -200 z" />
+            <path d="M 2.0 2.0 m 201 0 m 273 0 m 520 0 h 400 v 120 h -400 v -120 z" />
+          </g>
+
+          <g name="EXSTR" {...defaultGProps}>
+            <path d="M 2.0 2.0 m 201 0 m 273 0 m 520 0 m 500 240 h 120 v 320 h -120 v -320 z" />
+          </g>
+          <g fontSize={48}>
+            <g fontSize={72} className="stroke-white fill-white">
+              <text x="580" y="220" onClick={() => setRoom('F_2fDomi')}>
+                {RoomNames.F_2fDomi}
+              </text>
+            </g>
+            <g className="stroke-white fill-white">
+              <text x="1040" y="80">
+                風呂・トイレ
+              </text>
+              <text x="1180" y="220">
+                キッチン
+              </text>
+              <text x="1260" y="300">
+                専用玄関
+              </text>
+            </g>
+            <g className="stroke-brand-dark fill-brand-dark">
+              <text x="1500" y="300" transform="rotate(90,1520,320)">
+                外階段
               </text>
             </g>
           </g>
