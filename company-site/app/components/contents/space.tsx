@@ -2,6 +2,7 @@
 
 import { ReactElement } from 'react'
 import HeadLine from '../HeadLine'
+import Link from 'next/link'
 
 export default function Space(): ReactElement {
   return (
@@ -14,7 +15,7 @@ export default function Space(): ReactElement {
 
         <p className="mb-2">
           ご予約は
-          <a
+          <Link
             href="https://spacemarket.com/p/sp/ay-house01-2f-ldk"
             target={'_blank'}
             className="underline inline-block mx-1"
@@ -24,7 +25,7 @@ export default function Space(): ReactElement {
               title="外部リンク"
               className="inline-block align-sub bg-[url(/img/link.svg)] bg-no-repeat w-3 h-3 ml-1"
             />
-          </a>
+          </Link>
           からよろしくお願いします
         </p>
 
@@ -32,7 +33,7 @@ export default function Space(): ReactElement {
           <dt className="text-lg mb-2">スペース一覧</dt>
           <dd>
             <div className="border rounded-md p-4 mt-4 bg-[url(/img/2fldk.png)] pt-[100vw] md:pt-1 bg-no-repeat bg-contain md:bg-right-top md:pr-52">
-              <a
+              <Link
                 href="https://spacemarket.com/p/6VFBsJ-zNNWcQ0mS"
                 target={'_blank'}
               >
@@ -53,13 +54,13 @@ export default function Space(): ReactElement {
                     />
                   </dd>
                 </dl>
-              </a>
+              </Link>
             </div>
           </dd>
 
           <dd>
             <div className="border rounded-md p-4 mt-4 bg-[url(/img/garden.png)] pt-[100vw] md:pt-1 bg-no-repeat bg-contain md:bg-right-top md:pr-52">
-              <a
+              <Link
                 href="https://www.spacemarket.com/p/VrpL5gw2XGTtExbZ/"
                 target={'_blank'}
               >
@@ -82,13 +83,13 @@ export default function Space(): ReactElement {
                     />
                   </dd>
                 </dl>
-              </a>
+              </Link>
             </div>
           </dd>
 
           <dd>
             <div className="border rounded-md p-4 mt-4 bg-[url(/img/aroom.png)] pt-[100vw] md:pt-1 bg-no-repeat bg-contain md:bg-right-top md:pr-52">
-              <a
+              <Link
                 href="https://www.spacemarket.com/p/sUKtqT73-eHtwPCL/"
                 target={'_blank'}
               >
@@ -113,7 +114,7 @@ export default function Space(): ReactElement {
                     />
                   </dd>
                 </dl>
-              </a>
+              </Link>
             </div>
           </dd>
         </dl>
@@ -126,7 +127,7 @@ export default function Space(): ReactElement {
               </p>
               <p>
                 ご予約にあたっては、
-                <a
+                <Link
                   className="inline-block mx-1 underline"
                   href="https://forms.gle/Q8qeywx7cMvEUAcX9"
                   target="_blank"
@@ -137,7 +138,7 @@ export default function Space(): ReactElement {
                     title="外部リンク"
                     className="inline-block align-sub bg-[url(/img/link.svg)] bg-no-repeat w-3 h-3 ml-1"
                   />
-                </a>
+                </Link>
                 からお問い合わせください
               </p>
             </div>

@@ -2,11 +2,12 @@
 
 import '../styles/globals.css'
 import Script from 'next/script'
-import { useRouter, usePathname } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 import { ReactElement, useEffect, useMemo, useState } from 'react'
 import { isPageName, PageName, titles } from './domains/pages'
 import TopNavi from './components/TopNavi'
 import Ogp from './components/functions/ogp'
+import Link from 'next/link'
 
 export default function RootLayout({
   children,
@@ -76,8 +77,6 @@ function Layout({
 }): ReactElement {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const pathname = usePathname()
-  const { push: _push } = useRouter()
-  const push = (url: string) => _push(url, undefined)
   const hideNavi = useMemo(() => {
     return pathname.includes('/privacy')
   }, [pathname])
@@ -88,15 +87,13 @@ function Layout({
           <div className="w-full py-4 bg-brand-dark shadow-sm text-white fixed z-10 top-0">
             <div className="mx-auto sm:w-7/12 md:w-9/12 flex flex-row justify-between items-center px-4">
               <h1 className="text-xl">
-                <a className="cursor-pointer" onClick={() => push('/')}>
-                  AY合同会社
-                </a>
+                <Link href="/">AY合同会社</Link>
               </h1>
 
               <div className="text-white hover:text-gray-500 hidden md:flex">
-                <a className="cursor-pointer" onClick={() => push('/inquiry')}>
+                <Link className="cursor-pointer" href="/inquiry">
                   お問合せ
-                </a>
+                </Link>
               </div>
             </div>
           </div>
