@@ -1,17 +1,17 @@
-import Head from 'next/head'
-import { useRouter } from 'next/router'
+'use client'
+
+import { useParams } from 'next/navigation'
 import { ReactElement } from 'react'
 import { isPageName, titles } from '../../domains/pages'
 
 export default function Ogp(): ReactElement {
-  const { query } = useRouter()
-  const { page: _p } = query
+  const { page: _p } = useParams()
 
   const page =
     typeof _p === 'string' && isPageName(_p) && _p !== 'home' ? _p : ''
 
   return (
-    <Head>
+    <>
       <meta property="og:url" content={`https://www.aya-eiya.work/${page}`} />
       <meta property="og:type" content="website" />
       <meta property="og:title" content={titles.home} />
@@ -24,6 +24,6 @@ export default function Ogp(): ReactElement {
         property="og:image"
         content={`https://www.aya-eiya.work/img/house_ogp.png`}
       />
-    </Head>
+    </>
   )
 }

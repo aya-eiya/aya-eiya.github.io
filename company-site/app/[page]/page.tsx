@@ -1,15 +1,11 @@
+'use client'
+
 import { ReactElement } from 'react'
-import HomePage from '.'
+import HomePage from '../HomePage'
 import { PageNames } from '../domains/pages'
 
 export default function Page(): ReactElement {
   return HomePage()
-}
-
-export async function getStaticProps() {
-  return {
-    props: {},
-  }
 }
 
 export async function getStaticPaths() {
