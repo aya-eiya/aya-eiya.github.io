@@ -5,8 +5,9 @@ export const PageNames = [
   'company',
   'inquiry',
   'office',
+  'surroundings',
 ] as const
-export type PageName = typeof PageNames[number]
+export type PageName = (typeof PageNames)[number]
 
 export const titles: Record<PageName, string> = {
   home: 'AY HOUSE',
@@ -15,6 +16,7 @@ export const titles: Record<PageName, string> = {
   inquiry: 'AY HOUSE | お問合せ',
   space: 'AY HOUSE | レンタルスペース',
   office: 'AY HOUSE | コワーキングスペース',
+  surroundings: 'AY HOUSE | 周辺の環境',
 }
 export function isPageName(id: string): id is PageName {
   return PageNames.indexOf(id as PageName) > -1

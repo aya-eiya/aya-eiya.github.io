@@ -1,6 +1,8 @@
+'use client'
+
 import MenuIcon from './icons/menu'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 
 export default function TopNavi({
   isMenuOpen,
@@ -10,7 +12,7 @@ export default function TopNavi({
   setIsMenuOpen: (isMenuOpen: boolean) => void
 }) {
   const { push: _push } = useRouter()
-  const push = (url: string) => _push(url, undefined, { shallow: true })
+  const push = (url: string) => _push(url, undefined)
   return (
     <nav className="top-4 right-4 z-10 md:top-24 md:bg-opacity-70 md:bg-white fixed md:right-4 md:border-r">
       <div className="text-right md:hidden">

@@ -24,14 +24,10 @@ jobs:
         working-directory: company-site
         run: yarn build
 
-      - name: export
-        working-directory: company-site
-        run: yarn next export -o ../out
-
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out
+          publish_dir: ./company-site/out
           cname: www.aya-eiya.work
           enable_jekyll: false

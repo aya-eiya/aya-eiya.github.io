@@ -1,8 +1,9 @@
+'use client'
+
 import { ReactElement } from 'react'
-import Layout from '../components/Layout'
 export default function Privacy(): ReactElement {
   return (
-    <Layout hideNavi={true}>
+    <>
       <dl className="p-2 border rounded mb-4 mx-2">
         <dt className="text-lg m-2">プライバシーポリシー(個人情報保護方針)</dt>
         <dd className="mx-2">
@@ -106,6 +107,6 @@ export default function Privacy(): ReactElement {
           当社Webサイトへのリンクは、自由に設置していただいて構いません。ただし、Webサイトの内容等によってはリンクの設置をお断りすることがあります。
         </dd>
       </dl>
-    </Layout>
+    </>
   )
 }
