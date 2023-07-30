@@ -36,7 +36,8 @@ export default function House(): ReactElement {
             <h3 className="text-lg mb-4">品川区旗の台 - 庭付き一戸建</h3>
             <div className="px-2">
               <p className="mb-4">
-                品川区旗の台の駅近く、徒歩3分の立地で7LLDDKKの広い庭付き一戸建てです
+                品川区旗の台の駅近く、徒歩3分の立地で7LLDDKK（7室 &amp;
+                LDK2箇所）の広い庭付き一戸建てです
               </p>
               <p className="mb-4">
                 個室中心で広いお部屋が多く、シェアハウスでは珍しいルームシェアでのご利用もいただけます
@@ -168,7 +169,11 @@ function OptionList() {
         [
           <>
             <p className="mb-2">
-              <img src="/img/station.svg" className="h-8 md:h-20" />
+              <img
+                src="/img/station.svg"
+                alt="最寄り駅"
+                className="h-8 md:h-20"
+              />
             </p>
             <p>徒歩</p>
             <p>３分</p>
@@ -180,7 +185,11 @@ function OptionList() {
         [
           <>
             <p className="mb-2">
-              <img src="/img/laundry.svg" className="h-8 md:h-20" />
+              <img
+                src="/img/laundry.svg"
+                alt="洗濯機"
+                className="h-8 md:h-20"
+              />
             </p>
             <p>縦型</p>
             <p>２台</p>
@@ -192,19 +201,23 @@ function OptionList() {
         [
           <>
             <p className="mb-2">
-              <img src="/img/dryer.svg" className="h-8 md:h-20" />
+              <img
+                src="/img/dryer.svg"
+                alt="衣類乾燥機"
+                className="h-8 md:h-20"
+              />
             </p>
             <p>ガス</p>
             <p>１台</p>
           </>,
           <>
-            <p>乾燥機</p>
+            <p>衣類乾燥機</p>
           </>,
         ],
         [
           <>
             <p className="mb-2">
-              <img src="/img/pot.svg" className="h-8 md:h-20" />
+              <img src="/img/pot.svg" alt="キッチン" className="h-8 md:h-20" />
             </p>
             <p>ガス</p>
             <p>３口</p>
@@ -216,7 +229,11 @@ function OptionList() {
         [
           <>
             <p className="mb-2">
-              <img src="/img/bycycle.svg" className="h-8 md:h-20" />
+              <img
+                src="/img/bicycle.svg"
+                alt="駐輪スペース"
+                className="h-8 md:h-20"
+              />
             </p>
             <p>一人</p>
             <p>１台</p>
@@ -228,7 +245,11 @@ function OptionList() {
         [
           <>
             <p className="mb-2">
-              <img src="/img/internet.svg" className="h-8 md:h-20" />
+              <img
+                src="/img/internet.svg"
+                alt="ネット環境"
+                className="h-8 md:h-20"
+              />
             </p>
             <p>光回線</p>
             <p>Wifi</p>
@@ -240,7 +261,11 @@ function OptionList() {
         [
           <>
             <p className="mb-2">
-              <img src="/img/bathroom.svg" className="h-8 md:h-20" />
+              <img
+                src="/img/bathroom.svg"
+                alt="トイレ"
+                className="h-8 md:h-20"
+              />
             </p>
             <p>3ヶ所</p>
             <p className="text-xs">(シャワートイレ)</p>
@@ -252,7 +277,7 @@ function OptionList() {
         [
           <>
             <p className="mb-2">
-              <img src="/img/sink.svg" className="h-8 md:h-20" />
+              <img src="/img/sink.svg" alt="洗面所" className="h-8 md:h-20" />
             </p>
             <p>２ヶ所</p>
             <p className="text-xs">兼脱衣所</p>
@@ -264,7 +289,7 @@ function OptionList() {
         [
           <>
             <p className="mb-2">
-              <img src="/img/bath.svg" className="h-8 md:h-20" />
+              <img src="/img/bath.svg" alt="浴室" className="h-8 md:h-20" />
             </p>
             <p>２ヶ所</p>
           </>,
@@ -275,7 +300,7 @@ function OptionList() {
         [
           <>
             <p className="mb-2">
-              <img src="/img/upstairs.svg" className="h-8 md:h-20" />
+              <img src="/img/upstairs.svg" alt="階数" className="h-8 md:h-20" />
             </p>
             <p>２階</p>
             <p> </p>
@@ -287,7 +312,11 @@ function OptionList() {
         [
           <>
             <p className="mb-2">
-              <img src="/img/sofa.svg" className="h-8 md:h-20" />
+              <img
+                src="/img/sofa.svg"
+                alt="共用リビング"
+                className="h-8 md:h-20"
+              />
             </p>
             <p>共用</p>
             <p>1階</p>
@@ -299,7 +328,11 @@ function OptionList() {
         [
           <>
             <p className="mb-2">
-              <img src="/img/people.svg" className="h-8 md:h-20" />
+              <img
+                src="/img/people.svg"
+                alt="個室シェア"
+                className="h-8 md:h-20"
+              />
             </p>
             <p>最大</p>
             <p>３名</p>
@@ -311,7 +344,7 @@ function OptionList() {
         [
           <>
             <p className="mb-2">
-              <img src="/img/lock.svg" className="h-8 md:h-20" />
+              <img src="/img/lock.svg" alt="玄関" className="h-8 md:h-20" />
             </p>
             <p>玄関</p>
             <p>個室</p>
@@ -323,7 +356,11 @@ function OptionList() {
         [
           <>
             <p className="mb-2">
-              <img src="/img/trunk.svg" className="h-8 md:h-20" />
+              <img
+                src="/img/trunk.svg"
+                alt="トランクルーム"
+                className="h-8 md:h-20"
+              />
             </p>
             <p>あり</p>
             <p>（有料）</p>
