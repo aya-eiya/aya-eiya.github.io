@@ -1,5 +1,3 @@
-'use client'
-
 import { ReactElement } from 'react'
 import Company from './components/contents/company'
 import Home from './components/contents/home'
