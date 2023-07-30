@@ -17,6 +17,7 @@ import {
 } from '../../domains/house'
 import { FloorPlan } from '../floorPlan'
 import { currencyFormat } from '../../domains/number'
+import Link from 'next/link'
 
 const defaultRNum = Rooms.reduce(
   (i, r) => ({ ...i, [r]: 1 }),
@@ -47,7 +48,7 @@ export default function House(): ReactElement {
                 外国人起業家や、フリーランスのエンジニアなど会社員以外のお仕事をしている人も入居しており、
                 <br />
                 週末には
-                <a
+                <Link
                   href="https://ay-house01.connpass.com/"
                   target="_blank"
                   title="connpass イベントグループページ"
@@ -59,7 +60,7 @@ export default function House(): ReactElement {
                       className="inline-block align-sub bg-[url(/img/link.svg)] bg-no-repeat w-4 h-4 ml-1"
                     />
                   </span>
-                </a>
+                </Link>
                 を催しております
               </p>
             </div>

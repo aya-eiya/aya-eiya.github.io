@@ -1,17 +1,17 @@
 'use client'
 
-import { ReactElement, ReactText } from 'react'
+import { ReactElement } from 'react'
 
 export default function HeadLine({
   id,
   children,
 }: {
   id: string
-  children: ReactText
+  children: string | number
 }): ReactElement {
   return (
     <>
-      <a id={id} className="block relative" />
+      <hr id={id} className="block relative invisible" />
       <h1 className="mt-16 text-2xl px-2 inline-block">{children}</h1>
     </>
   )

@@ -2,6 +2,7 @@
 
 import { ReactElement } from 'react'
 import HeadLine from '../HeadLine'
+import Link from 'next/link'
 
 export default function Office(): ReactElement {
   return (
@@ -15,13 +16,13 @@ export default function Office(): ReactElement {
 
         <p className="mb-2">
           お問い合わせは、右下のFBチャットボタンもしくは、
-          <a href="https://forms.gle/cE6YqBN1o4DMqejKA" target={'_blank'}>
+          <Link href="https://forms.gle/cE6YqBN1o4DMqejKA" target="_blank">
             こちらのフォーム
-          </a>
+          </Link>
           から
         </p>
         <div className="mb-2">
-          <a href="https://forms.gle/cE6YqBN1o4DMqejKA" target={'_blank'}>
+          <Link href="https://forms.gle/cE6YqBN1o4DMqejKA" target="_blank">
             <dl className="border rounded-md p-4 mt-4 bg-[url(/img/office_01.png)] pt-[65vw] md:pt-0 bg-no-repeat bg-contain md:bg-right-top md:pr-48">
               <dt className="mb-2">お問合せ</dt>
               <dd className="pl-4 mb-4">Googleフォームが開きます</dd>
@@ -34,7 +35,7 @@ export default function Office(): ReactElement {
                 />
               </dd>
             </dl>
-          </a>
+          </Link>
         </div>
       </div>
     </>

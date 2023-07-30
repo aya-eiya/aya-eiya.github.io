@@ -2,7 +2,6 @@
 
 import MenuIcon from './icons/menu'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 
 export default function TopNavi({
   isMenuOpen,
@@ -11,8 +10,6 @@ export default function TopNavi({
   isMenuOpen: boolean
   setIsMenuOpen: (isMenuOpen: boolean) => void
 }) {
-  const { push: _push } = useRouter()
-  const push = (url: string) => _push(url, undefined)
   return (
     <nav className="top-4 right-4 z-10 md:top-24 md:bg-opacity-70 md:bg-white fixed md:right-4 md:border-r">
       <div className="text-right md:hidden">
@@ -33,32 +30,32 @@ export default function TopNavi({
       >
         <li className="text-right">
           <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
-            <a onClick={() => push('/home')}>AY HOUSEについて</a>
+            <Link href="/home">AY HOUSEについて</Link>
           </div>
         </li>
         <li className="text-right">
           <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
-            <a onClick={() => push('/house')}>シェアハウスのご案内</a>
+            <Link href="/house">シェアハウスのご案内</Link>
           </div>
         </li>
         <li className="text-right">
           <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
-            <a onClick={() => push('/space')}>レンタルスペース紹介</a>
+            <Link href="/space">レンタルスペース紹介</Link>
           </div>
         </li>
         <li className="text-right">
           <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
-            <a onClick={() => push('/office')}>コワーキングスペース</a>
+            <Link href="/office">コワーキングスペース</Link>
           </div>
         </li>
         <li className="text-right">
           <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
-            <a onClick={() => push('/surroundings')}>周辺の環境</a>
+            <Link href="/surroundings">周辺の環境</Link>
           </div>
         </li>
         <li className="text-right">
           <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
-            <a onClick={() => push('/company')}>会社概要</a>
+            <Link href="/company">会社概要</Link>
           </div>
         </li>
         <li className="text-right">
@@ -74,12 +71,12 @@ export default function TopNavi({
         </li>
         <li className="text-right">
           <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
-            <a onClick={() => push('/inquiry')}>お問合せ</a>
+            <Link href="/inquiry">お問合せ</Link>
           </div>
         </li>
         <li className="text-right">
           <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
-            <a onClick={() => push('/privacy')}>プライバシーポリシー</a>
+            <Link href="/privacy">プライバシーポリシー</Link>
           </div>
         </li>
       </ul>

@@ -2,6 +2,7 @@
 
 import { ReactElement } from 'react'
 import HeadLine from '../HeadLine'
+import Link from 'next/link'
 
 export default function Surroundings(): ReactElement {
   return (
@@ -101,13 +102,13 @@ export default function Surroundings(): ReactElement {
           </table>
           <p className="text-right pt-2">
             など、
-            <a
+            <Link
               target="_blank"
               className="text-brand-base hover:text-brand-right"
               href="https://tabelog.com/tokyo/A1317/A131712/R7912/rstLst/?svd=20221231&svt=1900&svps=2&LstRange=SF"
             >
               人気店多数
-            </a>
+            </Link>
           </p>
         </section>
       </div>
