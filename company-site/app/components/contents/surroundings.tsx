@@ -11,7 +11,7 @@ export default function Surroundings(): ReactElement {
       <div className="mt-10 mx-2">
         <section>
           <div className="mx-2">
-            <h3 className="my-1 font-semibold">旗の台駅周辺（徒歩2〜4分）</h3>
+            <h2 className="my-1 font-semibold">旗の台駅周辺（徒歩2〜4分）</h2>
             <div className="mb-4 flex flex-row md:flex-col">
               <div className=""></div>
               <div className="">
@@ -22,7 +22,7 @@ export default function Surroundings(): ReactElement {
                   駅前商店街には、昔ながらのお店も便利のよいコンビニやスーパーチェーン、外食チェーンなどがあり大変に生活がしやすいエリアとなっています。
                 </p>
                 <p className="mb-2">
-                  定食屋さん雑誌などでも取り上げられるラーメン店、カレーハウス、食堂など外食の選択肢が多数あります。
+                  昔ながらの定食屋さんや、雑誌などでも取り上げられるラーメン店、カレーハウス、食堂など外食の選択肢が多数あります。
                 </p>
                 <p>
                   最寄りのスーパーは、イオン系の小型スーパーのまいばすけっとです。小型スーパーですが、徒歩2分の立地のため日常生活には非常に便利です。
