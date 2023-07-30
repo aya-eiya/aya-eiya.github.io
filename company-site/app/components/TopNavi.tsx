@@ -14,6 +14,7 @@ export default function TopNavi({
     <nav className="top-4 right-4 z-10 md:top-24 md:bg-opacity-70 md:bg-white fixed md:right-4 md:border-r">
       <div className="text-right md:hidden">
         <button
+          name="topNavigation"
           onClick={() => {
             setIsMenuOpen(!isMenuOpen)
           }}
