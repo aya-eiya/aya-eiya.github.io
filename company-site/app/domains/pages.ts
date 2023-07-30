@@ -6,7 +6,7 @@ export const PageNames = [
   'inquiry',
   'office',
 ] as const
-export type PageName = typeof PageNames[number]
+export type PageName = (typeof PageNames)[number]
 
 export const titles: Record<PageName, string> = {
   home: 'AY HOUSE',

@@ -1,10 +1,16 @@
+'use client'
+
 import { ReactElement, useEffect, useState } from 'react'
 import Error from 'next/error'
-import { useRouter } from 'next/router'
-import { isPageName } from '../domains/pages'
+import { useRouter, useParams, usePathname } from 'next/navigation'
+import { isPageName } from './domains/pages'
 
 export default function _404(): ReactElement {
-  const { asPath, replace } = useRouter()
+  const { replace } = useRouter()
+  const pathName = usePathname()
+  const params = useParams()
+  const asPath =
+    pathName + '?' + Object.keys(params).map((key) => `${key}=${params[key]}`)
   const [isLoading, setIsLoading] = useState(true)
   useEffect(() => {
     if (!isLoading) {

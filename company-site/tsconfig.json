@@ -17,14 +17,20 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "public/script/*.js"
-  ],
+    "public/script/*.js",
+    ".next/types/**/*.ts"
+, "app/privacy"  ],
   "exclude": [
     "node_modules"
   ]
