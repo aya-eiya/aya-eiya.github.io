@@ -1,10 +1,12 @@
-1:HL["/_next/static/css/db671f02fd619221.css",{"as":"style"}]
-0:["5PE2NsALq3cwk1UmC9Y4g",[[["",{"children":["privacy",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],"$L2",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/db671f02fd619221.css","precedence":"next"}]],"$L3"]]]]
-4:I{"id":192,"chunks":["176:static/chunks/176-a78ccc5ebbeb7873.js","185:static/chunks/app/layout-e90072096cf75fa3.js"],"name":"","async":false}
-5:I{"id":7767,"chunks":["272:static/chunks/webpack-a1059f1fbcba8def.js","971:static/chunks/fd9d1056-2b6d54e642f5c69a.js","596:static/chunks/596-5b801afe72a529e7.js"],"name":"default","async":false}
-6:I{"id":7920,"chunks":["272:static/chunks/webpack-a1059f1fbcba8def.js","971:static/chunks/fd9d1056-2b6d54e642f5c69a.js","596:static/chunks/596-5b801afe72a529e7.js"],"name":"default","async":false}
-7:I{"id":5939,"chunks":["160:static/chunks/app/not-found-69d4b7d22b66a7f1.js"],"name":"","async":false}
-8:I{"id":4839,"chunks":["272:static/chunks/webpack-a1059f1fbcba8def.js","971:static/chunks/fd9d1056-2b6d54e642f5c69a.js","596:static/chunks/596-5b801afe72a529e7.js"],"name":"default","async":false}
-9:I{"id":6910,"chunks":["385:static/chunks/app/privacy/page-a72e7352b739e68e.js"],"name":"","async":false}
-2:[["$","$L4",null,{"children":["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","loading":"$undefined","loadingStyles":"$undefined","hasLoading":false,"template":["$","$L6",null,{}],"templateStyles":"$undefined","notFound":["$","$L7",null,{}],"notFoundStyles":[],"childProp":{"current":["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children","privacy","children"],"error":"$undefined","errorStyles":"$undefined","loading":"$undefined","loadingStyles":"$undefined","hasLoading":false,"template":["$","$L6",null,{}],"templateStyles":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","childProp":{"current":[["$","$L8",null,{"propsForComponent":{"params":{}},"Component":"$9"}],null],"segment":"__PAGE__"},"styles":[]}],"segment":"privacy"},"styles":[]}],"params":{}}],null]
-3:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+1:HL["/_next/static/css/32e89e952c8626ab.css","style",{"crossOrigin":""}]
+0:["OZ088j-P-WBMMs3OzKr5W",[[["",{"children":["privacy",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],"$L2",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/32e89e952c8626ab.css","precedence":"next","crossOrigin":""}]],"$L3"]]]]
+4:I[9047,["176","static/chunks/176-b66b5779f2fbf6c3.js","185","static/chunks/app/layout-e833a7a69c3476ba.js"],""]
+5:I[6954,[],""]
+6:I[7264,[],""]
+7:I[8516,["160","static/chunks/app/not-found-d3a642a405220dfa.js"],""]
+9:I[8297,[],""]
+a:I[3402,["385","static/chunks/app/privacy/page-0d9867fb3cf1c85d.js"],""]
+b:{}
+2:[null,["$","$L4",null,{"children":["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","$L7",null,{}],"notFoundStyles":[],"initialChildNode":["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children","privacy","children"],"loading":"$undefined","loadingStyles":"$undefined","loadingScripts":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","initialChildNode":["$L8",["$","$L9",null,{"propsForComponent":{"params":{}},"Component":"$a","isStaticGeneration":true}],null],"childPropSegment":"__PAGE__","styles":null}],"childPropSegment":"privacy","styles":null}],"params":"$b"}],null]
+3:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}]]
+8:null
