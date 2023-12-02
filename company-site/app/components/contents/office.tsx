@@ -12,7 +12,7 @@ export default function Office(): ReactElement {
         <p className="mb-2">
           住民用のオフィススペースについて、コワーキングスペースやレンタルオフィスとしてご利用いただけるプランをご用意しております
         </p>
-        <p className="mb-2">現在は月額利用（5000円〜）のみ募集しております</p>
+        <p className="mb-2">現在は月額利用(5000円〜)のみ募集しております</p>
 
         <p className="mb-2">
           お問い合わせは、右下のFBチャットボタンもしくは、

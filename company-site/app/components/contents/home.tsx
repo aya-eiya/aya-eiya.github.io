@@ -20,7 +20,7 @@ export default function Home(): ReactElement {
             </p>
           </div>
           <div className="mb-2">
-            <p>現在、品川旗の台にシェアハウス１号店を運営しています</p>
+            <p>現在、品川旗の台にシェアハウス1号店を運営しています</p>
             <p>
               ご案内は
               <Link href="/house" className="font-bold underline">

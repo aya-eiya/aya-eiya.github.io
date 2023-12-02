@@ -60,6 +60,7 @@ function Floor1({
             name="1F1"
             fill={colors.R_1fL}
             strokeWidth={strokeWidths.R_1fL}
+            className={'cursor-pointer'}
             onClick={() => setRoom('R_1fL')}
           >
             <path d="M 2.0 2.0 h 455.0 v 273.0 h -455.0 v -273.0 z" />
@@ -69,6 +70,7 @@ function Floor1({
             name="1F2"
             fill={colors.M_1fDomi}
             strokeWidth={strokeWidths.M_1fDomi}
+            className={'cursor-pointer'}
             onClick={() => setRoom('M_1fDomi')}
           >
             <path d="M 2.0 2.0 m 455.0 0.0 m 273 0 m 50 0 h 405.0 h 70 v 182.0 v 60 h -70 v 122.0 h -405.0 h -50 v -182.0 h 50 v -182.0 z" />
@@ -95,6 +97,7 @@ function Floor1({
             name="1F3"
             fill={colors.R_1fJ}
             strokeWidth={strokeWidths.R_1fJ}
+            className={'cursor-pointer'}
             onClick={() => setRoom('R_1fJ')}
           >
             <path d="M 2.0 2.0 m 182.0 910.0 h 273 h 110 v 91 h -50 h 50 h 254 v 273 h -637 v -273 v -91 z" />
@@ -103,24 +106,31 @@ function Floor1({
             name="1F4"
             fill={colors.R_1fC}
             strokeWidth={strokeWidths.R_1fC}
+            className={'cursor-pointer'}
             onClick={() => setRoom('R_1fC')}
           >
             <path d="M 2.0 2.0 m 1092.0 1001.0 h 364 v 273 h -364 v -273 z" />
           </g>
           <g fontSize={48}>
             <g fontSize={72} className="stroke-white fill-white">
-              <text x="80" y="180" onClick={() => setRoom('R_1fL')}>
+              <text
+                x="80"
+                y="180"
+                className={'cursor-pointer'}
+                onClick={() => setRoom('R_1fL')}
+              >
                 {RoomNames.R_1fL}
               </text>
               <text
                 fontSize={38}
                 x="480"
                 y="160"
+                className={'cursor-pointer'}
                 onClick={() => setRoom('R_1fL')}
               >
                 サービスルーム
               </text>
-              <g onClick={() => setRoom('R_1fC')}>
+              <g className={'cursor-pointer'} onClick={() => setRoom('R_1fC')}>
                 <text x="1150" y="1110">
                   {RoomNames.R_1fC}
                 </text>
@@ -128,13 +138,19 @@ function Floor1({
                   管理人室
                 </text>
               </g>
-              <text x="270" y="1150" onClick={() => setRoom('R_1fJ')}>
+              <text
+                x="270"
+                y="1150"
+                className={'cursor-pointer'}
+                onClick={() => setRoom('R_1fJ')}
+              >
                 {RoomNames.R_1fJ}
               </text>
               <text
                 fontSize={62}
                 x="800"
                 y="180"
+                className={'cursor-pointer'}
                 onClick={() => setRoom('M_1fDomi')}
               >
                 {RoomNames.M_1fDomi}
@@ -193,6 +209,7 @@ function Floor2({
             name="2F1"
             fill={colors.R_2fA}
             strokeWidth={strokeWidths.R_2fA}
+            className={'cursor-pointer'}
             onClick={() => setRoom('R_2fA')}
           >
             <path d="M 2.0 2.0 m 201 330 m 273 0 h 409.5 v 273.0 h -409.5 v -273.0 z" />
@@ -201,6 +218,7 @@ function Floor2({
             name="2F2"
             fill={colors.R_2fB}
             strokeWidth={strokeWidths.R_2fA}
+            className={'cursor-pointer'}
             onClick={() => setRoom('R_2fB')}
           >
             <path d="M 2.0 2.0 m 201 330 m 273 273 h 409.5 v 273.0 h -409.5 v -273.0 z" />
@@ -216,6 +234,7 @@ function Floor2({
             {...defaultGProps}
             fill={colors.M_2fDomi}
             strokeWidth={strokeWidths.M_2fDomi}
+            className={'cursor-pointer'}
             onClick={() => setRoom('M_2fDomi')}
           >
             <path d="M 2.0 2.0 m 201 330 m 273 0 m 410 0 h 91 h 500.5 v 546 h -309 v -223 h -191 v -153 h -91 z" />
@@ -231,13 +250,28 @@ function Floor2({
           </g>
           <g fontSize={48}>
             <g fontSize={72} className="stroke-white fill-white">
-              <text x="560" y="480" onClick={() => setRoom('R_2fA')}>
+              <text
+                x="560"
+                y="480"
+                className={'cursor-pointer'}
+                onClick={() => setRoom('R_2fA')}
+              >
                 {RoomNames.R_2fA}
               </text>
-              <text x="560" y="760" onClick={() => setRoom('R_2fB')}>
+              <text
+                x="560"
+                y="760"
+                className={'cursor-pointer'}
+                onClick={() => setRoom('R_2fB')}
+              >
                 {RoomNames.R_2fB}
               </text>
-              <text x="1020" y="550" onClick={() => setRoom('M_2fDomi')}>
+              <text
+                x="1020"
+                y="550"
+                className={'cursor-pointer'}
+                onClick={() => setRoom('M_2fDomi')}
+              >
                 {RoomNames.M_2fDomi}
               </text>
             </g>
@@ -270,6 +304,7 @@ function Floor2({
             {...defaultGProps}
             fill={colors.F_2fDomi}
             strokeWidth={strokeWidths.F_2fDomi}
+            className={'cursor-pointer'}
             onClick={() => setRoom('F_2fDomi')}
           >
             <path d="M 2.0 2.0 m 201 0 m 273 0 h 520 v 320 h -520 v -320 z" />
@@ -282,7 +317,12 @@ function Floor2({
           </g>
           <g fontSize={48}>
             <g fontSize={72} className="stroke-white fill-white">
-              <text x="580" y="220" onClick={() => setRoom('F_2fDomi')}>
+              <text
+                x="580"
+                y="220"
+                className={'cursor-pointer'}
+                onClick={() => setRoom('F_2fDomi')}
+              >
                 {RoomNames.F_2fDomi}
               </text>
             </g>
