@@ -156,7 +156,7 @@ export default function House(): ReactElement {
         <OptionList />
         <hr className="border-b md:mt-4 mb-1" />
         <div>
-          備考：女子ドミトリーには上記以外に専用キッチン・水回りが含まれます
+          備考:女子ドミトリーには上記以外に専用キッチン・水回りが含まれます
         </div>
       </div>
     </>
@@ -176,7 +176,7 @@ function OptionList() {
               />
             </p>
             <p>徒歩</p>
-            <p>３分</p>
+            <p>3分</p>
           </>,
           <>
             <p>旗の台駅</p>
@@ -192,7 +192,7 @@ function OptionList() {
               />
             </p>
             <p>縦型</p>
-            <p>２台</p>
+            <p>2台</p>
           </>,
           <>
             <p>洗濯機</p>
@@ -208,7 +208,7 @@ function OptionList() {
               />
             </p>
             <p>ガス</p>
-            <p>１台</p>
+            <p>1台</p>
           </>,
           <>
             <p>衣類乾燥機</p>
@@ -220,7 +220,7 @@ function OptionList() {
               <img src="/img/pot.svg" alt="キッチン" className="h-8 md:h-20" />
             </p>
             <p>ガス</p>
-            <p>３口</p>
+            <p>3口</p>
           </>,
           <>
             <p>キッチン</p>
@@ -236,7 +236,7 @@ function OptionList() {
               />
             </p>
             <p>一人</p>
-            <p>１台</p>
+            <p>1台</p>
           </>,
           <>
             <p>駐輪スペース</p>
@@ -279,7 +279,7 @@ function OptionList() {
             <p className="mb-2">
               <img src="/img/sink.svg" alt="洗面所" className="h-8 md:h-20" />
             </p>
-            <p>２ヶ所</p>
+            <p>2ヶ所</p>
             <p className="text-xs">兼脱衣所</p>
           </>,
           <>
@@ -291,7 +291,7 @@ function OptionList() {
             <p className="mb-2">
               <img src="/img/bath.svg" alt="浴室" className="h-8 md:h-20" />
             </p>
-            <p>２ヶ所</p>
+            <p>2ヶ所</p>
           </>,
           <>
             <p>風呂・シャワー</p>
@@ -302,7 +302,7 @@ function OptionList() {
             <p className="mb-2">
               <img src="/img/upstairs.svg" alt="階数" className="h-8 md:h-20" />
             </p>
-            <p>２階</p>
+            <p>2階</p>
             <p> </p>
           </>,
           <>
@@ -335,7 +335,7 @@ function OptionList() {
               />
             </p>
             <p>最大</p>
-            <p>３名</p>
+            <p>3名</p>
           </>,
           <>
             <p>ルームシェア対応</p>
@@ -363,7 +363,7 @@ function OptionList() {
               />
             </p>
             <p>あり</p>
-            <p>（有料）</p>
+            <p>(有料)</p>
           </>,
           <>
             <p>トランクルーム</p>

@@ -11,7 +11,7 @@ export default function Surroundings(): ReactElement {
       <div className="mt-10 mx-2">
         <section>
           <div className="mx-2">
-            <h2 className="my-1 font-semibold">旗の台駅周辺（徒歩2〜4分）</h2>
+            <h2 className="my-1 font-semibold">旗の台駅周辺(徒歩2〜4分)</h2>
             <div className="mb-4 flex flex-row md:flex-col">
               <div className=""></div>
               <div className="">

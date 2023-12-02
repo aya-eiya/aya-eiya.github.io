@@ -27,13 +27,13 @@ export default function Company(): ReactElement {
               <th className="border w-32 p-3 font-normal bg-brand-dark text-white">
                 設立
               </th>
-              <td className="border p-3">令和3年（2021年） 8月 4日</td>
+              <td className="border p-3">令和3年(2021年) 8月 4日</td>
             </tr>
             <tr>
               <th className="border w-32 p-3 font-normal bg-brand-dark text-white">
                 所在地
               </th>
-              <td className="border p-3">東京都品川区旗の台１丁目１１番９号</td>
+              <td className="border p-3">東京都品川区旗の台1丁目11番9号</td>
             </tr>
             <tr>
               <th className="border w-32 p-3 font-normal bg-brand-dark text-white">
