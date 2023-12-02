@@ -31,13 +31,13 @@ export default function House(): ReactElement {
       <HeadLine id="house">シェアハウスのご案内</HeadLine>
       <div className="mt-10 mx-auto">
         <h2 className="px-2 md:px-0 text-xl my-4">旗の台シェアハウス</h2>
-        <div className="bg-right bg-[url(/img/house01-01.png)] mb-4">
+        <div className="bg-right bg-no-repeat bg-[url(/img/house01-01.png)] mb-4">
           <div className="p-2 md:w-1/2 bg-opacity-60 bg-white text-shadow">
             <h3 className="text-lg mb-4">品川区旗の台 - 庭付き一戸建</h3>
             <div className="px-2">
               <p className="mb-4">
-                品川区旗の台の駅近く、徒歩3分の立地で7LLDDKK（7室 &amp;
-                LDK2箇所）の広い庭付き一戸建てです
+                品川区旗の台の駅近く、徒歩3分の立地で7LLDDKK(7室 &amp;
+                LDK2箇所)の広い庭付き一戸建てです
               </p>
               <p className="mb-4">
                 個室中心で広いお部屋が多く、シェアハウスでは珍しいルームシェアでのご利用もいただけます
