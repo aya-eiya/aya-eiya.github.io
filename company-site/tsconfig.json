@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -29,9 +25,8 @@
     "**/*.ts",
     "**/*.tsx",
     "public/script/*.js",
-    ".next/types/**/*.ts"
-, "app/privacy"  ],
-  "exclude": [
-    "node_modules"
-  ]
+    ".next/types/**/*.ts",
+    "app/privacy"
+  ],
+  "exclude": ["node_modules"]
 }
