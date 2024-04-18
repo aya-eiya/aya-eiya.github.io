@@ -77,7 +77,7 @@ export default function House(): ReactElement {
               <FloorPlan selected={room} setRoom={setRoom} />
             </div>
             <div className="col-span-3 md:col-span-2 pl-4">
-              {Rooms.map((key) => {
+              {Rooms.map((key): ReactElement => {
                 const value = Upto[key]
                 const comment = isAvailable(Available[key])
                 return (
@@ -162,7 +162,8 @@ export default function House(): ReactElement {
     </>
   )
 }
-function OptionList() {
+
+function OptionList(): ReactElement {
   return (
     <div className="grid gap-2 grid-cols-3 md:grid-cols-5 px-1 pb-2">
       {[
@@ -383,7 +384,7 @@ function Option({
 }: {
   icon: ReactElement
   children: ReactElement | ReactElement[]
-}) {
+}): ReactElement {
   return (
     <div className="bg-brand-base text-xs md:text-sm lg:text-base text-white rounded-lg py-2 flex flex-col items-center">
       <div className="h-6 md:h-10 rounded-md flex flex-col justify-center">

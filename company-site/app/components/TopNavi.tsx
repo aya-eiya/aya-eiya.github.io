@@ -1,5 +1,6 @@
 'use client'
 
+import { ReactElement } from 'react'
 import MenuIcon from './icons/menu'
 import Link from 'next/link'
 
@@ -9,13 +10,13 @@ export default function TopNavi({
 }: {
   isMenuOpen: boolean
   setIsMenuOpen: (isMenuOpen: boolean) => void
-}) {
+}): ReactElement {
   return (
     <nav className="top-4 right-4 z-10 md:top-24 md:bg-opacity-70 md:bg-white fixed md:right-4 md:border-r">
       <div className="text-right md:hidden">
         <button
           name="topNavigation"
-          onClick={() => {
+          onClick={(): void => {
             setIsMenuOpen(!isMenuOpen)
           }}
         >
