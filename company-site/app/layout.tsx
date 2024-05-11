@@ -57,7 +57,11 @@ export default function RootLayout({
         />
         <meta
           name="description"
-          content="戸建シェアハウス、レンタルスペースの運営を行うAY合同会社のホームページです。ITエンジニア向けを中心としたコンセプトシェアハウスを運営しており、起業家やITエンジニアに人気の物件となっております。"
+          content="戸建シェアハウス、レンタルスペースの運営を行うAY合同会社のホームページです。ITエンジニア向けを中心としたコンセプトシェアハウスを運営しており、起業家やITエンジニアに人気の物件となっています。"
+        />
+        <meta
+          name="google-site-verification"
+          content="7kSERnEQeg59zIDhceMur15WrY6TnUkPR4r2Rj8tEwY"
         />
         <title>{title}</title>
       </head>
