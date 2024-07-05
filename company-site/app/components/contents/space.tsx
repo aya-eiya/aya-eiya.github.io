@@ -103,7 +103,7 @@ export default function Space(): ReactElement {
                       WEB会議や日中の楽器練習、勉強部屋のほか
                     </p>
                     <p className="px-2 md:pr-4">
-                      室内に冷蔵庫と電子レンジが設置してありますので、お庭での撮影・イベントの際に控え室、休憩所としてご利用いただけます。
+                      室内に冷蔵庫と電子レンジが設置してありますので、お庭での撮影・イベントの際に控え室、休憩所としてご利用いただけます
                     </p>
                   </dd>
                   <dd className="pl-4 mb-4 break-words underline text-brand-light">
