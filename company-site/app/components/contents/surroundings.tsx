@@ -94,10 +94,6 @@ export default function Surroundings(): ReactElement {
                 <td className="p-1">まるやま</td>
                 <td className="p-1">老舗の昭和食堂</td>
               </tr>
-              <tr className="border-b">
-                <td className="p-1">スペイン食堂石井</td>
-                <td className="p-1">スペイン食堂</td>
-              </tr>
             </tbody>
           </table>
           <p className="text-right pt-2">

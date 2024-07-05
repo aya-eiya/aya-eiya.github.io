@@ -57,6 +57,11 @@ export default function TopNavi({
         </li>
         <li className="text-right">
           <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
+            <Link href="/engineering">ソフトウェア開発</Link>
+          </div>
+        </li>
+        <li className="text-right">
+          <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
             <Link href="/company">会社概要</Link>
           </div>
         </li>
