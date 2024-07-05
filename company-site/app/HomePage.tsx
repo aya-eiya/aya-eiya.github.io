@@ -7,6 +7,7 @@ import Office from './components/contents/office'
 import Space from './components/contents/space'
 import Surroundings from './components/contents/surroundings'
 import Engineering from './components/contents/engineering'
+import Other from './components/contents/other'
 
 export default function HomePage(): ReactElement {
   return (
@@ -26,6 +27,8 @@ export default function HomePage(): ReactElement {
       <Engineering />
       <hr className="h-44 border-0" />
       <Inquiry />
+      <hr className="h-44 border-0" />
+      <Other />
     </>
   )
 }

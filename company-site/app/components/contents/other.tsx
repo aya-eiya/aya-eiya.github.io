@@ -14,16 +14,24 @@ export default function Other(): ReactElement {
     <>
       <HeadLine id="other">ニュース・リンク</HeadLine>
       <div className="mt-10 mx-auto">
-        <p>弊社事業に関連するリンクや情報</p>
+        <p>弊社事業に関連するリンクや情報をご紹介いたします</p>
       </div>
       <div className="mt-10 mx-auto">
-        <h3 className="text-lg mb-4">リンク</h3>
         <ul className="pl-2">
           {entries.map((entry, index) => (
             <a key={index} href={entry.url} target={'_blank'}>
-              <dl>
-                <dt className="text-lg mt-4">{entry.title}</dt>
-                <dd className="px-2 mt-2">{entry.description}</dd>
+              <dl className="flex flex-row">
+                <dt className="text-lg w-16">{entry.title}</dt>
+                <dd className="px-2">
+                  <p className="underline">
+                    {entry.url}
+                    <span
+                      title="外部リンク"
+                      className="inline-block align-sub bg-[url(/img/link.svg)] bg-no-repeat w-3 h-3 ml-1"
+                    />
+                  </p>
+                  <p className="mt-2">{entry.description}</p>
+                </dd>
               </dl>
             </a>
           ))}
