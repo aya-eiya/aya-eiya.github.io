@@ -120,7 +120,7 @@ export default function House(): ReactElement {
                       {SpecialSales[key].length > 0 && (
                         <>
                           <div className="pl-2 md:col-span-2">
-                            キャンペーン割引：
+                            キャンペーン割引:
                           </div>
                           <div className="text-right md:col-span-2">
                             {SpecialSales[key].map((c) => {
