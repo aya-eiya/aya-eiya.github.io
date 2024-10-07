@@ -74,21 +74,15 @@ export default function Engineering(): ReactElement {
       </div>
       <div className="mt-10 mx-auto">
         <h3 className="text-lg mb-4">開発実績</h3>
-        <dl className="pl-2">
-          {experiences.map((experience, index) => (
-            <>
-              <dt key={`caption_${index}`} className="text-lg mt-4">
-                {experience.title}
-              </dt>
-              <dd key={`description_${index}`} className="px-2 mt-2">
-                {experience.description}
-              </dd>
-              <dd key={`elem_${index}`} className="px-2 mt-2">
-                使用技術/要素など: {experience.technologies}
-              </dd>
-            </>
-          ))}
-        </dl>
+        {experiences.map((experience, index) => (
+          <dl key={index} className="pl-2">
+            <dt className="text-lg mt-4">{experience.title}</dt>
+            <dd className="px-2 mt-2">{experience.description}</dd>
+            <dd className="px-2 mt-2">
+              使用技術/要素など: {experience.technologies}
+            </dd>
+          </dl>
+        ))}
       </div>
     </>
   )

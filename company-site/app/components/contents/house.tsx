@@ -14,6 +14,7 @@ import {
   Upto,
   ShareRent,
   isAvailable,
+  SpecialSales,
 } from '../../domains/house'
 import { FloorPlan } from '../floorPlan'
 import { currencyFormat } from '../../domains/number'
@@ -70,7 +71,7 @@ export default function House(): ReactElement {
         <div className="px-2 md:px-0">
           <h3 className="text-lg mb-4">ご案内</h3>
           <p className="px-2 pb-4 text-sm">
-            ご覧になりたい部屋を間取り図から選択してください
+            ご覧になりたい部屋を間取り図からクリックしてください
           </p>
           <div className="grid grid-cols-5">
             <div className="col-span-2 md:col-span-3 pb-6">
@@ -116,6 +117,23 @@ export default function House(): ReactElement {
                       <div className="text-right">
                         {currencyFormat(CommonFee)} 円
                       </div>
+                      {SpecialSales[key].length > 0 && (
+                        <>
+                          <div className="pl-2 md:col-span-2">
+                            キャンペーン割引：
+                          </div>
+                          <div className="text-right md:col-span-2">
+                            {SpecialSales[key].map((c) => {
+                              const key = Object.keys(c)[0]
+                              return (
+                                <div key={key}>
+                                  {key}: -{currencyFormat(c[key])} 円
+                                </div>
+                              )
+                            })}
+                          </div>
+                        </>
+                      )}
                       {value > 1 && (
                         <>
                           <div className="pl-2">入居人数:</div>
@@ -140,7 +158,13 @@ export default function House(): ReactElement {
                       <div className="md:col-span-2 pt-2 border-t text-right text-lg">
                         <span className="inline-block pr-4">合計</span>
                         {currencyFormat(
-                          (rnum[key] - 1) * ShareRent + Rent[key] + CommonFee
+                          (rnum[key] - 1) * ShareRent +
+                            Rent[key] +
+                            CommonFee -
+                            SpecialSales[key].reduce(
+                              (i, c) => i + Object.values(c)[0],
+                              0
+                            )
                         )}{' '}
                         円
                       </div>
