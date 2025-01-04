@@ -1,11 +1,9 @@
 export const PageNames = [
   'home',
-  'space',
   'house',
   'company',
   'engineering',
   'inquiry',
-  'office',
   'other',
   'surroundings',
 ] as const
@@ -17,8 +15,6 @@ export const titles: Record<PageName, string> = {
   engineering: 'AY HOUSE | ソフトウェア開発',
   house: 'AY HOUSE | シェアハウス',
   inquiry: 'AY HOUSE | お問合せ',
-  space: 'AY HOUSE | レンタルスペース',
-  office: 'AY HOUSE | コワーキングスペース',
   other: 'AY HOUSE | 外部リンク',
   surroundings: 'AY HOUSE | 周辺の環境',
 }
