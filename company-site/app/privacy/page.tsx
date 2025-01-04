@@ -60,9 +60,6 @@ export default function Privacy(): ReactElement {
         <dd className="mx-2">
           当社は本人から個人情報の開示を求められたときには、遅滞なく本人に対しこれを開示します。個人情報の利用目的の通知や訂正、追加、削除、利用の停止、第三者への提供の停止を希望される方は以下の手順でご請求ください
         </dd>
-        <dd className="mx-2">
-          弊社WEBページに設置のお問い合わせチャット(Facebookチャット)よりご請求ください
-        </dd>
         <dt className="text-lg m-2">
           8. 個人情報取り扱いに関する相談や苦情の連絡先
         </dt>

@@ -11,9 +11,7 @@ export default function Inquiry(): ReactElement {
       <div className="mt-10 mx-auto">
         <div className="border rounded-lg p-4 mx-2 text-white bg-brand-light">
           <p className="mb-4">
-            お問い合わせは、Twitter DM、Facebookページ
-            <br />
-            およびページ下部のチャットにて受け付けております
+            お問い合わせは、Twitter DM、Facebookページからお願いいたします
           </p>
           <div className="grid md:grid-cols-6 w-1/2 gap-2">
             <div className="md:col-span-2">Twitter:</div>

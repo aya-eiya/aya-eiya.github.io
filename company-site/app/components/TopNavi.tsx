@@ -42,16 +42,6 @@ export default function TopNavi({
         </li>
         <li className="text-right">
           <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
-            <Link href="/space">レンタルスペース紹介</Link>
-          </div>
-        </li>
-        <li className="text-right">
-          <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
-            <Link href="/office">コワーキングスペース</Link>
-          </div>
-        </li>
-        <li className="text-right">
-          <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
             <Link href="/surroundings">周辺の環境</Link>
           </div>
         </li>
