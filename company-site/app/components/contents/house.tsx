@@ -175,6 +175,12 @@ export default function House(): ReactElement {
             </div>
           </div>
         </div>
+        <div>
+          <p className="text-sm mt-2">
+            ※1、※2）:
+            ドミトリーを継続して3ヶ月以上一人でご利用の方について、4ヶ月目から個室とみなした差分賃料が発生します
+          </p>
+        </div>
       </div>
       <div className="px-2 mx-auto pt-4">
         <OptionList />
