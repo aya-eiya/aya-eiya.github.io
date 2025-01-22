@@ -99,7 +99,7 @@ export const SpecialSales: Record<Room, { [key in string]: number }[]> = {
   M_2fDomi: [],
   M_1fDomi: [
     {
-      '学割 or エンジニア割': 3000,
+      '学割 or エンジニア割': 5000,
     },
   ],
   F_2fDomi: [
