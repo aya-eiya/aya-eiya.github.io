@@ -77,33 +77,21 @@ export const Rent: Record<Room, number> = {
 export const SpecialSales: Record<Room, { [key in string]: number }[]> = {
   R_1fL: [
     {
-      レンタルスペース協力費: 5000,
-    },
-    {
       '学割 or エンジニア割': 5000,
     },
   ],
   R_1fC: [],
   R_1fJ: [
     {
-      レンタルスペース協力費: 5000,
-    },
-    {
       '学割 or エンジニア割': 5000,
     },
   ],
   R_2fA: [
     {
-      レンタルスペース協力費: 5000,
-    },
-    {
       '学割 or エンジニア割': 5000,
     },
   ],
   R_2fB: [
-    {
-      レンタルスペース協力費: 5000,
-    },
     {
       '学割 or エンジニア割': 5000,
     },
@@ -111,16 +99,10 @@ export const SpecialSales: Record<Room, { [key in string]: number }[]> = {
   M_2fDomi: [],
   M_1fDomi: [
     {
-      レンタルスペース協力費: 5000,
-    },
-    {
       '学割 or エンジニア割': 3000,
     },
   ],
   F_2fDomi: [
-    {
-      レンタルスペース協力費: 5000,
-    },
     {
       '学割 or エンジニア割': 5000,
     },
