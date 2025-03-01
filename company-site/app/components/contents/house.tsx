@@ -93,7 +93,7 @@ export default function House(): ReactElement {
                       {!comment && <span className="text-red-500">(満室)</span>}
                       {typeof comment === 'string' && comment}
                     </h2>
-                    <div className="m-2 mt-0 rounded-sm border border-gray-400 p-2 text-sm">
+                    <div className="m-2 mt-0 rounded-xs border border-gray-400 p-2 text-sm">
                       {DetailTexts[key]}
                     </div>
                     <div
