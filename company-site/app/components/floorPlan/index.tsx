@@ -131,11 +131,8 @@ function Floor1({
                 サービスルーム
               </text>
               <g className={'cursor-pointer'} onClick={() => setRoom('R_1fC')}>
-                <text x="1150" y="1110">
+                <text x="1150" y="1150">
                   {RoomNames.R_1fC}
-                </text>
-                <text x="1140" y="1220">
-                  管理人室
                 </text>
               </g>
               <text

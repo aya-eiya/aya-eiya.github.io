@@ -23,7 +23,7 @@ export const RoomNames: Record<Room, string> = {
 }
 export const Upto: Record<Room, number> = {
   R_1fL: 3,
-  R_1fC: 0,
+  R_1fC: 2,
   R_1fJ: 2,
   R_2fA: 2,
   R_2fB: 2,
@@ -38,13 +38,13 @@ export type YearMonth = {
 export type AvailableState = true | false | YearMonth
 export const Available: Record<Room, AvailableState> = {
   R_1fL: true,
-  R_1fC: false,
+  R_1fC: true,
   R_1fJ: false,
-  R_2fA: { year: 2023, month: 9 },
-  R_2fB: { year: 2023, month: 9 },
+  R_2fA: true,
+  R_2fB: false,
   M_2fDomi: true,
   M_1fDomi: true,
-  F_2fDomi: { year: 2023, month: 9 },
+  F_2fDomi: { year: 2025, month: 4 },
 }
 export function isAvailable(
   state: AvailableState,
@@ -66,7 +66,7 @@ export const Deposit = 30000
 export const ShareRent = 15000
 export const Rent: Record<Room, number> = {
   R_1fL: 105000,
-  R_1fC: 0,
+  R_1fC: 90000,
   R_1fJ: 105000,
   R_2fA: 85000,
   R_2fB: 85000,
@@ -80,7 +80,11 @@ export const SpecialSales: Record<Room, { [key in string]: number }[]> = {
       '学割 or エンジニア割': 5000,
     },
   ],
-  R_1fC: [],
+  R_1fC: [
+    {
+      '学割 or エンジニア割': 5000,
+    },
+  ],
   R_1fJ: [
     {
       '学割 or エンジニア割': 5000,
@@ -99,12 +103,12 @@ export const SpecialSales: Record<Room, { [key in string]: number }[]> = {
   M_2fDomi: [],
   M_1fDomi: [
     {
-      '学割 or エンジニア割': 5000,
+      '学割 or エンジニア割': 3000,
     },
   ],
   F_2fDomi: [
     {
-      '学割 or エンジニア割': 5000,
+      '学割 or エンジニア割': 2000,
     },
   ],
 }
@@ -112,7 +116,8 @@ export const SpecialSales: Record<Room, { [key in string]: number }[]> = {
 export const DetailTexts: Record<Room, string> = {
   R_1fL:
     '庭に面した離れの一室に加え、収納が豊富なサービスルームがついたお部屋です。3名までルームシェアができます',
-  R_1fC: '管理人室として利用しています',
+  R_1fC:
+    '1Fの広めの個室です。備え付けのシングル＋αサイズのベッドがあります。2名までルームシェアができます',
   R_1fJ:
     '唯一の和室です。作業に適した書斎がついているお部屋となります。3名までルームシェアができます',
   R_2fA:

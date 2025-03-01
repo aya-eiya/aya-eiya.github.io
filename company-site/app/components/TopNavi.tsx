@@ -26,7 +26,7 @@ export default function TopNavi({
       <ul
         className={`md:flex flex-col justify-between bg-white md:bg-transparent p-4 ${
           isMenuOpen
-            ? 'flex drop-shadow border-brand-bright rounded-md'
+            ? 'flex drop-shadow-sm border-brand-bright rounded-md'
             : 'hidden'
         }`}
       >

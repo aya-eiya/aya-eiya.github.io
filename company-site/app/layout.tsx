@@ -81,7 +81,7 @@ function Layout({
     <>
       <div className="w-full relative text-brand-dark">
         <header className="flex items-center justify-center flex-col mb-4">
-          <div className="w-full py-4 bg-brand-dark shadow-sm text-white fixed z-10 top-0">
+          <div className="w-full py-4 bg-brand-dark shadow-xs text-white fixed z-10 top-0">
             <div className="mx-auto sm:w-7/12 md:w-9/12 flex flex-row justify-between items-center px-4">
               <h1 className="text-xl">
                 <Link href="/">AY合同会社</Link>
@@ -100,7 +100,7 @@ function Layout({
           )}
         </header>
         <main
-          className="mt-24 mx-auto max-w-screen-sm md:max-w-screen-sm lg:max-w-screen-md 2xl:max-w-screen-lg flex flex-col pb-11 text-brand-dark"
+          className="mt-24 mx-auto max-w-(--breakpoint-sm) md:max-w-(--breakpoint-sm) lg:max-w-(--breakpoint-md) 2xl:max-w-(--breakpoint-lg) flex flex-col pb-11 text-brand-dark"
           onClick={
             isMenuOpen
               ? () => {
