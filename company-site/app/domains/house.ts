@@ -38,13 +38,13 @@ export type YearMonth = {
 export type AvailableState = true | false | YearMonth
 export const Available: Record<Room, AvailableState> = {
   R_1fL: true,
-  R_1fC: false,
+  R_1fC: true,
   R_1fJ: false,
-  R_2fA: { year: 2023, month: 9 },
-  R_2fB: { year: 2023, month: 9 },
+  R_2fA: true,
+  R_2fB: false,
   M_2fDomi: true,
   M_1fDomi: true,
-  F_2fDomi: { year: 2023, month: 9 },
+  F_2fDomi: { year: 2025, month: 4 },
 }
 export function isAvailable(
   state: AvailableState,
