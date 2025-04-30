@@ -1,9 +1,9 @@
 export const RoomNames = {
-  R_1fL: 'Western Room (Detached)',
-  R_1fC: 'Western Room (C)',
-  R_1fJ: 'Japanese Room with Study',
-  R_2fA: 'Western Room (A)',
-  R_2fB: 'Western Room (B)',
+  R_1fL: 'Room (D)',
+  R_1fC: 'Room (C)',
+  R_1fJ: 'Japanese Room',
+  R_2fA: 'Room (A)',
+  R_2fB: 'Room (B)',
   M_2fDomi: 'Shared Office',
   M_1fDomi: 'Male Dormitory',
   F_2fDomi: 'Female Dormitory',
@@ -11,7 +11,7 @@ export const RoomNames = {
 
 export const DetailTexts = {
   R_1fL:
-    'A detached room facing the garden with an additional service room featuring ample storage. Up to 3 people can share this room.',
+    'A detached room facing the garden with an additional room (can be used as den or study room) featuring ample storage. Up to 3 people can share this room.',
   R_1fC:
     'A spacious private room on the 1st floor with a built-in single+ size bed. Up to 2 people can share this room.',
   R_1fJ:

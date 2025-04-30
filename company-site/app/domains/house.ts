@@ -58,10 +58,10 @@ export const Available: Record<Room, AvailableState> = {
   R_1fC: true,
   R_1fJ: false,
   R_2fA: true,
-  R_2fB: false,
+  R_2fB: { year: 2025, month: 6 },
   M_2fDomi: true,
   M_1fDomi: true,
-  F_2fDomi: { year: 2025, month: 4 },
+  F_2fDomi: true,
 }
 
 export function isAvailable(

@@ -176,7 +176,7 @@ function Floor1({
               className={'cursor-pointer'}
               onClick={() => setRoom('R_1fL')}
             >
-              {lang === 'ja' ? 'サービスルーム' : 'Service Room'}
+              {lang === 'ja' ? 'サービスルーム' : 'DEN'}
             </text>
             <g className={'cursor-pointer'} onClick={() => setRoom('R_1fC')}>
               <text x="1150" y="1150">
@@ -402,7 +402,7 @@ function Floor2({
                 {lang === 'ja' ? 'キッチン' : 'Kitchen'}
               </text>
               <text x="1260" y="300">
-                {lang === 'ja' ? '専用玄関' : 'Private Entrance'}
+                {lang === 'ja' ? '専用玄関' : 'Entrance'}
               </text>
             </g>
             <g className="stroke-brand-dark fill-brand-dark">

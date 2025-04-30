@@ -47,10 +47,11 @@ export default function Home(): ReactElement {
           <div className="mb-2">
             <p>{t.currentStatus}</p>
             <p>
-              {t.guide1}
+              {t.guide1}&nbsp;
               <Link href="/house" className="font-bold underline">
                 {t.guide2}
               </Link>
+              &nbsp;
               {t.guide3}
             </p>
           </div>
