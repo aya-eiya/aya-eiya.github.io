@@ -1,3 +1,14 @@
+import type {
+  RoomNames as JaRoomNames,
+  DetailTexts as JaDetailTexts,
+} from './ja/house'
+import type {
+  RoomNames as EnRoomNames,
+  DetailTexts as EnDetailTexts,
+} from './en/house'
+import * as jaHouse from './ja/house'
+import * as enHouse from './en/house'
+
 export const Rooms = [
   'R_1fL',
   'R_1fC',
@@ -10,17 +21,20 @@ export const Rooms = [
 ] as const
 
 export type Room = (typeof Rooms)[number]
+export type Lang = 'ja' | 'en'
 
-export const RoomNames: Record<Room, string> = {
-  R_1fL: '洋室 離れ',
-  R_1fC: '洋室 (C)',
-  R_1fJ: '書斎付き和室',
-  R_2fA: '洋室 (A)',
-  R_2fB: '洋室 (B)',
-  M_2fDomi: '共用オフィス',
-  M_1fDomi: '男子ドミトリー',
-  F_2fDomi: '女子ドミトリー',
+export function getRoomNames(
+  lang: Lang
+): typeof JaRoomNames | typeof EnRoomNames {
+  return lang === 'ja' ? jaHouse.RoomNames : enHouse.RoomNames
 }
+
+export function getDetailTexts(
+  lang: Lang
+): typeof JaDetailTexts | typeof EnDetailTexts {
+  return lang === 'ja' ? jaHouse.DetailTexts : enHouse.DetailTexts
+}
+
 export const Upto: Record<Room, number> = {
   R_1fL: 3,
   R_1fC: 2,
@@ -31,11 +45,14 @@ export const Upto: Record<Room, number> = {
   M_1fDomi: 1,
   F_2fDomi: 1,
 }
+
 export type YearMonth = {
   year: number
   month: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
 }
+
 export type AvailableState = true | false | YearMonth
+
 export const Available: Record<Room, AvailableState> = {
   R_1fL: true,
   R_1fC: true,
@@ -46,10 +63,12 @@ export const Available: Record<Room, AvailableState> = {
   M_1fDomi: true,
   F_2fDomi: { year: 2025, month: 4 },
 }
+
 export function isAvailable(
   state: AvailableState,
+  lang: Lang,
   currentDate: Date = new Date()
-): boolean | string {
+): string | boolean {
   if (state === false || state === true) {
     return state
   }
@@ -59,11 +78,15 @@ export function isAvailable(
   if (check) {
     return true
   }
-  return `${state.year}年${state.month}月 空予定`
+  const AvailableSoonText =
+    lang === 'ja' ? jaHouse.AvailableSoonText : enHouse.AvailableSoonText
+  return AvailableSoonText(state.year, state.month)
 }
+
 export const CommonFee = 5000
 export const Deposit = 30000
 export const ShareRent = 15000
+
 export const Rent: Record<Room, number> = {
   R_1fL: 105000,
   R_1fC: 90000,
@@ -74,60 +97,20 @@ export const Rent: Record<Room, number> = {
   M_1fDomi: 65000,
   F_2fDomi: 45000,
 }
-export const SpecialSales: Record<Room, { [key in string]: number }[]> = {
-  R_1fL: [
-    {
-      '学割 or エンジニア割': 5000,
-    },
-  ],
-  R_1fC: [
-    {
-      '学割 or エンジニア割': 5000,
-    },
-  ],
-  R_1fJ: [
-    {
-      '学割 or エンジニア割': 5000,
-    },
-  ],
-  R_2fA: [
-    {
-      '学割 or エンジニア割': 5000,
-    },
-  ],
-  R_2fB: [
-    {
-      '学割 or エンジニア割': 5000,
-    },
-  ],
-  M_2fDomi: [],
-  M_1fDomi: [
-    {
-      '学割 or エンジニア割': 3000,
-    },
-  ],
-  F_2fDomi: [
-    {
-      '学割 or エンジニア割': 2000,
-    },
-  ],
-}
 
-export const DetailTexts: Record<Room, string> = {
-  R_1fL:
-    '庭に面した離れの一室に加え、収納が豊富なサービスルームがついたお部屋です。3名までルームシェアができます',
-  R_1fC:
-    '1Fの広めの個室です。備え付けのシングル＋αサイズのベッドがあります。2名までルームシェアができます',
-  R_1fJ:
-    '唯一の和室です。作業に適した書斎がついているお部屋となります。3名までルームシェアができます',
-  R_2fA:
-    '2階の個室(≒6.7畳/10.4平米)です。小学校のグラウンドを見下ろす大きなベランダがついています。2名までルームシェアができます',
-  R_2fB:
-    '2階の個室(≒6.7畳/10.4平米)です。小学校のグラウンドを見下ろす大きなベランダがついています。2名までルームシェアができます',
-  M_2fDomi:
-    '共用のオフィススペースです。懸垂器などのトレーニング器具もあり、外部の方もコワーキングスペースとして月額契約で利用できます',
-  M_1fDomi:
-    '男性用のドミトリーです。2段ベッドを一床と収納タンスが占有です。一室を最大6名で共有します。※1) ドミトリールームを一人での利用の場合は、賃料に月額3万円が加算されます',
-  F_2fDomi:
-    '女性用のドミトリーです。同施設内に別途玄関を備えた一室を最大4名で共有します。女性ドミトリー入居者専用の洗濯機、浴室、トイレ、ベランダ、キッチンルームの備えがあります。他の部屋との共用の設備もお使いいただけます。 ※2) ドミトリールームを一人での利用の場合は、賃料に月額2万円が加算されます',
+export function getSpecialSales(
+  lang: Lang
+): Record<Room, { [key: string]: number }[]> {
+  const SpecialSalesName =
+    lang === 'ja' ? jaHouse.SpecialSalesName : enHouse.SpecialSalesName
+  return {
+    R_1fL: [{ [SpecialSalesName]: 5000 }],
+    R_1fC: [{ [SpecialSalesName]: 5000 }],
+    R_1fJ: [{ [SpecialSalesName]: 5000 }],
+    R_2fA: [{ [SpecialSalesName]: 5000 }],
+    R_2fB: [{ [SpecialSalesName]: 5000 }],
+    M_2fDomi: [],
+    M_1fDomi: [],
+    F_2fDomi: [],
+  }
 }

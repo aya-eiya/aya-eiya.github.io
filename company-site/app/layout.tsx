@@ -4,10 +4,11 @@ import '../styles/globals.css'
 import Script from 'next/script'
 import { usePathname } from 'next/navigation'
 import { ReactElement, useEffect, useMemo, useState } from 'react'
-import { isPageName, PageName, titles } from './domains/pages'
+import { isPageName, getTitles } from './domains/pages'
 import TopNavi from './components/TopNavi'
 import Ogp from './components/functions/ogp'
 import Link from 'next/link'
+import { LanguageProvider, useLanguage } from './contexts/LanguageContext'
 
 export default function RootLayout({
   children,
@@ -16,21 +17,41 @@ export default function RootLayout({
   children: ReactElement
   params: { page: string }
 }): ReactElement {
+  return (
+    <LanguageProvider>
+      <RootLayoutContent children={children} params={params} />
+    </LanguageProvider>
+  )
+}
+
+function RootLayoutContent({
+  children,
+  params,
+}: {
+  children: ReactElement
+  params: { page: string }
+}): ReactElement {
+  const { lang } = useLanguage()
   const { page } = params
   const pathname = usePathname()
-  const [title, setTitle] = useState<(typeof titles)[PageName]>(titles.home)
+  const titles = getTitles(lang)
+
+  const title = useMemo(() => {
+    const id = page ? String(page) : pathname.replace(/^\//, '')
+    return titles[isPageName(id) ? id : 'home']
+  }, [pathname, page, titles])
+
   useEffect(() => {
     const id = page ? String(page) : pathname.replace(/^\//, '')
     const el = document.getElementById(id)
     if (!el) {
       return
     }
-    setTitle(titles[isPageName(id) ? id : 'home'])
     el.scrollIntoView({ behavior: 'smooth' })
   }, [pathname, page])
 
   return (
-    <html lang="ja">
+    <html lang={lang}>
       <head>
         <Script
           async
@@ -52,7 +73,11 @@ export default function RootLayout({
         />
         <meta
           name="description"
-          content="戸建シェアハウスの運営を行うAY合同会社のホームページです。ITエンジニア向けを中心としたコンセプトシェアハウスを運営しており、起業家やITエンジニアに人気の物件となっています"
+          content={
+            lang === 'ja'
+              ? '戸建シェアハウスの運営を行うAY合同会社のホームページです。ITエンジニア向けを中心としたコンセプトシェアハウスを運営しており、起業家やITエンジニアに人気の物件となっています'
+              : 'Welcome to AY LLC, operating residential share houses. We manage concept share houses focused on IT engineers, popular among entrepreneurs and tech professionals.'
+          }
         />
         <meta
           name="google-site-verification"
@@ -72,11 +97,13 @@ function Layout({
 }: {
   children: ReactElement | ReactElement[]
 }): ReactElement {
+  const { lang, setLang } = useLanguage()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const pathname = usePathname()
   const hideNavi = useMemo(() => {
     return pathname.includes('/privacy')
   }, [pathname])
+
   return (
     <>
       <div className="w-full relative text-brand-dark">
@@ -84,19 +111,45 @@ function Layout({
           <div className="w-full py-4 bg-brand-dark shadow-xs text-white fixed z-10 top-0">
             <div className="mx-auto sm:w-7/12 md:w-9/12 flex flex-row justify-between items-center px-4">
               <h1 className="text-xl">
-                <Link href="/">AY合同会社</Link>
+                <Link href="/">AY LLC</Link>
               </h1>
 
-              <div className="text-white hover:text-gray-500 hidden md:flex">
-                <Link className="cursor-pointer" href="/inquiry">
-                  お問合せ
-                </Link>
+              <div className="flex items-center gap-1">
+                <button
+                  className={`text-sm px-2 py-1 rounded ${
+                    lang === 'ja'
+                      ? 'bg-white text-brand-dark'
+                      : 'text-white hover:text-gray-300'
+                  }`}
+                  onClick={() => setLang('ja')}
+                >
+                  JA
+                </button>
+                <button
+                  className={`text-sm px-2 py-1 rounded ${
+                    lang === 'en'
+                      ? 'bg-white text-brand-dark'
+                      : 'text-white hover:text-gray-300'
+                  }`}
+                  onClick={() => setLang('en')}
+                >
+                  EN
+                </button>
+                <div className="text-white hover:text-gray-500 hidden md:flex ml-4">
+                  <Link className="cursor-pointer" href="/inquiry">
+                    {lang === 'ja' ? 'お問合せ' : 'Contact'}
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
 
           {hideNavi || (
-            <TopNavi isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+            <TopNavi
+              isMenuOpen={isMenuOpen}
+              setIsMenuOpen={setIsMenuOpen}
+              lang={lang}
+            />
           )}
         </header>
         <main
@@ -113,7 +166,7 @@ function Layout({
         </main>
         <hr className="h-60 border-none" />
         <footer className="h-10 bg-brand-base p-3 w-full absolute bottom-0">
-          <p className="text-center font-serif text-white">&copy; AY.LLC.</p>
+          <p className="text-center font-serif text-white">&copy; AY LLC</p>
         </footer>
       </div>
     </>

@@ -1,3 +1,8 @@
+import * as jaPages from './ja/pages'
+import * as enPages from './en/pages'
+import type { titles as JaTitles } from './ja/pages'
+import type { titles as EnTitles } from './en/pages'
+
 export const PageNames = [
   'home',
   'house',
@@ -7,17 +12,14 @@ export const PageNames = [
   'other',
   'surroundings',
 ] as const
-export type PageName = (typeof PageNames)[number]
 
-export const titles: Record<PageName, string> = {
-  home: 'AY HOUSE',
-  company: 'AY HOUSE | 会社概要',
-  engineering: 'AY HOUSE | ソフトウェア開発',
-  house: 'AY HOUSE | シェアハウス',
-  inquiry: 'AY HOUSE | お問合せ',
-  other: 'AY HOUSE | 外部リンク',
-  surroundings: 'AY HOUSE | 周辺の環境',
+export type PageName = (typeof PageNames)[number]
+export type Lang = 'ja' | 'en'
+
+export function getTitles(lang: Lang): typeof JaTitles | typeof EnTitles {
+  return lang === 'ja' ? jaPages.titles : enPages.titles
 }
+
 export function isPageName(id: string): id is PageName {
   return PageNames.indexOf(id as PageName) > -1
 }
