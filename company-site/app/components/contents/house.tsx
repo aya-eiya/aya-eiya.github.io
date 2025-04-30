@@ -5,74 +5,318 @@ import HeadLine from '../HeadLine'
 import {
   Available,
   CommonFee,
-  DetailTexts,
   Rent,
   Room,
-  RoomNames,
   Rooms,
   Deposit,
   Upto,
   ShareRent,
   isAvailable,
-  SpecialSales,
+  getRoomNames,
+  getDetailTexts,
+  getSpecialSales,
 } from '../../domains/house'
 import { FloorPlan } from '../floorPlan'
 import { currencyFormat } from '../../domains/number'
 import Link from 'next/link'
+import { useLanguage } from '../../contexts/LanguageContext'
+
+type FacilityInfo = {
+  name: string
+  detail1: string
+  detail2: string
+  label: string
+}
+
+type Facilities = Record<string, FacilityInfo>
+type FacilityTuple = [string, FacilityInfo]
 
 const defaultRNum = Rooms.reduce(
   (i, r) => ({ ...i, [r]: 1 }),
   {} as typeof Upto
 )
+
+const texts = {
+  ja: {
+    title: 'シェアハウスのご案内',
+    houseName: '旗の台シェアハウス',
+    houseType: '品川区旗の台 - 庭付き一戸建',
+    description1:
+      '品川区旗の台の駅近く、徒歩3分の立地で7LLDDKK(7室 & LDK2箇所)の広い庭付き一戸建てです',
+    description2:
+      '個室中心で広いお部屋が多く、シェアハウスでは珍しいルームシェアでのご利用もいただけます',
+    description3:
+      '住民はオーナーの影響からエンジニアが多く、ITに関わる方に人気が高くなっております',
+    description4:
+      '外国人起業家や、フリーランスのエンジニアなど会社員以外のお仕事をしている人も入居しており、',
+    eventLink: 'オーナー主催のIT勉強会',
+    description5: 'を催しております',
+    selectRoom: 'ご覧になりたい部屋を間取り図からクリックしてください',
+    full: '満室',
+    initialCost: '初期費用',
+    deposit: 'デポジット',
+    monthlyFee: '賃料月額',
+    rent: '賃料',
+    commonFee: '共益費',
+    campaign: 'キャンペーン割引',
+    occupants: '入居人数',
+    people: '人',
+    total: '合計',
+    dormitoryNote:
+      'ドミトリーを継続して3ヶ月以上一人でご利用の方について、4ヶ月目から個室とみなした差分賃料が発生します',
+    femaleDormitoryNote:
+      '備考:女子ドミトリーには上記以外に専用キッチン・水回りが含まれます',
+    facilities: {
+      station: {
+        name: '最寄り駅',
+        detail1: '徒歩',
+        detail2: '3分',
+        label: '旗の台駅',
+      },
+      laundry: {
+        name: '洗濯機',
+        detail1: '縦型',
+        detail2: '2台',
+        label: '洗濯機',
+      },
+      dryer: {
+        name: '衣類乾燥機',
+        detail1: 'ガス',
+        detail2: '1台',
+        label: '衣類乾燥機',
+      },
+      kitchen: {
+        name: 'キッチン',
+        detail1: 'ガス',
+        detail2: '3口',
+        label: 'キッチン',
+      },
+      bicycle: {
+        name: '駐輪スペース',
+        detail1: '一人',
+        detail2: '1台',
+        label: '駐輪スペース',
+      },
+      internet: {
+        name: 'ネット環境',
+        detail1: '光回線',
+        detail2: 'Wifi',
+        label: 'ネット環境',
+      },
+      bathroom: {
+        name: 'トイレ',
+        detail1: '3ヶ所',
+        detail2: '(シャワートイレ)',
+        label: 'トイレ',
+      },
+      sink: {
+        name: '洗面所',
+        detail1: '2ヶ所',
+        detail2: '兼脱衣所',
+        label: '洗面所',
+      },
+      bath: {
+        name: '浴室',
+        detail1: '2ヶ所',
+        detail2: '',
+        label: '風呂・シャワー',
+      },
+      floor: {
+        name: '階数',
+        detail1: '2階',
+        detail2: ' ',
+        label: '階数',
+      },
+      livingroom: {
+        name: '共用リビング',
+        detail1: '共用',
+        detail2: '1階',
+        label: 'リビング',
+      },
+      share: {
+        name: '個室シェア',
+        detail1: '最大',
+        detail2: '3名',
+        label: 'ルームシェア対応',
+      },
+      lock: {
+        name: '玄関',
+        detail1: '玄関',
+        detail2: '個室',
+        label: 'オートロック対応',
+      },
+      storage: {
+        name: 'トランクルーム',
+        detail1: 'あり',
+        detail2: '(有料)',
+        label: 'トランクルーム',
+      },
+    } as Facilities,
+  },
+  en: {
+    title: 'Share House Guide',
+    houseName: 'Hatanodai Share House',
+    houseType: 'Shinagawa Hatanodai - Detached House with Garden',
+    description1:
+      'A spacious 7LLDDKK (7 rooms & 2 LDK) detached house with garden, just 3 minutes walk from Hatanodai Station in Shinagawa',
+    description2:
+      'Featuring many spacious private rooms, we uniquely offer room sharing options which is rare in share houses',
+    description3:
+      "Due to the owner's influence, many residents are engineers, making it popular among IT professionals",
+    description4:
+      'Our residents include foreign entrepreneurs and freelance engineers, and',
+    eventLink: 'owner-hosted IT study sessions',
+    description5: 'are held on weekends',
+    selectRoom: 'Please click on a room in the floor plan to view details',
+    full: 'Full',
+    initialCost: 'Initial Costs',
+    deposit: 'Deposit',
+    monthlyFee: 'Monthly Fees',
+    rent: 'Rent',
+    commonFee: 'Common Fee',
+    campaign: 'Campaign Discount',
+    occupants: 'Occupants',
+    people: 'people',
+    total: 'Total',
+    dormitoryNote:
+      'Note: For dormitory residents staying alone for more than 3 months, additional private room rate difference will apply from the 4th month',
+    femaleDormitoryNote:
+      'Note: Female dormitory includes exclusive kitchen and water facilities in addition to the above',
+    facilities: {
+      station: {
+        name: 'Nearest Station',
+        detail1: 'Walk',
+        detail2: '3min',
+        label: 'Hatanodai Station',
+      },
+      laundry: {
+        name: 'Washing Machine',
+        detail1: 'Vertical',
+        detail2: '2 units',
+        label: 'Washing Machine',
+      },
+      dryer: {
+        name: 'Clothes Dryer',
+        detail1: 'Gas',
+        detail2: '1 unit',
+        label: 'Clothes Dryer',
+      },
+      kitchen: {
+        name: 'Kitchen',
+        detail1: 'Gas',
+        detail2: '3 burners',
+        label: 'Kitchen',
+      },
+      bicycle: {
+        name: 'Bicycle Parking',
+        detail1: 'Per person',
+        detail2: '1 space',
+        label: 'Bicycle Parking',
+      },
+      internet: {
+        name: 'Internet',
+        detail1: 'Fiber',
+        detail2: 'Wifi',
+        label: 'Internet',
+      },
+      bathroom: {
+        name: 'Bathroom',
+        detail1: '3 rooms',
+        detail2: '(Toilet)',
+        label: 'Bathroom',
+      },
+      sink: {
+        name: 'Bathroom',
+        detail1: '2 rooms',
+        detail2: '(Change Area)',
+        label: 'Bathroom',
+      },
+      bath: {
+        name: 'Bathroom',
+        detail1: '2 rooms',
+        detail2: '(Shower Room)',
+        label: 'Bathroom',
+      },
+      floor: {
+        name: 'Floors',
+        detail1: '2F',
+        detail2: ' ',
+        label: 'Floors',
+      },
+      livingroom: {
+        name: 'Shared Living',
+        detail1: 'Shared',
+        detail2: '1F',
+        label: 'Living Room',
+      },
+      share: {
+        name: 'Room Share',
+        detail1: 'Up to',
+        detail2: '3 people',
+        label: 'Room Share',
+      },
+      lock: {
+        name: 'Entrance',
+        detail1: 'Main',
+        detail2: 'Private',
+        label: 'Auto Lock',
+      },
+      storage: {
+        name: 'Storage',
+        detail1: 'Available',
+        detail2: '(Paid)',
+        label: 'Storage Room',
+      },
+    } as Facilities,
+  },
+}
+
 export default function House(): ReactElement {
+  const { lang } = useLanguage()
   const [room, setRoom] = useState('a' as Room)
   const [rnum, setRNum] = useState(defaultRNum)
+  const t = texts[lang]
+
+  const roomNames = getRoomNames(lang)
+  const detailTexts = getDetailTexts(lang)
+  const specialSales = getSpecialSales(lang)
+
   return (
     <>
-      <HeadLine id="house">シェアハウスのご案内</HeadLine>
+      <HeadLine id="house">{t.title}</HeadLine>
       <div className="mt-10 mx-auto">
-        <h2 className="px-2 md:px-0 text-xl my-4">旗の台シェアハウス</h2>
+        <h2 className="px-2 md:px-0 text-xl my-4">{t.houseName}</h2>
         <div className="bg-right bg-no-repeat bg-[url(/img/house01-01.png)] mb-4">
           <div className="p-2 md:w-1/2 bg-opacity-60 bg-white text-shadow">
-            <h3 className="text-lg mb-4">品川区旗の台 - 庭付き一戸建</h3>
+            <h3 className="text-lg mb-4">{t.houseType}</h3>
             <div className="px-2">
-              <p className="mb-4">
-                品川区旗の台の駅近く、徒歩3分の立地で7LLDDKK(7室 &amp;
-                LDK2箇所)の広い庭付き一戸建てです
-              </p>
-              <p className="mb-4">
-                個室中心で広いお部屋が多く、シェアハウスでは珍しいルームシェアでのご利用もいただけます
-              </p>
-              <p className="mb-4">
-                住民はオーナーの影響からエンジニアが多く、ITに関わる方に人気が高くなっております
-              </p>
+              <p className="mb-4">{t.description1}</p>
+              <p className="mb-4">{t.description2}</p>
+              <p className="mb-4">{t.description3}</p>
               <p>
-                外国人起業家や、フリーランスのエンジニアなど会社員以外のお仕事をしている人も入居しており、
+                {t.description4}
                 <br />
-                週末には
                 <Link
                   href="https://ay-house01.connpass.com/"
                   target="_blank"
-                  title="connpass イベントグループページ"
+                  title="connpass Event Group Page"
                 >
                   <span className="underline inline-block mx-1 ">
-                    オーナー主催のIT勉強会
+                    {t.eventLink}
                     <span
-                      title="外部リンク"
+                      title="External Link"
                       className="inline-block align-sub bg-[url(/img/link.svg)] bg-no-repeat w-4 h-4 ml-1"
                     />
                   </span>
                 </Link>
-                を催しております
+                {t.description5}
               </p>
             </div>
           </div>
         </div>
         <div className="px-2 md:px-0">
-          <h3 className="text-lg mb-4">ご案内</h3>
-          <p className="px-2 pb-4 text-sm">
-            ご覧になりたい部屋を間取り図からクリックしてください
-          </p>
+          <h3 className="text-lg mb-4">{t.title}</h3>
+          <p className="px-2 pb-4 text-sm">{t.selectRoom}</p>
           <div className="grid grid-cols-5">
             <div className="col-span-2 md:col-span-3 pb-6">
               <FloorPlan selected={room} setRoom={setRoom} />
@@ -80,7 +324,12 @@ export default function House(): ReactElement {
             <div className="col-span-3 md:col-span-2 pl-4">
               {Rooms.map((key): ReactElement => {
                 const value = Upto[key]
-                const comment = isAvailable(Available[key])
+                const availResult = isAvailable(Available[key], lang)
+                const comment =
+                  typeof availResult === 'string' ||
+                  typeof availResult === 'boolean'
+                    ? availResult
+                    : null
                 return (
                   <div
                     key={key}
@@ -89,12 +338,14 @@ export default function House(): ReactElement {
                     }`}
                   >
                     <h2 className="text-lg pb-4">
-                      {RoomNames[key]}
-                      {!comment && <span className="text-red-500">(満室)</span>}
+                      {roomNames[key]}
+                      {!comment && (
+                        <span className="text-red-500">({t.full})</span>
+                      )}
                       {typeof comment === 'string' && comment}
                     </h2>
                     <div className="m-2 mt-0 rounded-xs border border-gray-400 p-2 text-sm">
-                      {DetailTexts[key]}
+                      {detailTexts[key]}
                     </div>
                     <div
                       className={
@@ -103,27 +354,31 @@ export default function House(): ReactElement {
                           : 'hidden'
                       }
                     >
-                      <h3 className="md:col-span-2 text-lg pb-1">初期費用</h3>
-                      <div className="pl-2">デポジット:</div>
+                      <h3 className="md:col-span-2 text-lg pb-1">
+                        {t.initialCost}
+                      </h3>
+                      <div className="pl-2">{t.deposit}:</div>
                       <div className="text-right">
                         {currencyFormat(Deposit)} 円
                       </div>
-                      <h3 className="md:col-span-2 text-lg pb-1">賃料月額</h3>
-                      <div className="pl-2">賃料:</div>
+                      <h3 className="md:col-span-2 text-lg pb-1">
+                        {t.monthlyFee}
+                      </h3>
+                      <div className="pl-2">{t.rent}:</div>
                       <div className="text-right">
                         {currencyFormat(Rent[key])} 円
                       </div>
-                      <div className="pl-2">共益費:</div>
+                      <div className="pl-2">{t.commonFee}:</div>
                       <div className="text-right">
                         {currencyFormat(CommonFee)} 円
                       </div>
-                      {SpecialSales[key].length > 0 && (
+                      {specialSales[key].length > 0 && (
                         <>
                           <div className="pl-2 md:col-span-2">
-                            キャンペーン割引:
+                            {t.campaign}:
                           </div>
                           <div className="text-right md:col-span-2">
-                            {SpecialSales[key].map((c) => {
+                            {specialSales[key].map((c) => {
                               const key = Object.keys(c)[0]
                               return (
                                 <div key={key}>
@@ -136,8 +391,8 @@ export default function House(): ReactElement {
                       )}
                       {value > 1 && (
                         <>
-                          <div className="pl-2">入居人数:</div>
-                          <div className=" border-gray-400 text-right">
+                          <div className="pl-2">{t.occupants}:</div>
+                          <div className="border-gray-400 text-right">
                             <select
                               className="w-16 border text-right px-2"
                               onChange={({ target: { value } }) =>
@@ -151,17 +406,17 @@ export default function House(): ReactElement {
                                 return <option key={i}>{i + 1}</option>
                               })}
                             </select>{' '}
-                            / {value} 人
+                            / {value} {t.people}
                           </div>
                         </>
                       )}
                       <div className="md:col-span-2 pt-2 border-t text-right text-lg">
-                        <span className="inline-block pr-4">合計</span>
+                        <span className="inline-block pr-4">{t.total}</span>
                         {currencyFormat(
                           (rnum[key] - 1) * ShareRent +
                             Rent[key] +
                             CommonFee -
-                            SpecialSales[key].reduce(
+                            specialSales[key].reduce(
                               (i, c) => i + Object.values(c)[0],
                               0
                             )
@@ -176,238 +431,66 @@ export default function House(): ReactElement {
           </div>
         </div>
         <div>
-          <p className="text-sm mt-2">
-            ※1、※2）:
-            ドミトリーを継続して3ヶ月以上一人でご利用の方について、4ヶ月目から個室とみなした差分賃料が発生します
-          </p>
+          <p className="text-sm mt-2">※1、※2）: {t.dormitoryNote}</p>
         </div>
       </div>
       <div className="px-2 mx-auto pt-4">
         <OptionList />
         <hr className="border-b md:mt-4 mb-1" />
-        <div>
-          備考:女子ドミトリーには上記以外に専用キッチン・水回りが含まれます
-        </div>
+        <div>{t.femaleDormitoryNote}</div>
       </div>
     </>
   )
 }
 
 function OptionList(): ReactElement {
+  const { lang } = useLanguage()
+  const facilities = texts[lang].facilities
+  const facilityItems: FacilityTuple[] = [
+    ['station', facilities.station],
+    ['laundry', facilities.laundry],
+    ['dryer', facilities.dryer],
+    ['kitchen', facilities.kitchen],
+    ['bicycle', facilities.bicycle],
+    ['internet', facilities.internet],
+    ['bathroom', facilities.bathroom],
+    ['sink', facilities.sink],
+    ['bath', facilities.bath],
+    ['floor', facilities.floor],
+    ['livingroom', facilities.livingroom],
+    ['share', facilities.share],
+    ['lock', facilities.lock],
+    ['storage', facilities.storage],
+  ]
+
   return (
     <div className="grid gap-2 grid-cols-3 md:grid-cols-5 px-1 pb-2">
-      {[
-        [
+      {facilityItems.map(([img, facility], key) => (
+        <Option
+          icon={
+            <>
+              <p className="mb-2">
+                <img
+                  src={`/img/${img}.svg`}
+                  alt={facility.name}
+                  className="h-8 md:h-20"
+                />
+              </p>
+              <p>{facility.detail1}</p>
+              <p>{facility.detail2}</p>
+            </>
+          }
+          key={key}
+        >
           <>
-            <p className="mb-2">
-              <img
-                src="/img/station.svg"
-                alt="最寄り駅"
-                className="h-8 md:h-20"
-              />
-            </p>
-            <p>徒歩</p>
-            <p>3分</p>
-          </>,
-          <>
-            <p>旗の台駅</p>
-          </>,
-        ],
-        [
-          <>
-            <p className="mb-2">
-              <img
-                src="/img/laundry.svg"
-                alt="洗濯機"
-                className="h-8 md:h-20"
-              />
-            </p>
-            <p>縦型</p>
-            <p>2台</p>
-          </>,
-          <>
-            <p>洗濯機</p>
-          </>,
-        ],
-        [
-          <>
-            <p className="mb-2">
-              <img
-                src="/img/dryer.svg"
-                alt="衣類乾燥機"
-                className="h-8 md:h-20"
-              />
-            </p>
-            <p>ガス</p>
-            <p>1台</p>
-          </>,
-          <>
-            <p>衣類乾燥機</p>
-          </>,
-        ],
-        [
-          <>
-            <p className="mb-2">
-              <img src="/img/pot.svg" alt="キッチン" className="h-8 md:h-20" />
-            </p>
-            <p>ガス</p>
-            <p>3口</p>
-          </>,
-          <>
-            <p>キッチン</p>
-          </>,
-        ],
-        [
-          <>
-            <p className="mb-2">
-              <img
-                src="/img/bicycle.svg"
-                alt="駐輪スペース"
-                className="h-8 md:h-20"
-              />
-            </p>
-            <p>一人</p>
-            <p>1台</p>
-          </>,
-          <>
-            <p>駐輪スペース</p>
-          </>,
-        ],
-        [
-          <>
-            <p className="mb-2">
-              <img
-                src="/img/internet.svg"
-                alt="ネット環境"
-                className="h-8 md:h-20"
-              />
-            </p>
-            <p>光回線</p>
-            <p>Wifi</p>
-          </>,
-          <>
-            <p>ネット環境</p>
-          </>,
-        ],
-        [
-          <>
-            <p className="mb-2">
-              <img
-                src="/img/bathroom.svg"
-                alt="トイレ"
-                className="h-8 md:h-20"
-              />
-            </p>
-            <p>3ヶ所</p>
-            <p className="text-xs">(シャワートイレ)</p>
-          </>,
-          <>
-            <p>トイレ</p>
-          </>,
-        ],
-        [
-          <>
-            <p className="mb-2">
-              <img src="/img/sink.svg" alt="洗面所" className="h-8 md:h-20" />
-            </p>
-            <p>2ヶ所</p>
-            <p className="text-xs">兼脱衣所</p>
-          </>,
-          <>
-            <p>洗面所</p>
-          </>,
-        ],
-        [
-          <>
-            <p className="mb-2">
-              <img src="/img/bath.svg" alt="浴室" className="h-8 md:h-20" />
-            </p>
-            <p>2ヶ所</p>
-          </>,
-          <>
-            <p>風呂・シャワー</p>
-          </>,
-        ],
-        [
-          <>
-            <p className="mb-2">
-              <img src="/img/upstairs.svg" alt="階数" className="h-8 md:h-20" />
-            </p>
-            <p>2階</p>
-            <p> </p>
-          </>,
-          <>
-            <p>階数</p>
-          </>,
-        ],
-        [
-          <>
-            <p className="mb-2">
-              <img
-                src="/img/sofa.svg"
-                alt="共用リビング"
-                className="h-8 md:h-20"
-              />
-            </p>
-            <p>共用</p>
-            <p>1階</p>
-          </>,
-          <>
-            <p>リビング</p>
-          </>,
-        ],
-        [
-          <>
-            <p className="mb-2">
-              <img
-                src="/img/people.svg"
-                alt="個室シェア"
-                className="h-8 md:h-20"
-              />
-            </p>
-            <p>最大</p>
-            <p>3名</p>
-          </>,
-          <>
-            <p>ルームシェア対応</p>
-          </>,
-        ],
-        [
-          <>
-            <p className="mb-2">
-              <img src="/img/lock.svg" alt="玄関" className="h-8 md:h-20" />
-            </p>
-            <p>玄関</p>
-            <p>個室</p>
-          </>,
-          <>
-            <p>オートロック対応</p>
-          </>,
-        ],
-        [
-          <>
-            <p className="mb-2">
-              <img
-                src="/img/trunk.svg"
-                alt="トランクルーム"
-                className="h-8 md:h-20"
-              />
-            </p>
-            <p>あり</p>
-            <p>(有料)</p>
-          </>,
-          <>
-            <p>トランクルーム</p>
-          </>,
-        ],
-      ].map(([icon, text], key) => (
-        <Option icon={icon} key={key}>
-          {text}
+            <p>{facility.label}</p>
+          </>
         </Option>
       ))}
     </div>
   )
 }
+
 function Option({
   icon,
   children,
