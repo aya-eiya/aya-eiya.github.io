@@ -1,6 +1,6 @@
 'use client'
 
-import { ReactElement, useState } from 'react'
+import { ReactElement, useState, useRef } from 'react'
 import HeadLine from '../HeadLine'
 import {
   Available,
@@ -276,7 +276,16 @@ export default function House(): ReactElement {
   const { lang } = useLanguage()
   const [room, setRoom] = useState('a' as Room)
   const [rnum, setRNum] = useState(defaultRNum)
+  const [isScrolling, setIsScrolling] = useState(false)
+  const roomDetailsRef = useRef<HTMLDivElement>(null)
   const t = texts[lang]
+
+  const handleRoomChange = (newRoom: Room) => {
+    setRoom(newRoom)
+    setIsScrolling(true)
+    roomDetailsRef.current?.scrollIntoView({ behavior: 'smooth' })
+    setTimeout(() => setIsScrolling(false), 1000)
+  }
 
   const roomNames = getRoomNames(lang)
   const detailTexts = getDetailTexts(lang)
@@ -319,15 +328,33 @@ export default function House(): ReactElement {
           <h3 className="text-lg mb-4">{t.title}</h3>
           <p className="px-2 pb-4 text-sm">{t.selectRoom}</p>
           <div>
-            <FloorTable selected={room} setRoom={setRoom} />
+            <FloorTable selected={room} setRoom={handleRoomChange} />
           </div>
           <div className="flex flex-col md:flex-row">
             <div className="md:w-3/5">
               <div className="floor-map">
-                <FloorPlan selected={room} setRoom={setRoom} />
+                <FloorPlan selected={room} setRoom={handleRoomChange} />
               </div>
             </div>
-            <div className="room-details md:w-2/5">
+            {isScrolling && (
+              <div className="fixed bottom-4 right-4 bg-white rounded-full p-3 shadow-lg animate-bounce">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                  />
+                </svg>
+              </div>
+            )}
+            <div ref={roomDetailsRef} className="room-details md:w-2/5">
               {Rooms.map((key): ReactElement => {
                 const value = Upto[key]
                 const availResult = isAvailable(Available[key], lang)
