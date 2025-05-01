@@ -296,7 +296,14 @@ export default function House(): ReactElement {
       <HeadLine id="house">{t.title}</HeadLine>
       <div className="mt-10 mx-auto">
         <h2 className="px-2 md:px-0 text-xl my-4">{t.houseName}</h2>
-        <div className="bg-right bg-no-repeat bg-[url(/img/house01-01.png)] mb-4">
+        <div className="md:hidden">
+          <img
+            src="/img/house01-01.png"
+            alt="House Image"
+            className="w-full h-auto mb-4"
+          />
+        </div>
+        <div className="md:bg-right md:bg-no-repeat md:bg-[url(/img/house01-01.png)] mb-4">
           <div className="p-2 md:w-1/2 bg-opacity-60 bg-white text-shadow">
             <h3 className="text-lg mb-4">{t.houseType}</h3>
             <div className="px-2">
@@ -504,7 +511,7 @@ function OptionList(): ReactElement {
             <>
               <p className="mb-2">
                 <img
-                  src={`/img/${img}.svg`}
+                  src={`/img/options/${img}.svg`}
                   alt={facility.name}
                   className="h-8 md:h-20"
                 />
