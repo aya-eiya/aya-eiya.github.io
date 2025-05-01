@@ -327,7 +327,7 @@ export default function House(): ReactElement {
                 <FloorPlan selected={room} setRoom={setRoom} />
               </div>
             </div>
-            <div className="md:w-2/5">
+            <div className="room-details md:w-2/5">
               {Rooms.map((key): ReactElement => {
                 const value = Upto[key]
                 const availResult = isAvailable(Available[key], lang)
