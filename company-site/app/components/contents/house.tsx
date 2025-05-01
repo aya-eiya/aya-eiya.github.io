@@ -17,6 +17,7 @@ import {
   getSpecialSales,
 } from '../../domains/house'
 import { FloorPlan } from '../floorPlan'
+import { FloorTable } from '../floorTable'
 import { currencyFormat } from '../../domains/number'
 import Link from 'next/link'
 import { useLanguage } from '../../contexts/LanguageContext'
@@ -317,11 +318,16 @@ export default function House(): ReactElement {
         <div className="px-2 md:px-0">
           <h3 className="text-lg mb-4">{t.title}</h3>
           <p className="px-2 pb-4 text-sm">{t.selectRoom}</p>
-          <div className="grid grid-cols-5">
-            <div className="col-span-2 md:col-span-3 pb-6">
-              <FloorPlan selected={room} setRoom={setRoom} />
+          <div>
+            <FloorTable selected={room} setRoom={setRoom} />
+          </div>
+          <div className="flex flex-col md:flex-row">
+            <div className="md:w-3/5">
+              <div className="floor-map">
+                <FloorPlan selected={room} setRoom={setRoom} />
+              </div>
             </div>
-            <div className="col-span-3 md:col-span-2 pl-4">
+            <div className="md:w-2/5">
               {Rooms.map((key): ReactElement => {
                 const value = Upto[key]
                 const availResult = isAvailable(Available[key], lang)
