@@ -37,28 +37,29 @@ export function FloorPlan({
     (i, r) => ({ ...i, [r]: r === selected ? selectedWidth : defaultWidth }),
     {} as Record<Room, number>
   )
-
   return (
-    <div className="grid md:grid-cols-2">
-      <div className="p2">
-        <Floor1
-          colors={colors}
-          strokeWidths={strokeWidths}
-          setRoom={setRoom}
-          roomNames={roomNames}
-          lang={lang}
-        />
-        <p className="text-center">1F</p>
-      </div>
-      <div className="p2">
-        <Floor2
-          colors={colors}
-          strokeWidths={strokeWidths}
-          setRoom={setRoom}
-          roomNames={roomNames}
-          lang={lang}
-        />
-        <p className="text-center">2F</p>
+    <div className="flex flex-col">
+      <div className="flex md:flex-row flex-col gap-4">
+        <div className="p2">
+          <Floor1
+            colors={colors}
+            strokeWidths={strokeWidths}
+            setRoom={setRoom}
+            roomNames={roomNames}
+            lang={lang}
+          />
+          <p className="text-center">1F</p>
+        </div>
+        <div className="p2">
+          <Floor2
+            colors={colors}
+            strokeWidths={strokeWidths}
+            setRoom={setRoom}
+            roomNames={roomNames}
+            lang={lang}
+          />
+          <p className="text-center">2F</p>
+        </div>
       </div>
     </div>
   )

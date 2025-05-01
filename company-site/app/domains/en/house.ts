@@ -31,4 +31,4 @@ export const DetailTexts = {
 export const SpecialSalesName = 'Student or Engineer Discount'
 
 export const AvailableSoonText = (year: number, month: number): string =>
-  `Available from ${year}/${month}`
+  `Available ${year}/${month}`
