@@ -41,7 +41,7 @@ export default function Inquiry(): ReactElement {
                 {t.twitter}
                 <span
                   title={t.externalLink}
-                  className="inline-block align-sub bg-[url(/img/link.white.svg)] bg-no-repeat w-3 h-3 ml-1"
+                  className="inline-block align-sub bg-[url(/img/icons/link.white.svg)] bg-no-repeat w-3 h-3 ml-1"
                 />
               </Link>
             </div>
@@ -51,7 +51,7 @@ export default function Inquiry(): ReactElement {
                 {t.facebook}
                 <span
                   title={t.externalLink}
-                  className="inline-block align-sub bg-[url(/img/link.white.svg)] bg-no-repeat w-3 h-3 ml-1"
+                  className="inline-block align-sub bg-[url(/img/icons/link.white.svg)] bg-no-repeat w-3 h-3 ml-1"
                 />
               </Link>
             </div>
@@ -61,7 +61,7 @@ export default function Inquiry(): ReactElement {
                 {t.instagram}
                 <span
                   title={t.externalLink}
-                  className="inline-block align-sub bg-[url(/img/link.white.svg)] bg-no-repeat w-3 h-3 ml-1"
+                  className="inline-block align-sub bg-[url(/img/icons/link.white.svg)] bg-no-repeat w-3 h-3 ml-1"
                 />
               </Link>
             </div>
