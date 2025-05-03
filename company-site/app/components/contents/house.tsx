@@ -380,9 +380,12 @@ export default function House(): ReactElement {
                     <h2 className="text-lg pb-4">
                       {roomNames[key]}
                       {!comment && (
-                        <span className="text-red-500">({t.full})</span>
+                        <>
+                          {' '}
+                          <span className="text-red-500">({t.full})</span>
+                        </>
                       )}
-                      {typeof comment === 'string' && comment}
+                      {typeof comment === 'string' && <> {comment}</>}
                     </h2>
                     <div className="m-2 mt-0 rounded-xs border border-gray-400 p-2 text-sm">
                       {detailTexts[key]}

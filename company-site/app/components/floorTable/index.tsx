@@ -64,7 +64,9 @@ export function FloorTable({
                 )}
               </div>
               <div>
-                {typeof room.available === 'string' ? (
+                {room.rent === 0 ? (
+                  <></>
+                ) : typeof room.available === 'string' ? (
                   <span className="text-gray-600">{room.available}</span>
                 ) : room.available ? (
                   <span className="text-gray-600">
