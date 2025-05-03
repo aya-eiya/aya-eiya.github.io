@@ -76,7 +76,7 @@ function Floor1({
     <svg className="w-full" viewBox="0,0,1480.0,1280.0">
       <g className="stroke-brand-base">
         <g
-          name="1F1"
+          name="R_1fL"
           fill={colors.R_1fL}
           strokeWidth={strokeWidths.R_1fL}
           className={'cursor-pointer'}
@@ -86,7 +86,7 @@ function Floor1({
           <path d="M 2.0 2.0 m 455.0 0.0 h 273.0 h 50.0 v 182.0 h -50.0 v 182.0 h -273.0 v -182.0 v -182.0 z" />
         </g>
         <g
-          name="1F2"
+          name="M_1fDomi"
           fill={colors.M_1fDomi}
           strokeWidth={strokeWidths.M_1fDomi}
           className={'cursor-pointer'}
@@ -95,7 +95,7 @@ function Floor1({
           <path d="M 2.0 2.0 m 455.0 0.0 m 273 0 m 50 0 h 405.0 h 70 v 182.0 v 60 h -70 v 122.0 h -405.0 h -50 v -182.0 h 50 v -182.0 z" />
         </g>
         <g
-          name="1FB"
+          name="S_1fBath"
           stroke="black"
           fill={defaultColor}
           strokeWidth={defaultWidth}
@@ -103,7 +103,7 @@ function Floor1({
           <path d="M 2.0 2.0 m 455.0 0.0 m 273 0 m 455.0 0 m 70 0 h 203.0 v 242.0 v 122.0 h -203.0 h -70 v -122.0 h 70 v -60 v -182.0 z" />
         </g>
         <g
-          name="1FL"
+          name="S_1fLiv"
           stroke="black"
           fill={defaultColor}
           strokeWidth={defaultWidth}
@@ -111,7 +111,7 @@ function Floor1({
           <path d="M 2.0 2.0 m 455.0 182.0 m 0 182.0 h 420.0 v 546.0 h -420.0 v -546.0 z" />
         </g>
         <g
-          name="1FDK"
+          name="S_1fDk"
           stroke="black"
           fill={defaultColor}
           strokeWidth={defaultWidth}
@@ -119,7 +119,7 @@ function Floor1({
           <path d="M 2.0 2.0 m 455.0 182.0 m 0 182.0 m 420 0 h 581.0 v 546.0 h -191.0 v -256 h -390 v -290.0 z" />
         </g>
         <g
-          name="1FENT"
+          name="S_1fEnt"
           stroke="black"
           fill={defaultColor}
           strokeWidth={defaultWidth}
@@ -127,7 +127,7 @@ function Floor1({
           <path d="M 2.0 2.0 m 565.0 910.0 h 310 v -256 h 390 v 256 h 191 v 91.0 h -364 v 200 h -273 v -200 h -254 v -91.0 z" />
         </g>
         <g
-          name="STR"
+          name="S_1fStr"
           stroke="black"
           fill={defaultColor}
           strokeWidth={defaultWidth}
@@ -135,7 +135,7 @@ function Floor1({
           <path d="M 2.0 2.0 m 975.0 654.0 h 191 v 256 h -191 v -256 z" />
         </g>
         <g
-          name="1FWC"
+          name="S_1fToi"
           stroke="black"
           fill={defaultColor}
           strokeWidth={defaultWidth}
@@ -143,7 +143,7 @@ function Floor1({
           <path d="M 2.0 2.0 m 1337.0 910.0 h 120 v 91 h -120 v -91 z" />
         </g>
         <g
-          name="1F3"
+          name="R_1fJ"
           fill={colors.R_1fJ}
           strokeWidth={strokeWidths.R_1fJ}
           className={'cursor-pointer'}
@@ -152,7 +152,7 @@ function Floor1({
           <path d="M 2.0 2.0 m 182.0 910.0 h 273 h 110 v 91 h -50 h 50 h 254 v 273 h -637 v -273 v -91 z" />
         </g>
         <g
-          name="1F4"
+          name="R_1fC"
           fill={colors.R_1fC}
           strokeWidth={strokeWidths.R_1fC}
           className={'cursor-pointer'}
@@ -160,77 +160,75 @@ function Floor1({
         >
           <path d="M 2.0 2.0 m 1092.0 1001.0 h 364 v 273 h -364 v -273 z" />
         </g>
-        <g fontSize={48}>
-          <g fontSize={72} className="stroke-white fill-white">
-            <text
-              x="80"
-              y="180"
-              className={'cursor-pointer'}
-              onClick={() => setRoom('R_1fL')}
-            >
-              {roomNames.R_1fL}
-            </text>
-            <text
-              fontSize={38}
-              x="480"
-              y="160"
-              className={'cursor-pointer'}
-              onClick={() => setRoom('R_1fL')}
-            >
-              {lang === 'ja' ? 'サービスルーム' : 'DEN'}
-            </text>
-            <g className={'cursor-pointer'} onClick={() => setRoom('R_1fC')}>
-              <text x="1150" y="1150">
-                {roomNames.R_1fC}
-              </text>
-            </g>
-            <text
-              x="270"
-              y="1150"
-              className={'cursor-pointer'}
-              onClick={() => setRoom('R_1fJ')}
-            >
-              {roomNames.R_1fJ}
-            </text>
-            <text
-              fontSize={62}
-              x="800"
-              y="180"
-              className={'cursor-pointer'}
-              onClick={() => setRoom('M_1fDomi')}
-            >
-              {roomNames.M_1fDomi}
+        <g name="R_1fL" fontSize={72} className="stroke-white fill-white">
+          <text
+            x="80"
+            y="180"
+            className={'cursor-pointer'}
+            onClick={() => setRoom('R_1fL')}
+          >
+            {roomNames.R_1fL}
+          </text>
+          <text
+            fontSize={38}
+            x="480"
+            y="160"
+            className={'cursor-pointer'}
+            onClick={() => setRoom('R_1fL')}
+          >
+            {lang === 'ja' ? 'サービスルーム' : 'DEN'}
+          </text>
+          <g className={'cursor-pointer'} onClick={() => setRoom('R_1fC')}>
+            <text x="1150" y="1150">
+              {roomNames.R_1fC}
             </text>
           </g>
-          <g className="stroke-brand-dark fill-brand-dark">
-            <text x="1300" y="70">
-              {lang === 'ja' ? '浴室' : 'Bath'}
-            </text>
-            <text x="1300" y="180">
-              {lang === 'ja' ? '脱衣所' : 'Changing Room'}
-            </text>
-            <text x="1300" y="250">
-              {lang === 'ja' ? '洗面所' : 'Washroom'}
-            </text>
-            <text x="1320" y="320">
-              W.C.
-            </text>
-            <text x="580" y="620">
-              {lang === 'ja' ? 'リビング' : 'Living Room'}
-            </text>
-            <text x="960" y="560">
-              {lang === 'ja' ? 'ダイニング・キッチン' : 'Dining & Kitchen'}
-            </text>
-            <text x="1030" y="770">
-              {lang === 'ja' ? '階段' : 'Stairs'}
-            </text>
-            <text x="1360" y="968">
-              W.C.
-            </text>
-            <text x="920" y="1168">
-              {lang === 'ja' ? '玄関' : 'Entrance'}
-            </text>
-          </g>
+          <text
+            x="270"
+            y="1150"
+            className={'cursor-pointer'}
+            onClick={() => setRoom('R_1fJ')}
+          >
+            {roomNames.R_1fJ}
+          </text>
+          <text
+            fontSize={62}
+            x="800"
+            y="180"
+            className={'cursor-pointer'}
+            onClick={() => setRoom('M_1fDomi')}
+          >
+            {roomNames.M_1fDomi}
+          </text>
+        </g>
+        <g fontSize={48} className="stroke-brand-dark fill-brand-dark">
+          <text x="1300" y="70">
+            {lang === 'ja' ? '浴室' : 'Bath'}
+          </text>
+          <text x="1300" y="180">
+            {lang === 'ja' ? '脱衣所' : 'Changing Room'}
+          </text>
+          <text x="1300" y="250">
+            {lang === 'ja' ? '洗面所' : 'Washroom'}
+          </text>
+          <text x="1320" y="320">
+            W.C.
+          </text>
+          <text x="580" y="620">
+            {lang === 'ja' ? 'リビング' : 'Living Room'}
+          </text>
+          <text x="960" y="560">
+            {lang === 'ja' ? 'ダイニング・キッチン' : 'Dining & Kitchen'}
+          </text>
+          <text x="1030" y="770">
+            {lang === 'ja' ? '階段' : 'Stairs'}
+          </text>
+          <text x="1360" y="968">
+            W.C.
+          </text>
+          <text x="920" y="1168">
+            {lang === 'ja' ? '玄関' : 'Entrance'}
+          </text>
         </g>
       </g>
     </svg>
@@ -347,7 +345,7 @@ function Floor2({
               {lang === 'ja' ? '階段' : 'Stairs'}
             </text>
             <text x="410" y="1100">
-              {lang === 'ja' ? 'レンタルスペース' : 'Rental Space'}
+              {lang === 'ja' ? 'イベントスペース' : 'Event Space'}
             </text>
             <text x="1252" y="970">
               {lang === 'ja' ? '洗面所' : 'Washroom'}

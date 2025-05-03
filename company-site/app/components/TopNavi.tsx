@@ -4,6 +4,7 @@ import { ReactElement } from 'react'
 import MenuIcon from './icons/menu'
 import Link from 'next/link'
 import type { Lang } from '../domains/pages'
+import { useLanguage } from '../contexts/LanguageContext'
 
 const menuItems = {
   ja: {
@@ -31,12 +32,12 @@ const menuItems = {
 export default function TopNavi({
   isMenuOpen,
   setIsMenuOpen,
-  lang = 'ja',
 }: {
   isMenuOpen: boolean
   setIsMenuOpen: (isMenuOpen: boolean) => void
   lang?: Lang
 }): ReactElement {
+  const { lang } = useLanguage()
   const items = menuItems[lang]
 
   return (
@@ -89,7 +90,7 @@ export default function TopNavi({
               {items.blog}
               <span
                 title="外部リンク"
-                className="inline-block align-sub bg-[url(/img/link.svg)] bg-no-repeat w-3 h-3 ml-1"
+                className="inline-block align-sub bg-[url(/img/icons/link.svg)] bg-no-repeat w-3 h-3 ml-1"
               />
             </div>
           </Link>

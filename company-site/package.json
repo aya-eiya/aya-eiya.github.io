@@ -30,7 +30,8 @@
     "dev": "next dev",
     "lint": "eslint --fix",
     "format": "prettier --write",
-    "start": "next start"
+    "start": "next start",
+    "gen:png": "find public/img -name '*.jpeg' | xargs -I{} magick '{}' -resize '640x480' '{}.png';"
   },
   "version": "0.1.0"
 }
