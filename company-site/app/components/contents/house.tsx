@@ -280,7 +280,7 @@ export default function House(): ReactElement {
   const roomDetailsRef = useRef<HTMLDivElement>(null)
   const t = texts[lang]
 
-  const handleRoomChange = (newRoom: Room) => {
+  const handleRoomChange = (newRoom: Room): void => {
     setRoom(newRoom)
     setIsScrolling(true)
     roomDetailsRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -322,7 +322,7 @@ export default function House(): ReactElement {
                     {t.eventLink}
                     <span
                       title="External Link"
-                      className="inline-block align-sub bg-[url(/img/link.svg)] bg-no-repeat w-4 h-4 ml-1"
+                      className="inline-block align-sub bg-[url(/img/icons/link.svg)] bg-no-repeat w-4 h-4 ml-1"
                     />
                   </span>
                 </Link>

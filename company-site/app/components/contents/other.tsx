@@ -54,7 +54,7 @@ export default function Other(): ReactElement {
                     {entry.url}
                     <span
                       title={t.externalLink}
-                      className="inline-block align-sub bg-[url(/img/link.svg)] bg-no-repeat w-3 h-3 ml-1"
+                      className="inline-block align-sub bg-[url(/img/icons/link.svg)] bg-no-repeat w-3 h-3 ml-1"
                     />
                   </p>
                   <p className="mt-2">{entry.description}</p>

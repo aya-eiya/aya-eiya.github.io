@@ -115,13 +115,13 @@ export function getSpecialSales(
   }
 }
 
-export const Images = {
-  R_1fL: '/images/rooms/R_1fL.jpg',
-  R_1fC: '/images/rooms/R_1fC.jpg',
-  R_1fJ: '/images/rooms/R_1fJ.jpg',
-  R_2fA: '/images/rooms/R_2fA.jpg',
-  R_2fB: '/images/rooms/R_2fB.jpg',
-  M_2fDomi: '/images/rooms/M_2fDomi.jpg',
-  M_1fDomi: '/images/rooms/M_1fDomi.jpg',
-  F_2fDomi: '/images/rooms/F_2fDomi.jpg',
+export const ImagDir = {
+  R_1fL: '/img/rooms/R_1fL/',
+  R_1fC: '/img/rooms/R_1fC/',
+  R_1fJ: '/img/rooms/R_1fJ/',
+  R_2fA: '/img/rooms/R_2fA/',
+  R_2fB: '/img/rooms/R_2fB/',
+  M_2fDomi: '/img/rooms/M_2fDomi/',
+  M_1fDomi: '/img/rooms/M_1fDomi/',
+  F_2fDomi: '/img/rooms/F_2fDomi/',
 }

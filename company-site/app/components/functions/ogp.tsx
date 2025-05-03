@@ -3,14 +3,15 @@
 import { useParams } from 'next/navigation'
 import { ReactElement } from 'react'
 import { isPageName, getTitles } from '../../domains/pages'
-import type { Lang } from '../../domains/pages'
+import { useLanguage } from '../../contexts/LanguageContext'
 
 const descriptions = {
-  ja: '品川区にて戸建シェアハウス、レンタルスペースの運営を行うAY合同会社のホームページです。ITエンジニア向けを中心としたコンセプトシェアハウスを運営しており、起業家やITエンジニアに人気の物件となっております',
-  en: 'Welcome to AY LLC, operating residential share houses and rental spaces in Shinagawa, Tokyo. We manage concept share houses focused on IT engineers, which are popular among entrepreneurs and tech professionals.',
+  ja: '品川区にて戸建シェアハウスの運営を行うAY合同会社のホームページです。ITエンジニア向けを中心としたコンセプトシェアハウスを運営しており、起業家やITエンジニア、海外移住者の一時帰国時の滞在に人気の物件となっております',
+  en: 'Welcome to AY LLC, operating residential share houses in Shinagawa, Tokyo. We manage concept share houses focused on IT engineers, which are popular among entrepreneurs and tech professionals.',
 }
 
-export default function Ogp({ lang = 'ja' }: { lang?: Lang }): ReactElement {
+export default function Ogp(): ReactElement {
+  const { lang } = useLanguage()
   const { page: _p } = useParams()
   const titles = getTitles(lang)
 
