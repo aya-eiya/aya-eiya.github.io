@@ -399,18 +399,20 @@ export default function House(): ReactElement {
                       </h3>
                       <div className="pl-2">{t.deposit}:</div>
                       <div className="text-right">
-                        {currencyFormat(Deposit)} 円
+                        {currencyFormat(Deposit)} {lang === 'ja' ? '円' : 'JPY'}
                       </div>
                       <h3 className="md:col-span-2 text-lg pb-1">
                         {t.monthlyFee}
                       </h3>
                       <div className="pl-2">{t.rent}:</div>
                       <div className="text-right">
-                        {currencyFormat(Rent[key])} 円
+                        {currencyFormat(Rent[key])}{' '}
+                        {lang === 'ja' ? '円' : 'JPY'}
                       </div>
                       <div className="pl-2">{t.commonFee}:</div>
                       <div className="text-right">
-                        {currencyFormat(CommonFee)} 円
+                        {currencyFormat(CommonFee)}{' '}
+                        {lang === 'ja' ? '円' : 'JPY'}
                       </div>
                       {specialSales[key].length > 0 && (
                         <>
@@ -422,7 +424,8 @@ export default function House(): ReactElement {
                               const key = Object.keys(c)[0]
                               return (
                                 <div key={key}>
-                                  {key}: -{currencyFormat(c[key])} 円
+                                  {key}: -{currencyFormat(c[key])}{' '}
+                                  {lang === 'ja' ? '円' : 'JPY'}
                                 </div>
                               )
                             })}
