@@ -1,6 +1,6 @@
 'use client'
 
-import { ReactElement, useState, useRef } from 'react'
+import { ReactElement, useState, useRef, useCallback } from 'react'
 import HeadLine from '../HeadLine'
 import {
   Available,
@@ -272,12 +272,97 @@ const texts = {
   },
 }
 
+type ImageModalProps = {
+  images: string[]
+  alt: string
+  isOpen: boolean
+  onClose: () => void
+}
+
+function ImageModal({
+  images,
+  alt,
+  isOpen,
+  onClose,
+}: ImageModalProps): ReactElement | null {
+  const [selectedIndex, setSelectedIndex] = useState(0)
+
+  if (!isOpen) return null
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex flex-col items-center justify-center p-4">
+      <div className="relative max-w-4xl w-full bg-gray-100 rounded-lg p-4">
+        <button
+          onClick={onClose}
+          className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+          aria-label="Close modal"
+        >
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+        <div className="aspect-video mb-4">
+          <img
+            src={images[selectedIndex]}
+            alt={alt}
+            className="w-full h-full object-contain rounded-lg"
+          />
+        </div>
+        {images.length > 1 && (
+          <div className="flex gap-2 overflow-x-auto pb-2">
+            {images.map((image, index) => (
+              <button
+                key={index}
+                onClick={() => setSelectedIndex(index)}
+                className={`flex-shrink-0 w-24 aspect-video ${
+                  index === selectedIndex ? 'ring-2 ring-brand-base' : ''
+                }`}
+              >
+                <img
+                  src={image}
+                  alt={`${alt} thumbnail ${index + 1}`}
+                  className="w-full h-full object-cover rounded"
+                />
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  )
+}
+
 export default function House(): ReactElement {
   const { lang } = useLanguage()
   const [room, setRoom] = useState('a' as Room)
   const [rnum, setRNum] = useState(defaultRNum)
   const [isScrolling, setIsScrolling] = useState(false)
+  const [modalImages, setModalImages] = useState<string[]>([])
+  const [modalAlt, setModalAlt] = useState('')
+  const [isModalOpen, setIsModalOpen] = useState(false)
   const roomDetailsRef = useRef<HTMLDivElement>(null)
+
+  const openModal = useCallback((images: string[], alt: string) => {
+    setModalImages(images)
+    setModalAlt(alt)
+    setIsModalOpen(true)
+  }, [])
+
+  const closeModal = useCallback(() => {
+    setIsModalOpen(false)
+    setModalImages([])
+    setModalAlt('')
+  }, [])
   const t = texts[lang]
 
   const handleRoomChange = (newRoom: Room): void => {
@@ -336,6 +421,40 @@ export default function House(): ReactElement {
           <p className="px-2 pb-4 text-sm">{t.selectRoom}</p>
           <div>
             <FloorTable selected={room} setRoom={handleRoomChange} />
+            <div className="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {Object.entries(Available).map(([roomKey, available]) => {
+                if (typeof available === 'boolean' && !available) return null
+                const imageFolder = Object.keys(roomNames).find(
+                  (k) => k === roomKey
+                )
+                if (!imageFolder) return null
+
+                const images = Array.from({ length: 8 }, (_, i) => i + 1).map(
+                  (num) => `/img/rooms/${imageFolder}/${num}.${'png'}`
+                )
+                if (images.length === 0) return null
+
+                return (
+                  <div
+                    key={roomKey}
+                    className="aspect-video relative group cursor-pointer"
+                    onClick={() => {
+                      handleRoomChange(roomKey as Room)
+                      openModal(images, roomNames[roomKey as Room])
+                    }}
+                  >
+                    <img
+                      src={images[0]}
+                      alt={`Room ${roomNames[roomKey as Room]}`}
+                      className="w-full h-full object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-2 rounded-b-lg">
+                      {roomNames[roomKey as Room]}
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
           </div>
           <div className="flex flex-col md:flex-row">
             <div className="md:w-3/5">
@@ -482,9 +601,58 @@ export default function House(): ReactElement {
       </div>
       <div className="px-2 mx-auto pt-4">
         <OptionList />
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {[
+            { folder: 'S_1fEnt', name: t.facilities.lock.name },
+            { folder: 'S_1fLiv', name: t.facilities.livingroom.name },
+            { folder: 'S_1fDk', name: t.facilities.kitchen.name },
+            { folder: 'S_2fBath', name: t.facilities.bath.name },
+            { folder: 'S_2fToi', name: t.facilities.bathroom.name },
+          ].map((area, index) => {
+            const images = Array.from({ length: 8 }, (_, i) => i + 1)
+              .map(
+                (num) =>
+                  `/img/rooms/${area.folder}/${num}.${area.folder.startsWith('S_2f') ? 'jpeg' : 'png'}`
+              )
+              .filter((src) => {
+                try {
+                  const img = new Image()
+                  img.src = src
+                  return img.complete
+                } catch {
+                  return false
+                }
+              })
+
+            if (images.length === 0) return null
+
+            return (
+              <div
+                key={index}
+                className="aspect-video relative cursor-pointer"
+                onClick={() => openModal(images, area.name)}
+              >
+                <img
+                  src={images[0]}
+                  alt={area.name}
+                  className="w-full h-full object-cover rounded-lg transition-transform duration-300 hover:scale-105"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-2 rounded-b-lg">
+                  {area.name}
+                </div>
+              </div>
+            )
+          })}
+        </div>
         <hr className="border-b md:mt-4 mb-1" />
         <div>{t.femaleDormitoryNote}</div>
       </div>
+      <ImageModal
+        images={modalImages}
+        alt={modalAlt}
+        isOpen={isModalOpen}
+        onClose={closeModal}
+      />
     </>
   )
 }

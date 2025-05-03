@@ -246,7 +246,7 @@ function Floor2({
     <svg className="w-full" viewBox="148.0,0,1480.0,1280.0">
       <g className="stroke-brand-base">
         <g
-          name="R_2fB"
+          name="R_2fA"
           fill={colors.R_2fA}
           strokeWidth={strokeWidths.R_2fA}
           className={'cursor-pointer'}
@@ -373,7 +373,7 @@ function Floor2({
             <path d="M 2.0 2.0 m 201 0 m 273 0 m 520 0 h 400 v 120 h -400 v -120 z" />
           </g>
           <g
-            name="2f1K_Str"
+            name="S_2f1KStr"
             stroke="black"
             fill={defaultColor}
             strokeWidth={defaultWidth}
