@@ -126,7 +126,8 @@ export default function House(): ReactElement {
             <div className="mt-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-4">
               {LivingSpaces.map((roomKey) => {
                 const images = getRoomImages(roomKey)
-                if (images.length === 0) return null
+                const displayImages =
+                  images.length > 0 ? images : ['/img/rooms/no-image.svg']
 
                 return (
                   <div
@@ -134,11 +135,11 @@ export default function House(): ReactElement {
                     className="aspect-video relative group cursor-pointer"
                     onClick={() => {
                       handleRoomChange(roomKey)
-                      openModal(images, roomNames[roomKey])
+                      openModal(displayImages, roomNames[roomKey])
                     }}
                   >
                     <img
-                      src={images[0]}
+                      src={displayImages[0]}
                       alt={`Room ${roomNames[roomKey]}`}
                       className="w-full h-full object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
                     />
@@ -201,19 +202,19 @@ export default function House(): ReactElement {
                       )}
                       {typeof comment === 'string' && <> {comment}</>}
                     </h3>
-                    <div className="m-2 mt-0 rounded-xs border border-gray-400 p-2 text-sm flex justify-between items-start">
+                    <div className="m-2 mt-0 rounded-xs border border-gray-400 p-2 text-sm flex flex-col justify-between items-start">
                       <div>{detailTexts[key]}</div>
-                      <button
-                        className="ml-4 px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded text-sm flex items-center whitespace-nowrap"
-                        onClick={() => {
-                          const images = getRoomImages(key)
-                          if (images.length > 0) {
+                      {getRoomImages(key).length > 0 && (
+                        <button
+                          className="ml-4 px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded text-sm flex items-center whitespace-nowrap"
+                          onClick={() => {
+                            const images = getRoomImages(key)
                             openModal(images, roomNames[key])
-                          }
-                        }}
-                      >
-                        {t.showPhotos}
-                      </button>
+                          }}
+                        >
+                          {t.showPhotos}
+                        </button>
+                      )}
                     </div>
                     <div
                       className={
@@ -311,7 +312,8 @@ export default function House(): ReactElement {
         <div className="mt-4 grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mb-4">
           {SharedSpaces.map((roomKey) => {
             const images = getRoomImages(roomKey)
-            if (images.length === 0) return null
+            const displayImages =
+              images.length > 0 ? images : ['/img/rooms/no-image.svg']
 
             return (
               <div
@@ -319,11 +321,11 @@ export default function House(): ReactElement {
                 className="aspect-video relative group cursor-pointer"
                 onClick={() => {
                   handleRoomChange(roomKey)
-                  openModal(images, roomNames[roomKey])
+                  openModal(displayImages, roomNames[roomKey])
                 }}
               >
                 <img
-                  src={images[0]}
+                  src={displayImages[0]}
                   alt={`Room ${roomNames[roomKey]}`}
                   className="w-full h-full object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
                 />
