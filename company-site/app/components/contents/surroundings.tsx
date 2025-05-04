@@ -1,9 +1,14 @@
 'use client'
 
 import { ReactElement } from 'react'
+import { staticFiles } from '../../domains/staticFiles'
 import HeadLine from '../HeadLine'
 import Link from 'next/link'
 import { useLanguage } from '../../contexts/LanguageContext'
+
+const surroundingImages = staticFiles.filter((file) =>
+  file.startsWith('img/surroundings/')
+)
 
 const texts = {
   ja: {
@@ -97,9 +102,18 @@ export default function Surroundings(): ReactElement {
         <section>
           <div className="mx-2">
             <h2 className="my-1 font-semibold">{t.stationArea}</h2>
-            <div className="mb-4 flex flex-row md:flex-col">
-              <div className=""></div>
-              <div className="">
+            <div className="mb-4 flex flex-col md:flex-row gap-4">
+              <div className="md:w-1/2 flex flex-col gap-4">
+                {surroundingImages.map((image, index) => (
+                  <img
+                    key={index}
+                    src={`/${image}`}
+                    alt={`Surroundings ${index + 1}`}
+                    className="w-full rounded-lg shadow-md"
+                  />
+                ))}
+              </div>
+              <div className="md:w-1/2">
                 <p className="mb-2">{t.description1}</p>
                 <p className="mb-2">{t.description2}</p>
                 <p className="mb-2">{t.description3}</p>
