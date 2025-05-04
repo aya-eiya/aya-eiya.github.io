@@ -421,7 +421,7 @@ export default function House(): ReactElement {
           <p className="px-2 pb-4 text-sm">{t.selectRoom}</p>
           <div>
             <FloorTable selected={room} setRoom={handleRoomChange} />
-            <div className="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
               {Object.entries(Available).map(([roomKey, available]) => {
                 if (typeof available === 'boolean' && !available) return null
                 const imageFolder = Object.keys(roomNames).find(
@@ -446,6 +446,9 @@ export default function House(): ReactElement {
                     <img
                       src={images[0]}
                       alt={`Room ${roomNames[roomKey as Room]}`}
+                      onLoad={(e) => {
+                        console.log('done', e.currentTarget.src)
+                      }}
                       className="w-full h-full object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
                     />
                     <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-2 rounded-b-lg">

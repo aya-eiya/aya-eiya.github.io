@@ -22,6 +22,7 @@ module.exports = [
       'next.*.js',
       'postcss.config.js',
       'tailwind.config.js',
+      'scripts/**',
     ],
   },
   {
@@ -82,5 +83,9 @@ module.exports = [
         ...globals.browser,
       },
     },
+  },
+  {
+    files: ['scripts/**/*.js'],
+    js.configs.recommended,
   },
 ]

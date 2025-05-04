@@ -124,4 +124,4 @@ export const ImagDir = {
   M_2fDomi: '/img/rooms/M_2fDomi/',
   M_1fDomi: '/img/rooms/M_1fDomi/',
   F_2fDomi: '/img/rooms/F_2fDomi/',
-}
+} as const
