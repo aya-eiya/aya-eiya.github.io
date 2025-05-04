@@ -15,6 +15,7 @@ const menuItems = {
     company: '会社概要',
     blog: 'ブログ',
     inquiry: 'お問合せ',
+    terms: '利用規約',
     privacy: 'プライバシーポリシー',
   },
   en: {
@@ -25,6 +26,7 @@ const menuItems = {
     company: 'Company Profile',
     blog: 'Blog',
     inquiry: 'Contact',
+    terms: 'Terms of Use',
     privacy: 'Privacy Policy',
   },
 }
@@ -98,6 +100,11 @@ export default function TopNavi({
         <li className="text-right">
           <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
             <Link href="/inquiry">{items.inquiry}</Link>
+          </div>
+        </li>
+        <li className="text-right">
+          <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
+            <Link href="/terms">{items.terms}</Link>
           </div>
         </li>
         <li className="text-right">

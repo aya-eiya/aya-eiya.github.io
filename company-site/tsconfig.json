@@ -28,5 +28,5 @@
     ".next/types/**/*.ts",
     "app/privacy"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules","scripts/**/*.js"]
 }

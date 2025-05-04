@@ -36,9 +36,7 @@ export function LanguageProvider({
       ?.split('=')[1] === 'en'
       ? 'en'
       : undefined
-  const naviLang =
-    globalThis.navigator?.language?.slice(0, 2) === 'en' ? 'en' : undefined
-  const defaultLang = pathLang || paramLang || cookieLang || naviLang || 'ja'
+  const defaultLang = pathLang || paramLang || cookieLang || 'ja'
   const [lang, setLang] = useState<Lang>(defaultLang)
   useEffect(() => {
     // confirm lang is valid

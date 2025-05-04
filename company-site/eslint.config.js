@@ -22,6 +22,7 @@ module.exports = [
       'next.*.js',
       'postcss.config.js',
       'tailwind.config.js',
+      'scripts/**',
     ],
   },
   {

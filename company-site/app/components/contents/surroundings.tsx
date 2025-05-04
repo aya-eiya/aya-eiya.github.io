@@ -37,11 +37,6 @@ const texts = {
         branch: ['旗の台店'],
         type: 'イタリアン・パスタ・ピザ専門店',
       },
-      {
-        name: 'サイゼリヤ',
-        branch: ['旗の台店'],
-        type: 'イタリアン・ファミレス',
-      },
       { name: '麻布しき', branch: ['旗の台店'], type: '和食・うなぎ' },
       { name: 'まるやま', branch: [], type: '老舗の昭和食堂' },
     ],
@@ -78,11 +73,6 @@ const texts = {
         name: 'Popola Mama',
         branch: ['Hatanodai'],
         type: 'Italian Restaurant (Pasta & Pizza)',
-      },
-      {
-        name: 'Saizeriya',
-        branch: ['Hatanodai'],
-        type: 'Italian Family Restaurant',
       },
       {
         name: 'Azabu Shiki',

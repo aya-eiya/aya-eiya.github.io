@@ -8,6 +8,7 @@ import type {
 } from './en/house'
 import * as jaHouse from './ja/house'
 import * as enHouse from './en/house'
+import { staticFiles } from './staticFiles'
 
 export const Rooms = [
   'R_1fL',
@@ -15,13 +16,31 @@ export const Rooms = [
   'R_1fJ',
   'R_2fA',
   'R_2fB',
-  'M_2fDomi',
   'M_1fDomi',
   'F_2fDomi',
+  'S_2fOfc',
+  'S_1fBath',
+  'S_1fDk',
+  'S_1fEnt',
+  'S_1fLiv',
+  'S_1fStr',
+  'S_1fToi',
+  'S_2fBath',
+  'S_2fCor',
+  'S_2fEvSp',
+  'S_2fStr',
+  'S_2fToi',
+  'S_2f1KStr',
 ] as const
 
 export type Room = (typeof Rooms)[number]
 export type Lang = 'ja' | 'en'
+
+export const isSharedSpace = (room: Room): boolean => room.startsWith('S_')
+export const isLivingSpace = (room: Room): boolean => !isSharedSpace(room)
+
+export const SharedSpaces = Rooms.filter(isSharedSpace)
+export const LivingSpaces = Rooms.filter(isLivingSpace)
 
 export function getRoomNames(
   lang: Lang
@@ -35,15 +54,31 @@ export function getDetailTexts(
   return lang === 'ja' ? jaHouse.DetailTexts : enHouse.DetailTexts
 }
 
-export const Upto: Record<Room, number> = {
+export type RoomRecord<T> = {
+  [K in Room]: T
+}
+
+export const Upto: RoomRecord<number> = {
   R_1fL: 3,
   R_1fC: 2,
   R_1fJ: 2,
   R_2fA: 2,
   R_2fB: 2,
-  M_2fDomi: 0,
   M_1fDomi: 1,
   F_2fDomi: 1,
+  S_2fOfc: 0,
+  S_1fBath: 0,
+  S_1fDk: 0,
+  S_1fEnt: 0,
+  S_1fLiv: 0,
+  S_1fStr: 0,
+  S_1fToi: 0,
+  S_2fBath: 0,
+  S_2fCor: 0,
+  S_2fEvSp: 0,
+  S_2fStr: 0,
+  S_2fToi: 0,
+  S_2f1KStr: 0,
 }
 
 export type YearMonth = {
@@ -53,15 +88,27 @@ export type YearMonth = {
 
 export type AvailableState = true | false | YearMonth
 
-export const Available: Record<Room, AvailableState> = {
+export const Available: RoomRecord<AvailableState> = {
   R_1fL: { year: 2025, month: 6 },
   R_1fC: true,
   R_1fJ: false,
   R_2fA: true,
   R_2fB: { year: 2025, month: 6 },
-  M_2fDomi: true,
   M_1fDomi: true,
   F_2fDomi: true,
+  S_2fOfc: true,
+  S_1fBath: true,
+  S_1fDk: true,
+  S_1fEnt: true,
+  S_1fLiv: true,
+  S_1fStr: true,
+  S_1fToi: true,
+  S_2fBath: true,
+  S_2fCor: true,
+  S_2fEvSp: true,
+  S_2fStr: true,
+  S_2fToi: true,
+  S_2f1KStr: true,
 }
 
 export function isAvailable(
@@ -87,20 +134,32 @@ export const CommonFee = 5000
 export const Deposit = 30000
 export const ShareRent = 15000
 
-export const Rent: Record<Room, number> = {
+export const Rent: RoomRecord<number> = {
   R_1fL: 105000,
   R_1fC: 90000,
   R_1fJ: 105000,
   R_2fA: 85000,
   R_2fB: 85000,
-  M_2fDomi: 0,
   M_1fDomi: 65000,
   F_2fDomi: 45000,
+  S_2fOfc: 0,
+  S_1fBath: 0,
+  S_1fDk: 0,
+  S_1fEnt: 0,
+  S_1fLiv: 0,
+  S_1fStr: 0,
+  S_1fToi: 0,
+  S_2fBath: 0,
+  S_2fCor: 0,
+  S_2fEvSp: 0,
+  S_2fStr: 0,
+  S_2fToi: 0,
+  S_2f1KStr: 0,
 }
 
 export function getSpecialSales(
   lang: Lang
-): Record<Room, { [key: string]: number }[]> {
+): RoomRecord<{ [key: string]: number }[]> {
   const SpecialSalesName =
     lang === 'ja' ? jaHouse.SpecialSalesName : enHouse.SpecialSalesName
   return {
@@ -109,19 +168,51 @@ export function getSpecialSales(
     R_1fJ: [{ [SpecialSalesName]: 5000 }],
     R_2fA: [{ [SpecialSalesName]: 5000 }],
     R_2fB: [{ [SpecialSalesName]: 5000 }],
-    M_2fDomi: [],
     M_1fDomi: [],
     F_2fDomi: [],
+    S_2fOfc: [],
+    S_1fBath: [],
+    S_1fDk: [],
+    S_1fEnt: [],
+    S_1fLiv: [],
+    S_1fStr: [],
+    S_1fToi: [],
+    S_2fBath: [],
+    S_2fCor: [],
+    S_2fEvSp: [],
+    S_2fStr: [],
+    S_2fToi: [],
+    S_2f1KStr: [],
   }
 }
 
-export const ImagDir = {
+export const ImagDir: RoomRecord<string> = {
   R_1fL: '/img/rooms/R_1fL/',
   R_1fC: '/img/rooms/R_1fC/',
   R_1fJ: '/img/rooms/R_1fJ/',
   R_2fA: '/img/rooms/R_2fA/',
   R_2fB: '/img/rooms/R_2fB/',
-  M_2fDomi: '/img/rooms/M_2fDomi/',
   M_1fDomi: '/img/rooms/M_1fDomi/',
   F_2fDomi: '/img/rooms/F_2fDomi/',
+  S_2fOfc: '/img/rooms/S_2fOfc/',
+  S_1fBath: '/img/rooms/S_1fBath/',
+  S_1fDk: '/img/rooms/S_1fDk/',
+  S_1fEnt: '/img/rooms/S_1fEnt/',
+  S_1fLiv: '/img/rooms/S_1fLiv/',
+  S_1fStr: '/img/rooms/S_1fStr/',
+  S_1fToi: '/img/rooms/S_1fToi/',
+  S_2fBath: '/img/rooms/S_2fBath/',
+  S_2fCor: '/img/rooms/S_2fCor/',
+  S_2fEvSp: '/img/rooms/S_2fEvSp/',
+  S_2fStr: '/img/rooms/S_2fStr/',
+  S_2fToi: '/img/rooms/S_2fToi/',
+  S_2f1KStr: '/img/rooms/S_2f1KStr/',
+} as const
+
+export function getRoomImages(room: Room): string[] {
+  const basePath = `img/rooms/${room}/`
+  return staticFiles
+    .filter((file) => file.startsWith(basePath))
+    .map((file) => '/' + file)
+    .sort((a, b) => a.localeCompare(b))
 }
