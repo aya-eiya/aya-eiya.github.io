@@ -18,7 +18,6 @@ export const Rooms = [
   'R_2fB',
   'M_1fDomi',
   'F_2fDomi',
-  'F_2fDomi',
   'S_2fOfc',
   'S_1fBath',
   'S_1fDk',
@@ -36,6 +35,12 @@ export const Rooms = [
 
 export type Room = (typeof Rooms)[number]
 export type Lang = 'ja' | 'en'
+
+export const isSharedSpace = (room: Room): boolean => room.startsWith('S_')
+export const isLivingSpace = (room: Room): boolean => !isSharedSpace(room)
+
+export const SharedSpaces = Rooms.filter(isSharedSpace)
+export const LivingSpaces = Rooms.filter(isLivingSpace)
 
 export function getRoomNames(
   lang: Lang

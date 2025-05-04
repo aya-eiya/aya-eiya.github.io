@@ -101,7 +101,7 @@ function Layout({
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const pathname = usePathname()
   const hideNavi = useMemo(() => {
-    return pathname.includes('/privacy')
+    return pathname.includes('/privacy') || pathname.includes('/terms')
   }, [pathname])
 
   return (
@@ -111,7 +111,7 @@ function Layout({
           <div className="w-full py-4 bg-brand-dark shadow-xs text-white fixed z-10 top-0">
             <div className="mx-auto sm:w-7/12 md:w-9/12 flex flex-row justify-between items-center px-4">
               <h1 className="text-xl">
-                <Link href="/">AY LLC</Link>
+                <Link href="/">{lang === 'ja' ? 'AY合同会社' : 'AY LLC'}</Link>
               </h1>
 
               <div className="flex items-center gap-1">

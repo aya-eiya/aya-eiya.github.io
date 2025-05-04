@@ -6,4 +6,5 @@ export const titles = {
   inquiry: 'AY HOUSE | Contact',
   other: 'AY HOUSE | External Links',
   surroundings: 'AY HOUSE | Surroundings',
+  terms: 'AY HOUSE | Terms of Use',
 } as const

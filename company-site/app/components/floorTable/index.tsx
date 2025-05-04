@@ -3,7 +3,7 @@
 import { ReactElement } from 'react'
 import {
   Room,
-  Rooms,
+  LivingSpaces,
   getRoomNames,
   Rent,
   Available,
@@ -27,7 +27,7 @@ export function FloorTable({
   const { lang } = useLanguage()
   const roomNames = getRoomNames(lang)
 
-  const roomList: RoomInfo[] = Rooms.map((room) => ({
+  const roomList: RoomInfo[] = LivingSpaces.map((room) => ({
     name: roomNames[room],
     rent: Rent[room],
     available: isAvailable(Available[room], lang),
@@ -40,15 +40,15 @@ export function FloorTable({
           <div
             key={index}
             className={`border border-black cursor-pointer ${
-              Rooms[index] === selected
+              LivingSpaces[index] === selected
                 ? 'font-bold bg-gray-100 text-black'
                 : 'text-gray-600'
             } hover:bg-gray-100`}
-            onClick={() => setRoom(Rooms[index])}
+            onClick={() => setRoom(LivingSpaces[index])}
           >
             <div className="p-2 border-b border-black">
               <span
-                className={`text-base ${Rooms[index] === selected ? 'text-black' : 'text-gray-600'}`}
+                className={`text-base ${LivingSpaces[index] === selected ? 'text-black' : 'text-gray-600'}`}
               >
                 {room.name}
               </span>
