@@ -4,7 +4,7 @@ export const RoomNames = {
   R_1fJ: 'Japanese Room',
   R_2fA: 'Room (A)',
   R_2fB: 'Room (B)',
-  M_2fDomi: 'Shared Office',
+  S_2fOfc: 'Shared Office',
   M_1fDomi: 'Male Dormitory',
   F_2fDomi: 'Female Dormitory',
 } as const
@@ -20,7 +20,7 @@ export const DetailTexts = {
     'A private room on the 2nd floor (≒6.7 tatami/10.4㎡) with a large balcony overlooking the elementary school grounds. Up to 2 people can share this room.',
   R_2fB:
     'A private room on the 2nd floor (≒6.7 tatami/10.4㎡) with a large balcony overlooking the elementary school grounds. Up to 2 people can share this room.',
-  M_2fDomi:
+  S_2fOfc:
     'A shared office space equipped with exercise equipment including pull-up bars. External users can access it as a coworking space with a monthly contract.',
   M_1fDomi:
     'Male dormitory with one bunk bed and storage cabinet per person. Up to 6 people share one room. Note: Single occupancy requires an additional ¥30,000 per month.',

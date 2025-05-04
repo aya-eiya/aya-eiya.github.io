@@ -84,8 +84,4 @@ module.exports = [
       },
     },
   },
-  {
-    files: ['scripts/**/*.js'],
-    js.configs.recommended,
-  },
 ]

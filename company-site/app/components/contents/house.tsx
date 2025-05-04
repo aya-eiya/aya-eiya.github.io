@@ -15,6 +15,7 @@ import {
   getRoomNames,
   getDetailTexts,
   getSpecialSales,
+  getRoomImages,
 } from '../../domains/house'
 import { FloorPlan } from '../floorPlan'
 import { FloorTable } from '../floorTable'
@@ -422,37 +423,31 @@ export default function House(): ReactElement {
           <div>
             <FloorTable selected={room} setRoom={handleRoomChange} />
             <div className="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
-              {Object.entries(Available).map(([roomKey, available]) => {
+              {Rooms.map((roomKey) => {
+                const available = Available[roomKey]
                 if (typeof available === 'boolean' && !available) return null
-                const imageFolder = Object.keys(roomNames).find(
-                  (k) => k === roomKey
-                )
-                if (!imageFolder) return null
-
-                const images = Array.from({ length: 8 }, (_, i) => i + 1).map(
-                  (num) => `/img/rooms/${imageFolder}/${num}.${'png'}`
-                )
+                const images = getRoomImages(roomKey)
                 if (images.length === 0) return null
 
                 return (
                   <div
-                    key={roomKey}
+                    key={roomKey.toString()}
                     className="aspect-video relative group cursor-pointer"
                     onClick={() => {
-                      handleRoomChange(roomKey as Room)
+                      handleRoomChange(roomKey)
                       openModal(images, roomNames[roomKey as Room])
                     }}
                   >
                     <img
                       src={images[0]}
-                      alt={`Room ${roomNames[roomKey as Room]}`}
+                      alt={`Room ${roomNames[roomKey]}`}
                       onLoad={(e) => {
                         console.log('done', e.currentTarget.src)
                       }}
                       className="w-full h-full object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
                     />
                     <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-2 rounded-b-lg">
-                      {roomNames[roomKey as Room]}
+                      {roomNames[roomKey]}
                     </div>
                   </div>
                 )

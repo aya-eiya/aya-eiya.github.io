@@ -280,12 +280,12 @@ function Floor2({
           <path d="M 2.0 2.0 m 975.0 654.0 h 191 v 256 h -191 v -256 z" />
         </g>
         <g
-          name="M_2fDomi"
+          name="S_2fOfc"
           stroke="black"
-          fill={colors.M_2fDomi}
-          strokeWidth={strokeWidths.M_2fDomi}
+          fill={colors.S_2fOfc}
+          strokeWidth={strokeWidths.S_2fOfc}
           className={'cursor-pointer'}
-          onClick={() => setRoom('M_2fDomi')}
+          onClick={() => setRoom('S_2fOfc')}
         >
           <path d="M 2.0 2.0 m 201 330 m 273 0 m 410 0 h 91 h 500.5 v 546 h -309 v -223 h -191 v -153 h -91 z" />
         </g>
@@ -334,9 +334,9 @@ function Floor2({
             x="1020"
             y="550"
             className={'cursor-pointer'}
-            onClick={() => setRoom('M_2fDomi')}
+            onClick={() => setRoom('S_2fOfc')}
           >
-            {roomNames.M_2fDomi}
+            {roomNames.S_2fOfc}
           </text>
         </g>
         <g fontSize={48} className="stroke-brand-dark fill-brand-dark">
