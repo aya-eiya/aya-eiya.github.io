@@ -21,7 +21,7 @@ export const faqContent: FAQContent = {
       },
       {
         q: '入居の条件を教えてください',
-        a: '身分証明書、収入証明書が必要です。外国人の方は在留カードをご提示いただき、契約開始の時点を含む1ヶ月以上の在留期間があることが条件です。また、日本語もしくは英語でのコミュニケーションが可能である必要があります。',
+        a: '身分証明書、収入証明書が必要です。外国人の方は在留カード（在留カードがない場合は、滞在許可期間を示すVISAなどの書類）をご提示いただき、契約開始の時点を含む1ヶ月以上の在留期間があることが条件です。また、日本語もしくは英語でのコミュニケーションが可能である必要があります。',
       },
       {
         q: '原状回復の基準について教えてください',
@@ -74,7 +74,7 @@ export const faqContent: FAQContent = {
       },
       {
         q: 'What are the requirements for moving in?',
-        a: 'Identification and proof of income are required. Foreign residents must provide their residence card and have a period of stay that extends at least one month beyond the contract start date. They must also be able to communicate in either Japanese or English.',
+        a: 'Identification and proof of income are required. Foreign residents must provide their residence card (or VISA documentation showing permitted period of stay if residence card is not available) and have a period of stay that extends at least one month beyond the contract start date. They must also be able to communicate in either Japanese or English.',
       },
       {
         q: 'What are the standards for property restoration?',
