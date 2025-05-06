@@ -64,31 +64,33 @@ export default function Other(): ReactElement {
   return (
     <>
       <HeadLine id="other">{t.title}</HeadLine>
-      <div className="mt-10 mx-auto">
-        <p>{t.description}</p>
-      </div>
-      <div className="mt-10 mx-auto">
-        <ul className="pl-2">
-          {t.entries.map((entry, index) => (
-            <a key={index} href={entry.url} target={'_blank'}>
-              <dl className="flex flex-row">
-                <dt className="text-lg w-24 min-w-[6rem] flex-shrink-0">
-                  {entry.title}
-                </dt>
-                <dd className="px-2 flex-1">
-                  <p className="underline">
-                    {entry.url}
-                    <span
-                      title={t.externalLink}
-                      className="inline-block align-sub bg-[url(/img/icons/link.svg)] bg-no-repeat w-3 h-3 ml-1"
-                    />
-                  </p>
-                  <p className="mt-2">{entry.description}</p>
-                </dd>
-              </dl>
-            </a>
-          ))}
-        </ul>
+      <div className="mx-2">
+        <div className="mt-10 mx-auto">
+          <p>{t.description}</p>
+        </div>
+        <div className="mt-10 mx-auto">
+          <ul className="pl-2">
+            {t.entries.map((entry, index) => (
+              <a key={index} href={entry.url} target={'_blank'}>
+                <dl className="flex flex-row">
+                  <dt className="text-lg w-24 min-w-[6rem] flex-shrink-0">
+                    {entry.title}
+                  </dt>
+                  <dd className="px-2 flex-1">
+                    <p className="underline">
+                      {entry.url}
+                      <span
+                        title={t.externalLink}
+                        className="inline-block align-sub bg-[url(/img/icons/link.svg)] bg-no-repeat w-3 h-3 ml-1"
+                      />
+                    </p>
+                    <p className="mt-2">{entry.description}</p>
+                  </dd>
+                </dl>
+              </a>
+            ))}
+          </ul>
+        </div>
       </div>
     </>
   )

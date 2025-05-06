@@ -150,22 +150,24 @@ export default function Engineering(): ReactElement {
   return (
     <>
       <HeadLine id="engineering">{t.title}</HeadLine>
-      <div className="mt-10 mx-auto">
-        <p>{t.description1}</p>
-        <p className="mt-2">{t.description2}</p>
-        <p className="mt-2">{t.description3}</p>
-      </div>
-      <div className="mt-10 mx-auto">
-        <h3 className="text-lg mb-4">{t.experienceTitle}</h3>
-        {t.experiences.map((experience, index) => (
-          <dl key={index} className="pl-2">
-            <dt className="text-lg mt-4">{experience.title}</dt>
-            <dd className="px-2 mt-2">{experience.description}</dd>
-            <dd className="px-2 mt-2">
-              {t.technologies} {experience.technologies}
-            </dd>
-          </dl>
-        ))}
+      <div className="mx-2">
+        <div className="mt-10 mx-auto">
+          <p>{t.description1}</p>
+          <p className="mt-2">{t.description2}</p>
+          <p className="mt-2">{t.description3}</p>
+        </div>
+        <div className="mt-10 mx-auto">
+          <h3 className="text-lg mb-4">{t.experienceTitle}</h3>
+          {t.experiences.map((experience, index) => (
+            <dl key={index} className="pl-2">
+              <dt className="text-lg mt-4">{experience.title}</dt>
+              <dd className="px-2 mt-2">{experience.description}</dd>
+              <dd className="px-2 mt-2">
+                {t.technologies} {experience.technologies}
+              </dd>
+            </dl>
+          ))}
+        </div>
       </div>
     </>
   )
