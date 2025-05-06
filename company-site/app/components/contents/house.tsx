@@ -42,6 +42,14 @@ export default function House(): ReactElement {
   const [modalImages, setModalImages] = useState<string[]>([])
   const [modalAlt, setModalAlt] = useState('')
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [specialSalesEnabled, setSpecialSalesEnabled] = useState<{
+    [key in Room]: boolean
+  }>(() =>
+    Rooms.reduce(
+      (acc, r) => ({ ...acc, [r]: false }),
+      {} as { [key in Room]: boolean }
+    )
+  )
   const roomDetailsRef = useRef<HTMLDivElement>(null)
 
   const openModal = useCallback((images: string[], alt: string) => {
@@ -245,8 +253,22 @@ export default function House(): ReactElement {
                       </div>
                       {specialSales[key].length > 0 && (
                         <>
-                          <div className="pl-2 md:col-span-2">
-                            {t.campaign}:
+                          <div className="pl-2 md:col-span-2 flex items-center gap-2">
+                            <input
+                              type="checkbox"
+                              id={`special-sales-${key}`}
+                              checked={specialSalesEnabled[key]}
+                              onChange={(e) =>
+                                setSpecialSalesEnabled((prev) => ({
+                                  ...prev,
+                                  [key]: e.target.checked,
+                                }))
+                              }
+                              className="w-4 h-4"
+                            />
+                            <label htmlFor={`special-sales-${key}`}>
+                              {t.campaign}:
+                            </label>
                           </div>
                           <div className="text-right md:col-span-2">
                             {specialSales[key].map((c) => {
@@ -288,10 +310,12 @@ export default function House(): ReactElement {
                           (rnum[key] - 1) * ShareRent +
                             Rent[key] +
                             CommonFee -
-                            specialSales[key].reduce(
-                              (i, c) => i + Object.values(c)[0],
-                              0
-                            )
+                            (specialSalesEnabled[key]
+                              ? specialSales[key].reduce(
+                                  (i, c) => i + Object.values(c)[0],
+                                  0
+                                )
+                              : 0)
                         )}{' '}
                         円
                       </div>
