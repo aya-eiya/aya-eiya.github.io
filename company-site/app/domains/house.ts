@@ -90,7 +90,7 @@ export type AvailableState = true | false | YearMonth
 
 export const Available: RoomRecord<AvailableState> = {
   R_1fL: { year: 2025, month: 6 },
-  R_1fC: true,
+  R_1fC: false,
   R_1fJ: false,
   R_2fA: true,
   R_2fB: { year: 2025, month: 6 },
