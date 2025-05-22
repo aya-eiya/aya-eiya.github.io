@@ -1,6 +1,7 @@
 import { ReactElement } from 'react'
 import { useLanguage } from '../../contexts/LanguageContext'
 import { texts } from '../house/texts'
+import { staticFiles } from '../../domains/staticFiles'
 
 type FacilityInfo = {
   name: string
@@ -54,7 +55,7 @@ export function OptionList(): ReactElement {
             <>
               <p className="mb-2">
                 <img
-                  src={`/img/options/${img}.svg`}
+                  src={`/${staticFiles.find((f) => f === `img/options/${img}.svg`)}`}
                   alt={facility.name}
                   className="h-8 md:h-20"
                 />

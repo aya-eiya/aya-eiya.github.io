@@ -4,6 +4,7 @@ import { useParams } from 'next/navigation'
 import { ReactElement } from 'react'
 import { isPageName, getTitles } from '../../domains/pages'
 import { useLanguage } from '../../contexts/LanguageContext'
+import { staticFiles } from '../../domains/staticFiles'
 
 const descriptions = {
   ja: '品川区にて戸建シェアハウスの運営を行うAY合同会社のホームページです。ITエンジニア向けを中心としたコンセプトシェアハウスを運営しており、起業家やITエンジニア、海外移住者の一時帰国時の滞在に人気の物件となっております',
@@ -27,7 +28,7 @@ export default function Ogp(): ReactElement {
       <meta property="og:description" content={descriptions[lang]} />
       <meta
         property="og:image"
-        content={`https://www.aya-eiya.work/img/house_ogp.png`}
+        content={`https://www.aya-eiya.work/${staticFiles.find((f) => f === 'img/house_ogp.png')}`}
       />
     </>
   )
