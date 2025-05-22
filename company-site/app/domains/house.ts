@@ -186,29 +186,6 @@ export function getSpecialSales(
   }
 }
 
-export const ImagDir: RoomRecord<string> = {
-  R_1fL: '/img/rooms/R_1fL/',
-  R_1fC: '/img/rooms/R_1fC/',
-  R_1fJ: '/img/rooms/R_1fJ/',
-  R_2fA: '/img/rooms/R_2fA/',
-  R_2fB: '/img/rooms/R_2fB/',
-  M_1fDomi: '/img/rooms/M_1fDomi/',
-  F_2fDomi: '/img/rooms/F_2fDomi/',
-  S_2fOfc: '/img/rooms/S_2fOfc/',
-  S_1fBath: '/img/rooms/S_1fBath/',
-  S_1fDk: '/img/rooms/S_1fDk/',
-  S_1fEnt: '/img/rooms/S_1fEnt/',
-  S_1fLiv: '/img/rooms/S_1fLiv/',
-  S_1fStr: '/img/rooms/S_1fStr/',
-  S_1fToi: '/img/rooms/S_1fToi/',
-  S_2fBath: '/img/rooms/S_2fBath/',
-  S_2fCor: '/img/rooms/S_2fCor/',
-  S_2fEvSp: '/img/rooms/S_2fEvSp/',
-  S_2fStr: '/img/rooms/S_2fStr/',
-  S_2fToi: '/img/rooms/S_2fToi/',
-  S_2f1KStr: '/img/rooms/S_2f1KStr/',
-} as const
-
 export function getRoomImages(room: Room): string[] {
   const basePath = `img/rooms/${room}/`
   return staticFiles
