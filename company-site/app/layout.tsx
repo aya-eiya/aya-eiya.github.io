@@ -89,7 +89,7 @@ function RootLayoutContent({
         />
         <title>{title}</title>
       </head>
-      <body>
+      <body className="overflow-x-hidden">
         <Layout>{children}</Layout>
       </body>
     </html>
@@ -159,7 +159,7 @@ function Layout({
           )}
         </header>
         <main
-          className="mt-24 mx-auto w-full px-4 max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg flex flex-col pb-11 text-brand-dark"
+          className="mt-24 mx-auto box-border px-4 w-11/12 sm:w-10/12 md:w-9/12 lg:w-8/12 flex flex-col pb-11 text-brand-dark"
           onClick={
             isMenuOpen
               ? () => {
