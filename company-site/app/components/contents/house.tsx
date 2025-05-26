@@ -9,7 +9,6 @@ import {
   Room,
   Rooms,
   Deposit,
-  Upto,
   ShareRent,
   isAvailable,
   getRoomNames,
@@ -18,6 +17,8 @@ import {
   getRoomImages,
   SharedSpaces,
   LivingSpaces,
+  Capacity,
+  getRoomType,
 } from '../../domains/house'
 import { FloorPlan } from '../floorPlan'
 import { FloorTable } from '../floorTable'
@@ -31,7 +32,7 @@ import { texts } from '../house/texts'
 
 const defaultRNum = Rooms.reduce(
   (i, r) => ({ ...i, [r]: 1 }),
-  {} as typeof Upto
+  {} as { [K in Room]: number }
 )
 
 export default function House(): ReactElement {
@@ -186,13 +187,20 @@ export default function House(): ReactElement {
             )}
             <div ref={roomDetailsRef} className="room-details md:w-2/5">
               {Rooms.map((key): ReactElement => {
-                const value = Upto[key]
-                const availResult = isAvailable(Available[key], lang)
+                const capacity = Capacity[key]
+                const roomType = getRoomType(key)
+                const availability = Available[key]
+                const availResult = isAvailable(availability, lang)
                 const comment =
-                  typeof availResult === 'string' ||
-                  typeof availResult === 'boolean'
-                    ? availResult
-                    : null
+                  typeof availResult === 'number'
+                    ? lang === 'ja'
+                      ? `${availResult}床空き`
+                      : `${availResult} beds available`
+                    : typeof availResult === 'string' ||
+                        typeof availResult === 'boolean'
+                      ? availResult
+                      : null
+                const maxNum = capacity.maxResidents
                 return (
                   <div
                     key={key}
@@ -283,7 +291,7 @@ export default function House(): ReactElement {
                           </div>
                         </>
                       )}
-                      {value > 1 && (
+                      {roomType === 'private' && maxNum > 1 && (
                         <>
                           <div className="pl-2">{t.occupants}:</div>
                           <div className="border-gray-400 text-right">
@@ -296,11 +304,11 @@ export default function House(): ReactElement {
                                 })
                               }
                             >
-                              {[...Array(value)].map((_, i) => {
+                              {[...Array(maxNum)].map((_, i) => {
                                 return <option key={i}>{i + 1}</option>
                               })}
                             </select>{' '}
-                            / {value} {t.people}
+                            / {maxNum} {t.people}
                           </div>
                         </>
                       )}

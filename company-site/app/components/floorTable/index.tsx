@@ -8,13 +8,16 @@ import {
   Rent,
   Available,
   isAvailable,
+  getRoomType,
+  RoomType,
 } from '../../domains/house'
 import { useLanguage } from '../../contexts/LanguageContext'
 
 type RoomInfo = {
   name: string
   rent: number
-  available: string | boolean
+  available: string | boolean | number
+  type: RoomType
 }
 
 export function FloorTable({
@@ -31,6 +34,7 @@ export function FloorTable({
     name: roomNames[room],
     rent: Rent[room],
     available: isAvailable(Available[room], lang),
+    type: getRoomType(room),
   }))
 
   return (
@@ -66,6 +70,17 @@ export function FloorTable({
               <div>
                 {room.rent === 0 ? (
                   <></>
+                ) : room.type === 'dormitory' &&
+                  typeof room.available === 'number' ? (
+                  <span className="text-gray-600">
+                    {room.available > 0
+                      ? lang === 'ja'
+                        ? `${room.available}床空き`
+                        : `${room.available} beds`
+                      : lang === 'ja'
+                        ? '満室'
+                        : 'Full'}
+                  </span>
                 ) : typeof room.available === 'string' ? (
                   <span className="text-gray-600">{room.available}</span>
                 ) : room.available ? (
