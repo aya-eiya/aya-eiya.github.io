@@ -53,6 +53,10 @@ function RootLayoutContent({
   return (
     <html lang={lang}>
       <head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+        />
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-P626NSEPMZ"
@@ -155,7 +159,7 @@ function Layout({
           )}
         </header>
         <main
-          className="mt-24 mx-auto max-w-(--breakpoint-sm) md:max-w-(--breakpoint-sm) lg:max-w-(--breakpoint-md) 2xl:max-w-(--breakpoint-lg) flex flex-col pb-11 text-brand-dark"
+          className="mt-24 mx-auto w-full px-4 max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg flex flex-col pb-11 text-brand-dark"
           onClick={
             isMenuOpen
               ? () => {
