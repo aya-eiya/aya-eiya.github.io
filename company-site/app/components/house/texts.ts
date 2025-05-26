@@ -36,6 +36,8 @@ const baseContent: Record<Lang, Omit<TextContent, 'faq' | 'facilities'>> = {
       'ドミトリーを継続して3ヶ月以上一人でご利用の方について、4ヶ月目から個室とみなした差分賃料が発生します',
     femaleDormitoryNote:
       '備考:女子ドミトリーには上記以外に専用キッチン・水回りが含まれます',
+    availableBeds: '空きベッド数',
+    currentResidents: '現在の入居者数',
   },
   en: {
     title: 'Share House Guide',
@@ -69,6 +71,8 @@ const baseContent: Record<Lang, Omit<TextContent, 'faq' | 'facilities'>> = {
       'Note: For dormitory residents staying alone for more than 3 months, additional private room rate difference will apply from the 4th month',
     femaleDormitoryNote:
       'Note: Female dormitory includes exclusive kitchen and water facilities in addition to the above',
+    availableBeds: 'Available Beds',
+    currentResidents: 'Current Residents',
   },
 }
 

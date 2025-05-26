@@ -43,6 +43,8 @@ export type TextContent = {
   total: string
   dormitoryNote: string
   femaleDormitoryNote: string
+  availableBeds: string
+  currentResidents: string
   faq: FAQ
   facilities: Facilities
 }
