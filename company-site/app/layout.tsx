@@ -53,10 +53,7 @@ function RootLayoutContent({
   return (
     <html lang={lang}>
       <head>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-P626NSEPMZ"
@@ -110,7 +107,7 @@ function Layout({
 
   return (
     <>
-      <div className="w-full relative text-brand-dark">
+      <div className="relative text-brand-dark">
         <header className="flex items-center justify-center flex-col mb-4">
           <div className="w-full py-4 bg-brand-dark shadow-xs text-white fixed z-10 top-0">
             <div className="mx-auto sm:w-7/12 md:w-9/12 flex flex-row justify-between items-center px-4">

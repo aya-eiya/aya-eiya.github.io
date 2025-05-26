@@ -11,6 +11,14 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
+  /* URLやlong textの折り返し制御 */
+  a {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+    display: inline-block;
+  }
+
   *,
   ::after,
   ::before,
