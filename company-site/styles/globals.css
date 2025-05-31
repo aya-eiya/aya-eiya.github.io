@@ -12,7 +12,7 @@
 */
 @layer base {
   /* URLやlong textの折り返し制御 */
-  a {
+  a, a p, a span, a div {
     word-break: break-word;
     overflow-wrap: break-word;
     max-width: 100%;
