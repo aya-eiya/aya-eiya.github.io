@@ -101,10 +101,15 @@ function Layout({
   const { lang, setLang } = useLanguage()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const pathname = usePathname()
+
   const hideNavi = useMemo(() => {
     return pathname.includes('/privacy') || pathname.includes('/terms')
   }, [pathname])
 
+  // 広告ページの場合は最小限のレイアウトを返す
+  if (pathname.startsWith('/ads')) {
+    return <>{children}</>
+  }
   return (
     <>
       <div className="relative text-brand-dark">
