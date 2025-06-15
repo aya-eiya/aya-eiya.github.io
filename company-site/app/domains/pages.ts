@@ -10,6 +10,7 @@ export const PageNames = [
   'engineering',
   'inquiry',
   'other',
+  'community',
   'surroundings',
 ] as const
 
