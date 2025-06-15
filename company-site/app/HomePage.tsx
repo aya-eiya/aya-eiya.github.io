@@ -1,5 +1,6 @@
 import { ReactElement } from 'react'
 import Company from './components/contents/company'
+import Community from './components/contents/community'
 import Home from './components/contents/home'
 import House from './components/contents/house'
 import Inquiry from './components/contents/inquiry'
@@ -15,6 +16,8 @@ export default function HomePage(): ReactElement {
       <House />
       <hr className="h-44 border-0" />
       <Surroundings />
+      <hr className="h-44 border-0" />
+      <Community />
       <hr className="h-44 border-0" />
       <Company />
       <hr className="h-44 border-0" />
