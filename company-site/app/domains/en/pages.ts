@@ -1,11 +1,10 @@
 export const titles = {
-  home: 'AY HOUSE',
-  company: 'AY HOUSE | Company Profile',
-  engineering: 'AY HOUSE | Software Development',
+  home: 'AY.LLC.',
+  company: 'AY.LLC. | Company Profile',
+  engineering: 'AY.LLC. | Software Development',
   house: 'AY HOUSE | Share House',
   inquiry: 'AY HOUSE | Contact',
-  other: 'AY HOUSE | External Links',
   surroundings: 'AY HOUSE | Surroundings',
   terms: 'AY HOUSE | Terms of Use',
-  community: 'AY HOUSE | Community',
+  other: 'AY.LLC. | External Links',
 } as const

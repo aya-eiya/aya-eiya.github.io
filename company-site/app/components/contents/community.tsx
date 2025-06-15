@@ -157,7 +157,7 @@ export default function Community(): ReactElement {
                       )}
                     </div>
                     <Link
-                      href="https://discord.gg/your-invite-link"
+                      href="https://discord.gg/yAd8PEUwgh"
                       target="_blank"
                       className="text-brand-base hover:text-brand-bright inline-flex items-center"
                     >
