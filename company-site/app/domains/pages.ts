@@ -6,7 +6,6 @@ import type { titles as EnTitles } from './en/pages'
 export const PageNames = [
   'home',
   'house',
-  'community',
   'company',
   'engineering',
   'inquiry',
