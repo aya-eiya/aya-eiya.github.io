@@ -7,4 +7,5 @@ export const titles = {
   other: 'AY HOUSE | 外部リンク',
   surroundings: 'AY HOUSE | 周辺の環境',
   community: 'AY HOUSE | コミュニティ',
+  campaign: 'AY HOUSE | イベントスペース無償提供',
 } as const

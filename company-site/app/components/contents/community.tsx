@@ -3,11 +3,16 @@
 import { ReactElement } from 'react'
 import HeadLine from '../HeadLine'
 import { useLanguage } from '../../contexts/LanguageContext'
-import { staticFiles } from '../../domains/staticFiles'
+import { staticFiles, fileDetails } from '../../domains/staticFiles'
 import Link from 'next/link'
 
 const images = staticFiles
   .filter((path) => path.startsWith('img/communities'))
+  .filter(
+    (path) =>
+      fileDetails[path].type === 'png' &&
+      fileDetails[path].dimensions.width > 600
+  )
   .map((path) => `${path}`)
 
 const discordQRImages = {

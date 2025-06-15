@@ -8,4 +8,5 @@ export const titles = {
   surroundings: 'AY HOUSE | Surroundings',
   terms: 'AY HOUSE | Terms of Use',
   community: 'AY HOUSE | Community',
+  campaign: 'AY HOUSE | Free Event Space',
 } as const

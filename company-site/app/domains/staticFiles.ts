@@ -14,8 +14,10 @@ export interface FileInfo {
 
 export const staticFiles = [
   "favicon.ico",
+  "img/communities/cooking_dining.png",
   "img/communities/networking.png",
   "img/communities/open_house.png",
+  "img/communities/study_room.png",
   "img/contacts/discord_qr/l.png",
   "img/contacts/discord_qr/m.png",
   "img/contacts/discord_qr/s.png",
@@ -103,22 +105,40 @@ export const fileDetails = {
     "type": "ico",
     "mtime": "2024-07-05T06:31:10.698Z"
   },
-  "img/communities/networking.png": {
-    "size": 4628087,
+  "img/communities/cooking_dining.png": {
+    "size": 158767,
     "type": "png",
-    "mtime": "2025-06-15T03:50:13.230Z",
+    "mtime": "2025-06-15T06:26:13.204Z",
     "dimensions": {
-      "width": 2304,
-      "height": 1227
+      "width": 270,
+      "height": 260
+    }
+  },
+  "img/communities/networking.png": {
+    "size": 412627,
+    "type": "png",
+    "mtime": "2025-06-15T04:00:18.674Z",
+    "dimensions": {
+      "width": 601,
+      "height": 320
     }
   },
   "img/communities/open_house.png": {
-    "size": 470722,
+    "size": 390092,
     "type": "png",
-    "mtime": "2025-06-15T03:38:55.027Z",
+    "mtime": "2025-06-15T03:59:17.537Z",
     "dimensions": {
       "width": 640,
-      "height": 480
+      "height": 320
+    }
+  },
+  "img/communities/study_room.png": {
+    "size": 320802,
+    "type": "png",
+    "mtime": "2025-06-15T06:37:08.040Z",
+    "dimensions": {
+      "width": 590,
+      "height": 406
     }
   },
   "img/contacts/discord_qr/l.png": {
