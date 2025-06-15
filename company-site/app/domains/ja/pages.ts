@@ -6,4 +6,5 @@ export const titles = {
   inquiry: 'AY HOUSE | お問合せ',
   other: 'AY HOUSE | 外部リンク',
   surroundings: 'AY HOUSE | 周辺の環境',
+  community: 'AY HOUSE | コミュニティ',
 } as const

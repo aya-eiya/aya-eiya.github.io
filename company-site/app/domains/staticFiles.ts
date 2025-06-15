@@ -14,10 +14,11 @@ export interface FileInfo {
 
 export const staticFiles = [
   "favicon.ico",
+  "img/communities/networking.png",
+  "img/communities/open_house.png",
   "img/contacts/discord_qr/l.png",
   "img/contacts/discord_qr/m.png",
   "img/contacts/discord_qr/s.png",
-  "img/contacts/instagram_qr/.DS_Store",
   "img/contacts/instagram_qr/l.png",
   "img/contacts/instagram_qr/m.png",
   "img/contacts/instagram_qr/s.png",
@@ -46,7 +47,6 @@ export const staticFiles = [
   "img/options/sink.svg",
   "img/options/station.svg",
   "img/options/storage.svg",
-  "img/rooms/.DS_Store",
   "img/rooms/F_2fDomi/1.png",
   "img/rooms/F_2fDomi/2.png",
   "img/rooms/F_2fDomi/3.png",
@@ -55,6 +55,9 @@ export const staticFiles = [
   "img/rooms/F_2fDomi/6.png",
   "img/rooms/F_2fDomi/7.png",
   "img/rooms/F_2fDomi/8.png",
+  "img/rooms/M_1fDomi/1.png",
+  "img/rooms/M_1fDomi/2.png",
+  "img/rooms/M_1fDomi/3.png",
   "img/rooms/R_1fC/1.png",
   "img/rooms/R_1fC/2.png",
   "img/rooms/R_1fJ/1.png",
@@ -88,7 +91,6 @@ export const staticFiles = [
   "img/rooms/S_2fStr/1.png",
   "img/rooms/S_2fStr/2.png",
   "img/rooms/S_2fToi/1.png",
-  "img/rooms/garden.png",
   "img/rooms/no-image.svg",
   "img/surroundings/1.png",
   "img/surroundings/2.png",
@@ -100,6 +102,24 @@ export const fileDetails = {
     "size": 25931,
     "type": "ico",
     "mtime": "2024-07-05T06:31:10.698Z"
+  },
+  "img/communities/networking.png": {
+    "size": 4628087,
+    "type": "png",
+    "mtime": "2025-06-15T03:50:13.230Z",
+    "dimensions": {
+      "width": 2304,
+      "height": 1227
+    }
+  },
+  "img/communities/open_house.png": {
+    "size": 470722,
+    "type": "png",
+    "mtime": "2025-06-15T03:38:55.027Z",
+    "dimensions": {
+      "width": 640,
+      "height": 480
+    }
   },
   "img/contacts/discord_qr/l.png": {
     "size": 39680,
@@ -127,11 +147,6 @@ export const fileDetails = {
       "width": 180,
       "height": 180
     }
-  },
-  "img/contacts/instagram_qr/.DS_Store": {
-    "size": 6148,
-    "type": "",
-    "mtime": "2025-05-20T10:08:37.606Z"
   },
   "img/contacts/instagram_qr/l.png": {
     "size": 11486,
@@ -325,11 +340,6 @@ export const fileDetails = {
     "type": "svg",
     "mtime": "2024-07-05T06:31:10.709Z"
   },
-  "img/rooms/.DS_Store": {
-    "size": 6148,
-    "type": "",
-    "mtime": "2025-05-03T12:53:51.917Z"
-  },
   "img/rooms/F_2fDomi/1.png": {
     "size": 283706,
     "type": "png",
@@ -400,6 +410,33 @@ export const fileDetails = {
     "dimensions": {
       "width": 360,
       "height": 640
+    }
+  },
+  "img/rooms/M_1fDomi/1.png": {
+    "size": 329010,
+    "type": "png",
+    "mtime": "2025-06-15T02:30:46.137Z",
+    "dimensions": {
+      "width": 480,
+      "height": 480
+    }
+  },
+  "img/rooms/M_1fDomi/2.png": {
+    "size": 318031,
+    "type": "png",
+    "mtime": "2025-06-15T02:30:46.365Z",
+    "dimensions": {
+      "width": 480,
+      "height": 480
+    }
+  },
+  "img/rooms/M_1fDomi/3.png": {
+    "size": 330516,
+    "type": "png",
+    "mtime": "2025-06-15T02:30:46.590Z",
+    "dimensions": {
+      "width": 480,
+      "height": 480
     }
   },
   "img/rooms/R_1fC/1.png": {
@@ -699,15 +736,6 @@ export const fileDetails = {
       "height": 427
     }
   },
-  "img/rooms/garden.png": {
-    "size": 641854,
-    "type": "png",
-    "mtime": "2025-05-03T12:45:00.216Z",
-    "dimensions": {
-      "width": 640,
-      "height": 480
-    }
-  },
   "img/rooms/no-image.svg": {
     "size": 241,
     "type": "svg",
@@ -718,18 +746,18 @@ export const fileDetails = {
     }
   },
   "img/surroundings/1.png": {
-    "size": 661896,
+    "size": 535641,
     "type": "png",
-    "mtime": "2025-05-03T12:45:00.706Z",
+    "mtime": "2025-05-03T12:45:01.410Z",
     "dimensions": {
       "width": 640,
       "height": 480
     }
   },
   "img/surroundings/2.png": {
-    "size": 535641,
+    "size": 661896,
     "type": "png",
-    "mtime": "2025-05-03T12:45:01.410Z",
+    "mtime": "2025-05-03T12:45:00.706Z",
     "dimensions": {
       "width": 640,
       "height": 480

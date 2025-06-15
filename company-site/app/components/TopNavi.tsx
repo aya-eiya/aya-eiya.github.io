@@ -11,6 +11,7 @@ const menuItems = {
     home: 'AY HOUSEについて',
     house: 'シェアハウスのご案内',
     surroundings: '周辺の環境',
+    community: 'コミュニティ',
     engineering: 'ソフトウェア開発',
     company: '会社概要',
     blog: 'ブログ',
@@ -22,6 +23,7 @@ const menuItems = {
     home: 'About AY HOUSE',
     house: 'Share House Guide',
     surroundings: 'Surroundings',
+    community: 'Community',
     engineering: 'Software Development',
     company: 'Company Profile',
     blog: 'Blog',
@@ -74,6 +76,11 @@ export default function TopNavi({
         <li className="text-right">
           <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
             <Link href="/surroundings">{items.surroundings}</Link>
+          </div>
+        </li>
+        <li className="text-right">
+          <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
+            <Link href="/community">{items.community}</Link>
           </div>
         </li>
         <li className="text-right">

@@ -7,4 +7,5 @@ export const titles = {
   other: 'AY HOUSE | External Links',
   surroundings: 'AY HOUSE | Surroundings',
   terms: 'AY HOUSE | Terms of Use',
+  community: 'AY HOUSE | Community',
 } as const
