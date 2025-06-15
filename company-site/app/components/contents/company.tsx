@@ -17,7 +17,7 @@ const texts = {
     location: '所在地',
     locationValue: '東京都品川区旗の台1丁目11番9号',
     business: '事業内容',
-    businessValue: 'シェアハウス / 民泊施設 の管理・運営',
+    businessValue: 'シェアハウスの管理・運営およびソフトウェア受託開発',
   },
   en: {
     title: 'Company Profile',
@@ -32,7 +32,7 @@ const texts = {
     locationValue: '1-11-9 Hatanodai, Shinagawa-ku, Tokyo',
     business: 'Business',
     businessValue:
-      'Management and operation of share houses / accommodation facilities',
+      'Management and operation of share houses and custom software development',
   },
 }
 
