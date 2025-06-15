@@ -12,7 +12,6 @@ export const PageNames = [
   'inquiry',
   'other',
   'surroundings',
-  'campaign',
 ] as const
 
 export type PageName = (typeof PageNames)[number]
