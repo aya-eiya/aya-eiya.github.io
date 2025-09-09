@@ -106,12 +106,12 @@ export type RoomAvailability =
 
 export const Available: RoomRecord<RoomAvailability> = {
   R_1fL: { type: 'private', state: true },
-  R_1fC: { type: 'private', state: { year: 2025, month: 10 } },
+  R_1fC: { type: 'private', state: false },
   R_1fJ: { type: 'private', state: false },
   R_2fA: { type: 'private', state: false },
-  R_2fB: { type: 'private', state: { year: 2025, month: 9 } },
+  R_2fB: { type: 'private', state: { year: 2025, month: 11 } },
   M_1fDomi: { type: 'dormitory', residents: 0 },
-  F_2fDomi: { type: 'dormitory', residents: 1 },
+  F_2fDomi: { type: 'dormitory', residents: 0 },
   S_2fOfc: { type: 'shared', state: true },
   S_1fBath: { type: 'shared', state: true },
   S_1fDk: { type: 'shared', state: true },
