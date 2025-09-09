@@ -3,7 +3,7 @@
 import {
   createContext,
   useContext,
-  ReactNode,
+  ReactElement,
   useState,
   useEffect,
 } from 'react'
@@ -22,8 +22,8 @@ const LanguageContext = createContext<LanguageContextType | undefined>(
 export function LanguageProvider({
   children,
 }: {
-  children: ReactNode
-}): ReactNode {
+  children: ReactElement
+}): ReactElement {
   const pathLang = usePathname().includes('/en') ? 'en' : undefined
   const paramLang =
     new URLSearchParams(globalThis.location?.search).get('lang') === 'en'
