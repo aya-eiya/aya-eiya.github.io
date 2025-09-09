@@ -2,8 +2,8 @@
 
 import '../styles/globals.css'
 import Script from 'next/script'
-import { usePathname } from 'next/navigation'
-import { ReactElement, useEffect, useMemo, useState } from 'react'
+import { useParams, usePathname } from 'next/navigation'
+import { ReactNode, useEffect, useMemo, useState } from 'react'
 import { isPageName, getTitles } from './domains/pages'
 import TopNavi from './components/TopNavi'
 import Ogp from './components/functions/ogp'
@@ -12,29 +12,21 @@ import { LanguageProvider, useLanguage } from './contexts/LanguageContext'
 
 export default function RootLayout({
   children,
-  params,
 }: {
-  children: ReactElement
-  params: { page: string }
-}): ReactElement {
+  children: ReactNode
+}): ReactNode {
   return (
     <LanguageProvider>
-      <RootLayoutContent children={children} params={params} />
+      <RootLayoutContent children={children} />
     </LanguageProvider>
   )
 }
 
-function RootLayoutContent({
-  children,
-  params,
-}: {
-  children: ReactElement
-  params: { page: string }
-}): ReactElement {
+function RootLayoutContent({ children }: { children: ReactNode }): ReactNode {
   const { lang } = useLanguage()
-  const { page } = params
   const pathname = usePathname()
   const titles = getTitles(lang)
+  const { page } = useParams()
 
   const title = useMemo(() => {
     const id = page ? String(page) : pathname.replace(/^\//, '')
@@ -96,8 +88,8 @@ function RootLayoutContent({
 function Layout({
   children,
 }: {
-  children: ReactElement | ReactElement[]
-}): ReactElement {
+  children: ReactNode | ReactNode[]
+}): ReactNode {
   const { lang, setLang } = useLanguage()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const pathname = usePathname()
