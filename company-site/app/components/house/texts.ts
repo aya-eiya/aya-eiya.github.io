@@ -33,7 +33,7 @@ const baseContent: Record<Lang, Omit<TextContent, 'faq' | 'facilities'>> = {
     people: '人',
     total: '合計',
     dormitoryNote:
-      'ドミトリーを継続して3ヶ月以上一人でご利用の方について、4ヶ月目から個室とみなした差分賃料が発生します',
+      'ドミトリーを継続して長期間一人でご利用の方について、個室に移動していただく場合があります',
     femaleDormitoryNote:
       '備考:女子ドミトリーには上記以外に専用キッチン・水回りが含まれます',
     availableBeds: '空きベッド数',
@@ -68,7 +68,7 @@ const baseContent: Record<Lang, Omit<TextContent, 'faq' | 'facilities'>> = {
     people: 'people',
     total: 'Total',
     dormitoryNote:
-      'Note: For dormitory residents staying alone for more than 3 months, additional private room rate difference will apply from the 4th month',
+      'Note: For dormitory residents staying alone for long term may be asked to move to private room',
     femaleDormitoryNote:
       'Note: Female dormitory includes exclusive kitchen and water facilities in addition to the above',
     availableBeds: 'Available Beds',
