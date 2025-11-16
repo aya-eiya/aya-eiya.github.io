@@ -135,11 +135,6 @@ function Layout({
                     EN
                   </button>
                 </div>
-                <div className="text-white hover:text-gray-500 hidden md:flex ml-4">
-                  <Link className="cursor-pointer" href="/inquiry">
-                    {lang === 'ja' ? 'お問合せ' : 'Contact'}
-                  </Link>
-                </div>
               </div>
             </div>
           </div>
