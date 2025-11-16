@@ -1,6 +1,5 @@
 'use client'
 
-import Link from 'next/link'
 import { ReactElement } from 'react'
 import HeadLine from '../HeadLine'
 import { useLanguage } from '../../contexts/LanguageContext'

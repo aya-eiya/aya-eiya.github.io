@@ -1,10 +1,6 @@
 import { ReactElement } from 'react'
 import Company from './components/contents/company'
-import Community from './components/contents/community'
 import Home from './components/contents/home'
-import House from './components/contents/house'
-import Inquiry from './components/contents/inquiry'
-import Surroundings from './components/contents/surroundings'
 import Engineering from './components/contents/engineering'
 import Other from './components/contents/other'
 
