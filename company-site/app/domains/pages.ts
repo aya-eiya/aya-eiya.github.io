@@ -5,13 +5,13 @@ import type { titles as EnTitles } from './en/pages'
 
 export const PageNames = [
   'home',
-  'house',
+  //  'house',
   'company',
   'engineering',
-  'inquiry',
-  'other',
-  'community',
-  'surroundings',
+  //  'inquiry',
+  //  'other',
+  //  'community',
+  //  'surroundings',
 ] as const
 
 export type PageName = (typeof PageNames)[number]

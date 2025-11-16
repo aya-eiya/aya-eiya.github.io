@@ -13,17 +13,9 @@ export default function HomePage(): ReactElement {
     <>
       <Home />
       <hr className="h-44 border-0" />
-      <House />
-      <hr className="h-44 border-0" />
-      <Surroundings />
-      <hr className="h-44 border-0" />
-      <Community />
-      <hr className="h-44 border-0" />
       <Company />
       <hr className="h-44 border-0" />
       <Engineering />
-      <hr className="h-44 border-0" />
-      <Inquiry />
       <hr className="h-44 border-0" />
       <Other />
     </>
