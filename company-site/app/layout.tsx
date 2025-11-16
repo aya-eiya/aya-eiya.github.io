@@ -62,14 +62,14 @@ function RootLayoutContent({ children }: { children: ReactNode }): ReactNode {
         <meta name="robots" content="index, follow" />
         <meta
           name="keywords"
-          content="シェアハウス,ギークハウス,コワーキング,空き家活用,東京シェアハウス,パーティルーム,撮影スタジオ,品川区,旗の台,東急沿線,大井町線,浅草線,武蔵小山,西小山,戸越銀座,大岡山,自由が丘,五反田,share house,co-working,sharing economy,party room,rental studio"
+          content="受託開発, ソフトウェア開発, 技術顧問, フリーランスエンジニア, 開発支援, 一人法人, システム開発"
         />
         <meta
           name="description"
           content={
             lang === 'ja'
-              ? '戸建シェアハウスの運営を行うAY合同会社のホームページです。ITエンジニア向けを中心としたコンセプトシェアハウスを運営しており、起業家やITエンジニアに人気の物件となっています'
-              : 'Welcome to AY LLC, operating residential share houses. We manage concept share houses focused on IT engineers, popular among entrepreneurs and tech professionals.'
+              ? '豊富なソフトウェア開発経験を持つ代表による受託開発・技術顧問・開発支援を提供。フリーランスに近い柔軟な体制で、高品質なシステム開発と技術サポートを実現します。'
+              : 'We provide contract development, technical consulting, and development support led by our CEO with extensive software development experience. Operating with a flexible structure akin to freelancing, we deliver high-quality system development and technical support.'
           }
         />
         <meta

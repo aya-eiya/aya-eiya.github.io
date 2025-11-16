@@ -8,27 +8,27 @@ import { useLanguage } from '../contexts/LanguageContext'
 
 const menuItems = {
   ja: {
-    home: 'AY HOUSEについて',
-    house: 'シェアハウスのご案内',
-    surroundings: '周辺の環境',
-    community: 'コミュニティ',
+    home: 'AY合同会社について',
+    // house: 'シェアハウスのご案内',
+    // surroundings: '周辺の環境',
+    // community: 'コミュニティ',
     engineering: 'ソフトウェア開発',
     company: '会社概要',
     blog: 'ブログ',
-    inquiry: 'お問合せ',
-    terms: '利用規約',
+    // inquiry: 'お問合せ',
+    // terms: '利用規約',
     privacy: 'プライバシーポリシー',
   },
   en: {
-    home: 'About AY HOUSE',
-    house: 'Share House Guide',
-    surroundings: 'Surroundings',
-    community: 'Community',
+    home: 'About AY.LLC.',
+    // house: 'Share House Guide',
+    // surroundings: 'Surroundings',
+    // community: 'Community',
     engineering: 'Software Development',
     company: 'Company Profile',
     blog: 'Blog',
-    inquiry: 'Contact',
-    terms: 'Terms of Use',
+    // inquiry: 'Contact',
+    // terms: 'Terms of Use',
     privacy: 'Privacy Policy',
   },
 }
@@ -70,21 +70,6 @@ export default function TopNavi({
         </li>
         <li className="text-right">
           <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
-            <Link href="/house">{items.house}</Link>
-          </div>
-        </li>
-        <li className="text-right">
-          <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
-            <Link href="/surroundings">{items.surroundings}</Link>
-          </div>
-        </li>
-        <li className="text-right">
-          <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
-            <Link href="/community">{items.community}</Link>
-          </div>
-        </li>
-        <li className="text-right">
-          <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
             <Link href="/engineering">{items.engineering}</Link>
           </div>
         </li>
@@ -103,16 +88,6 @@ export default function TopNavi({
               />
             </div>
           </Link>
-        </li>
-        <li className="text-right">
-          <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
-            <Link href="/inquiry">{items.inquiry}</Link>
-          </div>
-        </li>
-        <li className="text-right">
-          <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
-            <Link href="/terms">{items.terms}</Link>
-          </div>
         </li>
         <li className="text-right">
           <div className="h-10 pt-2 text-gray-800 hover:text-gray-500 cursor-pointer">
