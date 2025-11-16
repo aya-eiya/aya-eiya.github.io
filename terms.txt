@@ -1,9 +1,9 @@
 1:"$Sreact.fragment"
 2:I[7989,[],"ClientSegmentRoot"]
-3:I[2551,["176","static/chunks/176-b293c0b8f74aca36.js","550","static/chunks/550-aba9f90323d6fe22.js","177","static/chunks/app/layout-f20b8eac671601cf.js"],"default"]
+3:I[2551,["176","static/chunks/176-b293c0b8f74aca36.js","550","static/chunks/550-7c63a6ef8740f801.js","177","static/chunks/app/layout-6a67ef827cc2679b.js"],"default"]
 4:I[9766,[],""]
 5:I[8924,[],""]
-6:I[3293,["345","static/chunks/app/not-found-ec761c31b046d8ba.js"],"default"]
+6:I[3293,["345","static/chunks/app/not-found-fcb18b937608caf1.js"],"default"]
 8:I[1959,[],"ClientPageRoot"]
 9:I[9490,["66","static/chunks/app/terms/page-9ab6148fc2ff04d3.js"],"default"]
 c:I[4431,[],"OutletBoundary"]
@@ -12,8 +12,8 @@ e:I[5278,[],"AsyncMetadataOutlet"]
 12:I[4431,[],"MetadataBoundary"]
 13:"$Sreact.suspense"
 15:I[7150,[],""]
-:HL["/_next/static/css/c36af8babd32bf11.css","style"]
-0:{"P":null,"b":"mwzqZ98TRkthQGou4oySP","p":"","c":["","terms"],"i":false,"f":[[["",{"children":["terms",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/c36af8babd32bf11.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","$L2",null,{"Component":"$3","slots":{"children":["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","$L6",null,{}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]},"params":{},"promise":"$@7"}]]}],{"children":["terms",["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":[["$","$L8",null,{"Component":"$9","searchParams":{},"params":"$0:f:0:1:1:props:children:1:props:params","promises":["$@a","$@b"]}],null,["$","$Lc",null,{"children":["$Ld",["$","$Le",null,{"promise":"$@f"}]]}]]}],{},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,[["$","$L10",null,{"children":"$L11"}],null],["$","$L12",null,{"children":["$","div",null,{"hidden":true,"children":["$","$13",null,{"fallback":null,"children":"$L14"}]}]}]]}],false]],"m":"$undefined","G":["$15",[]],"s":false,"S":true}
+:HL["/_next/static/css/e3833fb92e97312b.css","style"]
+0:{"P":null,"b":"-tHDpzjTN8F68AKyBtcUN","p":"","c":["","terms"],"i":false,"f":[[["",{"children":["terms",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/e3833fb92e97312b.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","$L2",null,{"Component":"$3","slots":{"children":["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","$L6",null,{}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]},"params":{},"promise":"$@7"}]]}],{"children":["terms",["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":[["$","$L8",null,{"Component":"$9","searchParams":{},"params":"$0:f:0:1:1:props:children:1:props:params","promises":["$@a","$@b"]}],null,["$","$Lc",null,{"children":["$Ld",["$","$Le",null,{"promise":"$@f"}]]}]]}],{},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,[["$","$L10",null,{"children":"$L11"}],null],["$","$L12",null,{"children":["$","div",null,{"hidden":true,"children":["$","$13",null,{"fallback":null,"children":"$L14"}]}]}]]}],false]],"m":"$undefined","G":["$15",[]],"s":false,"S":true}
 7:"$0:f:0:1:1:props:children:1:props:params"
 a:{}
 b:"$0:f:0:1:1:props:children:1:props:params"
