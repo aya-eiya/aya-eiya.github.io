@@ -15,7 +15,7 @@ export default function Privacy(): ReactElement {
       <dl className="p-2 border rounded-sm mb-4 mx-2">
         <dt className="text-lg m-2">1. 事業者情報</dt>
         <dd className="mx-2">AY合同会社</dd>
-        <dd className="mx-2">東京都品川区旗の台 1-11-9</dd>
+        <dd className="mx-2">東京都品川区上大崎３丁目１４ー３０ー８０４</dd>
         <dd className="mx-2">代表: 綾部 英俊</dd>
         <dt className="text-lg m-2">2. 個人情報の取得方法</dt>
         <dd className="mx-2">
