@@ -15,9 +15,9 @@ const texts = {
     established: '設立',
     establishedValue: '令和3年(2021年) 8月 4日',
     location: '所在地',
-    locationValue: '東京都品川区旗の台1丁目11番9号',
+    locationValue: '東京都品川区上大崎３丁目１４ー３０ー８０４',
     business: '事業内容',
-    businessValue: 'シェアハウスの管理・運営およびソフトウェア受託開発',
+    businessValue: 'ソフトウェア開発支援およびITコンサルタント事業',
   },
   en: {
     title: 'Company Profile',
@@ -29,10 +29,9 @@ const texts = {
     established: 'Established',
     establishedValue: 'August 4, 2021',
     location: 'Location',
-    locationValue: '1-11-9 Hatanodai, Shinagawa-ku, Tokyo',
+    locationValue: '3-14-30-804 Kamiosaki, Shinagawa-ku, Tokyo',
     business: 'Business',
-    businessValue:
-      'Management and operation of share houses and custom software development',
+    businessValue: 'Software Development Support and IT Consulting Services',
   },
 }
 
