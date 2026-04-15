@@ -77,6 +77,11 @@ function RootLayoutContent({ children }: { children: ReactNode }): ReactNode {
           content="7kSERnEQeg59zIDhceMur15WrY6TnUkPR4r2Rj8tEwY"
         />
         <title>{title}</title>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4228655180940549"
+          crossOrigin="anonymous"
+        ></script>
       </head>
       <body className="overflow-x-hidden">
         <Layout>{children}</Layout>
