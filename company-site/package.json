@@ -22,7 +22,7 @@
     "globals": "^17.5.0",
     "node-addon-api": "^8.7.0",
     "node-gyp": "^12.2.0",
-    "postcss": "^8.5.10",
+    "postcss": "^8.5.18",
     "prettier": "^3.8.3",
     "tailwindcss": "^4.2.2",
     "typescript": "^6.0.2",
